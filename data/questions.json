@@ -1,611 +1,608 @@
 [
+
   {
     "id": 1,
-    "question": "Which HTML tag is used for the largest heading?",
-    "options": ["<h6>", "<h1>", "<heading>", "<title>"],
+    "question": "Node.js runs on which engine?",
+    "options": ["SpiderMonkey", "V8 Engine", "Java Engine", "Quantum Engine"],
     "correct": "B"
   },
   {
     "id": 2,
-    "question": "Which HTML tag is used to insert an image?",
-    "options": ["<img>", "<image>", "<pic>", "<src>"],
-    "correct": "A"
+    "question": "Node.js is ______",
+    "options": ["Synchronous", "Single-threaded asynchronous", "Multi-threaded by default", "Frontend framework"],
+    "correct": "B"
   },
   {
     "id": 3,
-    "question": "Which attribute is used to provide a link in HTML?",
-    "options": ["src", "href", "link", "ref"],
-    "correct": "B"
+    "question": "Which module is used for file operations?",
+    "options": ["path", "url", "fs", "os"],
+    "correct": "C"
   },
   {
     "id": 4,
-    "question": "What is the default display type of <div> element?",
-    "options": ["inline", "block", "flex", "inline-block"],
-    "correct": "B"
+    "question": "What does npm stand for?",
+    "options": ["Node Package Manager", "New Program Manager", "Network Package Machine", "None"],
+    "correct": "A"
   },
   {
     "id": 5,
-    "question": "Which HTML tag is used to create a table row?",
-    "options": ["<tr>", "<td>", "<th>", "<row>"],
+    "question": "Which command initializes a Node project?",
+    "options": ["npm init", "node start", "npm project", "node --init"],
     "correct": "A"
   },
   {
     "id": 6,
-    "question": "Which tag is used to create an unordered list?",
-    "options": ["<ul>", "<ol>", "<li>", "<list>"],
-    "correct": "A"
-  },
-  {
-    "id": 7,
-    "question": "Which HTML element is used for line break?",
-    "options": ["<break>", "<br>", "<lb>", "<line>"],
+    "question": "Which keyword imports built-in modules in Node?",
+    "options": ["import", "require", "use", "include"],
     "correct": "B"
   },
   {
+    "id": 7,
+    "question": "Which function executes non-blocking operations?",
+    "options": ["sync()", "blocking()", "callback()", "thread()"],
+    "correct": "C"
+  },
+  {
     "id": 8,
-    "question": "Which input type allows selecting multiple values?",
-    "options": ["checkbox", "radio", "text", "number"],
+    "question": "Which module handles encryption in Node.js?",
+    "options": ["crypto", "encrypt", "bcrypt", "jwt"],
     "correct": "A"
   },
   {
     "id": 9,
-    "question": "Which HTML attribute is used to specify inline CSS?",
-    "options": ["style", "css", "font", "class"],
+    "question": "Which object handles environment variables?",
+    "options": ["process.env", "env.config", "node.env", "system.env"],
     "correct": "A"
   },
   {
     "id": 10,
-    "question": "HTML stands for?",
-    "options": ["HyperText Markup Language", "HighText Markdown Language", "HyperText Machine Language", "None"],
-    "correct": "A"
-  },
-  {
-    "id": 11,
-    "question": "Which tag is used to define important text?",
-    "options": ["<strong>", "<b>", "<mark>", "<highlight>"],
-    "correct": "A"
-  },
-  {
-    "id": 12,
-    "question": "Which tag is used for inserting JavaScript?",
-    "options": ["<js>", "<script>", "<javascript>", "<code>"],
-    "correct": "B"
-  },
-  {
-    "id": 13,
-    "question": "Which tag defines table columns?",
-    "options": ["<td>", "<th>", "<tr>", "<col>"],
+    "question": "Which module is used for network servers?",
+    "options": ["http", "net", "cluster", "All of these"],
     "correct": "D"
   },
   {
+    "id": 11,
+    "question": "Which function schedules asynchronous callback?",
+    "options": ["setTimeout()", "process.nextTick()", "setImmediate()", "All"],
+    "correct": "D"
+  },
+  {
+    "id": 12,
+    "question": "Which file usually stores dependencies?",
+    "options": ["package.json", "dependencies.js", "nodefile.json", "project.json"],
+    "correct": "A"
+  },
+  {
+    "id": 13,
+    "question": "Which module handles streams?",
+    "options": ["buffer", "stream", "pipe", "flow"],
+    "correct": "B"
+  },
+  {
     "id": 14,
-    "question": "Which HTML tag embeds audio?",
-    "options": ["<audio>", "<sound>", "<mp3>", "<voice>"],
+    "question": "To install a package locally:",
+    "options": ["npm i pkg", "npm get pkg", "node install pkg", "npm config pkg"],
     "correct": "A"
   },
   {
     "id": 15,
-    "question": "Which tag is used for forms?",
-    "options": ["<input>", "<form>", "<fieldset>", "<submit>"],
+    "question": "Which CLI flag runs a file?",
+    "options": ["npm run file.js", "node file.js", "execute file", "js file.js"],
     "correct": "B"
   },
-
-
   {
     "id": 16,
-    "question": "Node.js is based on which engine?",
-    "options": ["JavaScriptCore", "SpiderMonkey", "V8 Engine", "Chakra"],
-    "correct": "C"
+    "question": "Which statement is true about Node event loop?",
+    "options": ["Manages async callbacks", "Runs threads manually", "Same as browser event loop", "None"],
+    "correct": "A"
   },
   {
     "id": 17,
-    "question": "Which module is used to create server in Node.js?",
-    "options": ["http", "url", "fs", "path"],
+    "question": "Which module loads environment files?",
+    "options": ["dotenv", "env-load", "system-env", "config-env"],
     "correct": "A"
   },
   {
     "id": 18,
-    "question": "Which method is used to read files in Node.js?",
-    "options": ["fs.readFile()", "fs.write()", "file.read()", "read.file()"],
-    "correct": "A"
+    "question": "Which mechanism avoids callback hell?",
+    "options": ["Promises", "Async/await", "Generators", "All of these"],
+    "correct": "D"
   },
   {
     "id": 19,
-    "question": "NPM stands for?",
-    "options": ["Node Package Manager", "Node Program Manager", "New Program Manager", "None"],
+    "question": "package-lock.json ensures?",
+    "options": ["Version consistency", "Server deployment", "Testing logs", "Caching"],
     "correct": "A"
   },
   {
     "id": 20,
-    "question": "Express.js is a?",
-    "options": ["Database", "Frontend Framework", "Node.js Web Framework", "OS"],
-    "correct": "C"
+    "question": "child_process module helps in?",
+    "options": ["Creating new server", "Spawning sub-process", "Handling HTML", "Database indexing"],
+    "correct": "B"
   },
   {
     "id": 21,
-    "question": "Default port for Node apps is often?",
-    "options": ["80", "3000", "5000", "8080"],
-    "correct": "B"
+    "question": "Buffer in Node is used for?",
+    "options": ["Binary data storage", "Routing", "Auth", "JSON validation"],
+    "correct": "A"
   },
   {
     "id": 22,
-    "question": "Which command initializes Node project?",
-    "options": ["npm start", "npm init", "node init", "start project"],
-    "correct": "B"
+    "question": "Which is NOT built-in module?",
+    "options": ["fs", "cluster", "events", "axios"],
+    "correct": "D"
   },
   {
     "id": 23,
-    "question": "Which middleware parses JSON requests in Express?",
-    "options": ["express.text()", "express.url()","express.json()", "json.parse()"],
-    "correct": "C"
+    "question": "Which function reads file asynchronously?",
+    "options": ["fs.read()", "fs.readFile()", "fs.getFile()", "read.fs"],
+    "correct": "B"
   },
   {
     "id": 24,
-    "question": "Which module is used for File System?",
-    "options": ["os", "fs", "http", "dns"],
+    "question": "Non-blocking means?",
+    "options": ["Stops main thread", "Executes parallel without waiting", "Blocks CPU", "None"],
     "correct": "B"
   },
   {
     "id": 25,
-    "question": "To install Express globally?",
-    "options": ["npm i express", "npm install -g express", "install express", "npm add express"],
-    "correct": "B"
+    "question": "To handle JSON req body in Node use?",
+    "options": ["express.json()", "express.body()", "json.import()", "body.req()"],
+    "correct": "A"
   },
   {
     "id": 26,
-    "question": "Which response method sends JSON?",
-    "options": ["res.send()", "res.write()", "res.json()", "res.end()"],
-    "correct": "C"
+    "question": "Which manages multiple CPU utilization?",
+    "options": ["cluster module", "router", "http", "process.env"],
+    "correct": "A"
   },
   {
     "id": 27,
-    "question": "Which statement runs a Node file?",
-    "options": ["run file.js", "node file.js", "npm start file", "execute file.js"],
-    "correct": "B"
-  },
-  {
-    "id": 28,
-    "question": "Which module handles routing in Express?",
-    "options": ["Route", "Router", "express.Router()", "express.route()"],
+    "question": "Best logging package for production?",
+    "options": ["console.log", "Morgan", "Winston", "Debug"],
     "correct": "C"
   },
   {
+    "id": 28,
+    "question": "Which library handles realtime communication?",
+    "options": ["socket.io", "webRTC", "mqtt", "All of these"],
+    "correct": "D"
+  },
+  {
     "id": 29,
-    "question": "What is Callback?",
-    "options": ["Function inside a function", "Error handler", "File writer", "Loop"],
+    "question": "PM2 is used for?",
+    "options": ["Process management", "Database querying", "Auth token", "Testing"],
     "correct": "A"
   },
   {
     "id": 30,
-    "question": "Which library is used for MongoDB with Node?",
-    "options": ["mongoose", "sequelize", "typeorm", "prisma"],
+    "question": "Which method handles async parallel tasks?",
+    "options": ["Promise.all()", "Promise.race()", "async.parallel()", "asyncSeries"],
     "correct": "A"
   },
+
+
   {
     "id": 31,
-    "question": "Which statement starts an Express server?",
-    "options": ["app.begin()", "server.listen()", "app.start()", "express.run()"],
+    "question": "Express.js is a ______",
+    "options": ["DB", "Web framework", "OS tool", "Compiler"],
     "correct": "B"
   },
   {
     "id": 32,
-    "question": "Which method handles GET request?",
-    "options": ["app.fetch()", "app.get()", "app.use()", "req.get()"],
+    "question": "To create server in Express?",
+    "options": ["express.listen()", "app.listen()", "node.server()", "server.run()"],
     "correct": "B"
   },
   {
     "id": 33,
-    "question": "Which HTTP code means success?",
-    "options": ["200", "404", "500", "401"],
+    "question": "Which handles routing?",
+    "options": ["express.Router()", "fs.route()", "http.route()", "path.router()"],
     "correct": "A"
   },
   {
     "id": 34,
-    "question": "What is asynchronous in Node?",
-    "options": ["Executes later without blocking", "Executes instantly", "Blocks thread", "None"],
-    "correct": "A"
+    "question": "Status 201 means?",
+    "options": ["Bad request", "Created", "Not found", "Internal error"],
+    "correct": "B"
   },
   {
     "id": 35,
-    "question": "Which package stores environment variables?",
-    "options": ["dotenv", "envpkg", "configenv", "appenv"],
+    "question": "To serve static content?",
+    "options": ["express.static()", "app.folder()", "res.static()", "server.static()"],
     "correct": "A"
   },
-
   {
     "id": 36,
-    "question": "MongoDB is a?",
-    "options": ["Relational DB", "NoSQL DB", "Graph DB", "File DB"],
-    "correct": "B"
+    "question": "Middleware executes between?",
+    "options": ["Request and response", "HTML and CSS", "Client and DB only", "None"],
+    "correct": "A"
   },
   {
     "id": 37,
-    "question": "Default MongoDB port?",
-    "options": ["27017", "3306", "5432", "8080"],
-    "correct": "A"
-  },
-  {
-    "id": 38,
-    "question": "MongoDB stores data in?",
-    "options": ["Tables", "Collections", "Schemas", "Rows"],
+    "question": "Error middleware signature?",
+    "options": ["(req,res)", "(err,req,res,next)", "(res,err)", "(next,err)"],
     "correct": "B"
   },
   {
+    "id": 38,
+    "question": "To parse cookies use?",
+    "options": ["cookie-parser", "body-parser", "helmet", "axios"],
+    "correct": "A"
+  },
+  {
     "id": 39,
-    "question": "Collection contains?",
-    "options": ["Documents", "Rows", "Tables", "Keys"],
+    "question": "Which protects headers security?",
+    "options": ["helmet", "bcrypt", "jwt", "pm2"],
     "correct": "A"
   },
   {
     "id": 40,
-    "question": "Which command shows databases?",
-    "options": ["show collections", "use db", "show dbs", "db list"],
-    "correct": "C"
-  },
-  {
-    "id": 41,
-    "question": "Insert document command?",
-    "options": ["db.col.insert()", "db.collection.add()", "db.insert()", "insert.doc()"],
+    "question": "CORS is required for?",
+    "options": ["Cross-domain requests", "CSS loading", "DB indexing", "Testing"],
     "correct": "A"
   },
   {
+    "id": 41,
+    "question": "Which is token-based auth?",
+    "options": ["JWT", "OAuth", "Session", "Both A & B"],
+    "correct": "D"
+  },
+  {
     "id": 42,
-    "question": "Find all documents?",
-    "options": ["db.col.get()", "db.collection.find()", "db.find()", "db.collection.read()"],
-    "correct": "B"
+    "question": "Which hashing is best for passwords?",
+    "options": ["MD5", "SHA1", "bcrypt", "plain-text"],
+    "correct": "C"
   },
   {
     "id": 43,
-    "question": "Mongoose schema defines?",
-    "options": ["API routes", "Document structure", "CSS styles", "Server logs"],
-    "correct": "B"
+    "question": "REST stands for?",
+    "options": ["Representational State Transfer", "Remote Execution Service Transport", "Read Execute Secure Transfer", "None"],
+    "correct": "A"
   },
   {
     "id": 44,
-    "question": "Which type is default _id?",
-    "options": ["Number", "UUID", "ObjectId", "String"],
-    "correct": "C"
+    "question": "Idempotent method?",
+    "options": ["POST", "GET", "PUT", "Both B & C"],
+    "correct": "D"
   },
   {
     "id": 45,
-    "question": "To delete document?",
-    "options": ["delete()", "remove()", "deleteOne()", "drop()"],
-    "correct": "C"
+    "question": "HTTP 429 means?",
+    "options": ["Too many requests", "Timeout", "Redirect", "Bad gateway"],
+    "correct": "A"
   },
   {
     "id": 46,
-    "question": "Mongoose connect example?",
-    "options": ["mongoose.link()", "mongoose.connect()", "db.connect()", "mongo.use()"],
-    "correct": "B"
+    "question": "To rate limit API use?",
+    "options": ["express-rate-limit", "helmet", "uuid", "morgan"],
+    "correct": "A"
   },
   {
     "id": 47,
-    "question": "Update One syntax?",
-    "options": ["updateOne()", "modify()", "editOne()", "change()"],
+    "question": "API versioning best practice?",
+    "options": ["/v1/api", "/api-old", "/main", "/stable"],
     "correct": "A"
   },
   {
     "id": 48,
-    "question": "Which command deletes a collection?",
-    "options": ["db.col.remove()", "db.col.drop()", "drop.collection()", "db.drop()"],
-    "correct": "B"
+    "question": "Pagination improves?",
+    "options": ["Performance & response time", "UI only", "Security", "None"],
+    "correct": "A"
   },
   {
     "id": 49,
-    "question": "Aggregation pipeline starts with?",
-    "options": ["$match", "$start", "$pipe", "$aggregate"],
+    "question": "HTTP 204 means?",
+    "options": ["Success no content", "JSON returned", "Created", "Redirect"],
     "correct": "A"
   },
   {
     "id": 50,
-    "question": "To sort results?",
-    "options": ["sort()", "db.sort()", "db.col.order()", "db.col.rank()"],
-    "correct": "A"
-  }
-,
+    "question": "GraphQL advantage?",
+    "options": ["Over-fetching reduced", "Single endpoint", "Flexible querying", "All"],
+    "correct": "D"
+  },
   {
     "id": 51,
-    "question": "Which HTML tag is used for semantic navigation links?",
-    "options": ["<navigate>", "<nav>", "<menu>", "<link>"],
-    "correct": "B"
+    "question": "To validate request data?",
+    "options": ["Joi", "Yup", "Zod", "All"],
+    "correct": "D"
   },
   {
     "id": 52,
-    "question": "Which tag makes text italic in HTML?",
-    "options": ["<b>", "<i>", "<italic>", "<style>"],
-    "correct": "B"
+    "question": "To avoid SQL injection in backend?",
+    "options": ["Sanitization", "Prepared statements", "ORM", "All"],
+    "correct": "D"
   },
   {
     "id": 53,
-    "question": "Which attribute sets an image alternative text?",
-    "options": ["title", "alt", "caption", "description"],
-    "correct": "B"
-  },
-  {
-    "id": 54,
-    "question": "Which HTML element is used for internal CSS?",
-    "options": ["<style>", "<css>", "<stylesheet>", "<design>"],
+    "question": "Session storage library?",
+    "options": ["express-session", "session-cookie", "app-session", "req-store"],
     "correct": "A"
   },
   {
+    "id": 54,
+    "question": "JWT should be stored in?",
+    "options": ["LocalStorage", "HTTP-only cookie", "SessionStorage", "URL params"],
+    "correct": "B"
+  },
+  {
     "id": 55,
-    "question": "Which tag represents self-closing HTML element?",
-    "options": ["<img>", "<div>", "<section>", "<body>"],
+    "question": "Best password storing approach?",
+    "options": ["Hash + Salt", "Plain text", "Encode only", "LocalStorage"],
     "correct": "A"
   },
   {
     "id": 56,
-    "question": "Which HTML element defines emphasized text?",
-    "options": ["<em>", "<strong>", "<bold>", "<stress>"],
-    "correct": "A"
+    "question": "API logs should include?",
+    "options": ["IP, Method, Endpoint", "User-Agent", "Response time", "All"],
+    "correct": "D"
   },
   {
     "id": 57,
-    "question": "Which tag embeds videos?",
-    "options": ["<video>", "<media>", "<mp4>", "<movie>"],
+    "question": "WebSockets used for?",
+    "options": ["Real-time communication", "Image compression", "Security scan", "DB sharding"],
     "correct": "A"
   },
   {
     "id": 58,
-    "question": "What does <meta> tag control primarily?",
-    "options": ["Page content", "SEO & browser metadata", "Scripts", "Images"],
-    "correct": "B"
+    "question": "HTTP keep-alive improves?",
+    "options": ["Multiple request reuse", "CSS rendering", "Image caching", "DNS"],
+    "correct": "A"
   },
   {
     "id": 59,
-    "question": "Which input type hides characters when typing?",
-    "options": ["email", "text", "password", "hidden"],
-    "correct": "C"
+    "question": "gRPC uses which protocol?",
+    "options": ["HTTP/1.1", "HTTP/2", "TCP only", "UDP only"],
+    "correct": "B"
   },
   {
     "id": 60,
-    "question": "To open link in new tab use?",
-    "options": ["target='_self'", "new-tab", "link='_blank'", "target='_blank'"],
-    "correct": "D"
+    "question": "Throttling means?",
+    "options": ["Limiting request rate", "DB replication", "Server restart", "Image optimization"],
+    "correct": "A"
   },
+
+
   {
     "id": 61,
-    "question": "Which tag defines an item inside list?",
-    "options": ["<item>", "<li>", "<ul>/<ol>", "<row>"],
+    "question": "MongoDB is ______",
+    "options": ["Relational", "NoSQL document DB", "Graph DB", "Key-value only"],
     "correct": "B"
   },
   {
     "id": 62,
-    "question": "Which attribute is used for form submission URL?",
-    "options": ["target", "action", "url", "method"],
-    "correct": "B"
-  },
-  {
-    "id": 63,
-    "question": "What does HTML5 localStorage store?",
-    "options": ["Session cookies", "Permanent key-value data", "Server data", "SQL records"],
-    "correct": "B"
-  },
-  {
-    "id": 64,
-    "question": "Which tag is not semantic?",
-    "options": ["<article>", "<aside>", "<span>", "<footer>"],
+    "question": "Default _id type?",
+    "options": ["UUID", "String", "ObjectId", "Number"],
     "correct": "C"
   },
   {
-    "id": 65,
-    "question": "Which attribute marks a required form field?",
-    "options": ["validate", "required", "must", "need"],
-    "correct": "B"
-  },
-
-
-  {
-    "id": 66,
-    "question": "Node.js uses which architecture?",
-    "options": ["Single-threaded event loop", "Multi-threaded", "Dual process only", "Blocking IO"],
+    "id": 63,
+    "question": "Which improves read performance?",
+    "options": ["Indexes", "Aggregation", "Sharding", "Backup"],
     "correct": "A"
   },
   {
-    "id": 67,
-    "question": "Which function creates child processes?",
-    "options": ["fs.exec()", "child_process.spawn()", "process.run()", "fork.exec()"],
+    "id": 64,
+    "question": "findOne returns?",
+    "options": ["Array", "Single document", "Cursor", "String"],
     "correct": "B"
   },
   {
+    "id": 65,
+    "question": "To connect Node with Mongo?",
+    "options": ["mongoose.connect()", "mongo.connect()", "express.db()", "client.connect() only"],
+    "correct": "A"
+  },
+  {
+    "id": 66,
+    "question": "Which operator selects fields?",
+    "options": ["$filter", "$project", "$group", "$match"],
+    "correct": "B"
+  },
+  {
+    "id": 67,
+    "question": "Atomic operations handled using?",
+    "options": ["Transactions", "Indexes", "Replica sets", "Only writes"],
+    "correct": "A"
+  },
+  {
     "id": 68,
-    "question": "What is middleware in Express?",
-    "options": ["Database layer", "Function executed between request and response", "Frontend code", "File reader"],
+    "question": "MongoDB aggregation pipeline starts with?",
+    "options": ["$start", "$match", "$sort", "$add"],
     "correct": "B"
   },
   {
     "id": 69,
-    "question": "Which status code means unauthorized?",
-    "options": ["200", "401", "500", "403"],
-    "correct": "B"
+    "question": "To update a document?",
+    "options": ["updateOne()", "modify()", "updateDoc()", "fixOne()"],
+    "correct": "A"
   },
   {
     "id": 70,
-    "question": "To handle file uploads in Node use?",
-    "options": ["multer", "axios", "passport", "helmet"],
+    "question": "Sharding used for?",
+    "options": ["Scaling horizontally", "Vertical growth", "Backup", "Minor caching"],
     "correct": "A"
   },
   {
     "id": 71,
-    "question": "Which module protects HTTP headers security?",
-    "options": ["helmet", "cookie-parser", "jsonwebtoken", "bcrypt"],
+    "question": "Replica set used for?",
+    "options": ["Failover + High availability", "Compression", "Logging", "DNS"],
     "correct": "A"
   },
   {
     "id": 72,
-    "question": "Which library hashes passwords?",
-    "options": ["bcrypt", "crypto-md5", "hashify", "jwt"],
-    "correct": "A"
+    "question": "Which index improves text search?",
+    "options": ["2dsphere", "text", "unique", "hashed"],
+    "correct": "B"
   },
   {
     "id": 73,
-    "question": "JWT is used for?",
-    "options": ["Password storage", "Authentication/Authorization", "Database connection", "Caching"],
+    "question": "MongoDB stores data in?",
+    "options": ["Tables", "Collections", "Schemas", "Queries"],
     "correct": "B"
   },
   {
     "id": 74,
-    "question": "Which Express method handles POST?",
-    "options": ["app.create()", "app.get()", "app.post()", "app.req()"],
-    "correct": "C"
+    "question": "Best query performance rule?",
+    "options": ["Smaller documents", "Indexes", "Projection usage", "All"],
+    "correct": "D"
   },
   {
     "id": 75,
-    "question": "Which is used to store session server-side?",
-    "options": ["localStorage", "sessionStorage", "express-session", "cache-file"],
-    "correct": "C"
+    "question": "WriteConcern ensures?",
+    "options": ["Durability", "Cache eviction", "Paging", "Schema validation"],
+    "correct": "A"
   },
   {
     "id": 76,
-    "question": "Which HTTP response header sends cookies?",
-    "options": ["Set-Cookie", "Cookie-Auth", "Send-Cookie", "Auth-Session"],
+    "question": "Mongoose schema represents?",
+    "options": ["DB structure rules", "UI layout", "JWT payload", "Server config"],
     "correct": "A"
   },
   {
     "id": 77,
-    "question": "PM2 is used for?",
-    "options": ["Server restart & monitoring", "Database", "Debugging only", "CSS management"],
+    "question": "populate() is used to?",
+    "options": ["Join related collections", "Sort data", "Shard cluster", "Backups"],
     "correct": "A"
   },
   {
     "id": 78,
-    "question": "To prevent CORS issue use?",
-    "options": ["cors middleware", "helmet only", "bcrypt", "fs module"],
+    "question": "Which prevents duplicate entries?",
+    "options": ["unique index", "replica", "projection", "pipeline"],
     "correct": "A"
   },
   {
     "id": 79,
-    "question": "Streaming large files in Node improves?",
-    "options": ["Memory usage", "Speed", "Both A & B", "None"],
-    "correct": "C"
+    "question": "TTL index used for?",
+    "options": ["Auto document expiry", "Speed joins", "Validation", "Transactions"],
+    "correct": "A"
   },
   {
     "id": 80,
-    "question": "Which method returns server listening callback?",
-    "options": ["server.run()", "app.listen()", "express.start()", "start.server()"],
-    "correct": "B"
+    "question": "Mongo backup command?",
+    "options": ["mongodump", "mongo-save", "mongoexport", "db.backup()"],
+    "correct": "A"
   },
   {
     "id": 81,
-    "question": "To parse URL params use?",
-    "options": ["req.url", "req.params", "req.headers", "res.locals"],
+    "question": "Aggregation sort stage?",
+    "options": ["$rank", "$sort", "$orderBy", "$sequence"],
     "correct": "B"
   },
   {
     "id": 82,
-    "question": "Which is NOT a built-in Node module?",
-    "options": ["fs", "crypto", "cluster", "express"],
-    "correct": "D"
+    "question": "lookup is similar to?",
+    "options": ["SQL JOIN", "sharding", "select *", "group by"],
+    "correct": "A"
   },
   {
     "id": 83,
-    "question": "Error handling middleware signature is?",
-    "options": ["(req,res)", "(err,req,res,next)", "(res,next)", "(req,res,myErr)"],
-    "correct": "B"
+    "question": "Which saves multiple docs?",
+    "options": ["insertMany()", "createDoc()", "saveBulk()", "writeAll()"],
+    "correct": "A"
   },
   {
     "id": 84,
-    "question": "To serve static files in Express use?",
-    "options": ["app.static()", "express.static()", "static.folder()", "app.files()"],
-    "correct": "B"
+    "question": "Better for caching?",
+    "options": ["Redis", "Mongo", "Elastic", "MySQL"],
+    "correct": "A"
   },
   {
     "id": 85,
-    "question": "CRUD stands for?",
-    "options": ["Create Read Update Delete", "Connect Read Upload Delete", "Create Render Update Dump", "None"],
+    "question": "Mongo scale vertically means?",
+    "options": ["More CPU/RAM", "More servers", "Sharding", "Proxy caching"],
     "correct": "A"
   },
-
 
   {
     "id": 86,
-    "question": "Load balancer is used for?",
-    "options": ["Increase latency", "Distribute traffic across servers", "Reduce CPU power", "Database indexing"],
-    "correct": "B"
-  },
-  {
-    "id": 87,
-    "question": "What is horizontal scaling?",
-    "options": ["Adding more servers", "Increasing RAM", "Upgrading CPU", "Adding cache"],
+    "question": "Load Balancer function?",
+    "options": ["Distribute traffic", "Handle CSS", "Compress JS", "Email service"],
     "correct": "A"
   },
   {
+    "id": 87,
+    "question": "Caching reduces?",
+    "options": ["Database load", "Response time", "CPU load", "All"],
+    "correct": "D"
+  },
+  {
     "id": 88,
-    "question": "Cache used to improve?",
-    "options": ["Storage", "Speed & reduce DB load", "Security", "File editing"],
-    "correct": "B"
+    "question": "Horizontal scaling means?",
+    "options": ["More servers", "More RAM", "DB compression", "Single machine model"],
+    "correct": "A"
   },
   {
     "id": 89,
-    "question": "Which DB is better for relational data?",
-    "options": ["MongoDB", "MySQL", "Redis", "ElasticSearch"],
-    "correct": "B"
+    "question": "Rate limiting prevents?",
+    "options": ["DDoS", "Spam", "API abuse", "All"],
+    "correct": "D"
   },
   {
     "id": 90,
-    "question": "Why use message queues?",
-    "options": ["Async processing at scale", "To slow system", "Store media", "Replace DB"],
+    "question": "Circuit breaker prevents?",
+    "options": ["Repeated failed calls", "Memory leak", "Strong caching", "Slow frontend"],
     "correct": "A"
   },
   {
     "id": 91,
-    "question": "Stateless service means?",
-    "options": ["Stores user session internally", "No stored client session on server", "DB not required", "Single server only"],
-    "correct": "B"
+    "question": "Microservice benefit?",
+    "options": ["Independent deploy", "Scalable", "Fault isolation", "All"],
+    "correct": "D"
   },
   {
     "id": 92,
-    "question": "CDN improves?",
-    "options": ["Backend logic", "Frontend load speed", "DB schema", "Auth"],
-    "correct": "B"
+    "question": "Queue increases?",
+    "options": ["Async reliability", "Load handling", "Decoupling", "All"],
+    "correct": "D"
   },
   {
     "id": 93,
-    "question": "Which improves DB read performance?",
-    "options": ["Indexing", "Sharding only", "Cache eviction", "Replication only"],
+    "question": "API versioning example?",
+    "options": ["/api/v1", "/new-api", "/latest", "/vNext"],
     "correct": "A"
   },
   {
     "id": 94,
-    "question": "Rate limiting prevents?",
-    "options": ["Slow loading", "DDoS and abuse requests", "SQL injection", "Memory leak"],
-    "correct": "B"
-  },
-  {
-    "id": 95,
-    "question": "What is API gateway?",
-    "options": ["Database server", "Single entry point for services", "Auth token", "Frontend proxy only"],
-    "correct": "B"
-  },
-  {
-    "id": 96,
-    "question": "Write-behind cache means?",
-    "options": ["Data written immediately", "Writes stored then flushed later to DB", "No write allowed", "Used only for images"],
-    "correct": "B"
-  },
-  {
-    "id": 97,
-    "question": "Microservice advantage?",
-    "options": ["Large monolithic code", "Independent scaling & deployment", "Strong single point failure", "Hard reuse"],
-    "correct": "B"
-  },
-  {
-    "id": 98,
-    "question": "Shard database means?",
-    "options": ["Copy DB", "Split large DB into parts", "Only read DB", "Compress DB"],
-    "correct": "B"
-  },
-  {
-    "id": 99,
-    "question": "Circuit breaker pattern is used for?",
-    "options": ["Prevent repeated failed service calls", "Speed UI", "Encrypt DB", "Run cronjobs"],
+    "question": "Webhook means?",
+    "options": ["Server sends event push", "Client pulls events", "Cache strategy", "Socket wrapper"],
     "correct": "A"
   },
   {
+    "id": 95,
+    "question": "Distributed DB issue?",
+    "options": ["Replication lag", "Network partitions", "Inconsistency", "All"],
+    "correct": "D"
+  },
+  {
+    "id": 96,
+    "question": "CAP theorem: pick two?",
+    "options": ["Consistency, Availability, Partition tolerance", "CPU, RAM, Disk", "Cache, DB, Broker", "Scale, latency, cost"],
+    "correct": "A"
+  },
+  {
+    "id": 97,
+    "question": "CDN stores?",
+    "options": ["Static assets", "DB queries", "Server logs", "JWT secret"],
+    "correct": "A"
+  },
+  {
+    "id": 98,
+    "question": "Reverse proxy used for?",
+    "options": ["Security layer", "Load balancing", "SSL termination", "All"],
+    "correct": "D"
+  },
+  {
+    "id": 99,
+    "question": "Zero downtime deploy?",
+    "options": ["Rolling update", "Blue/Green", "Canary", "All"],
+    "correct": "D"
+  },
+  {
     "id": 100,
-    "question": "Event-driven architecture uses?",
-    "options": ["Polling", "Webhooks/MQ/streams", "Manual API trigger", "Offline tasks only"],
-    "correct": "B"
+    "question": "Best practice for large file upload?",
+    "options": ["Stream files", "Load in memory fully", "Use JSON", "Block event loop"],
+    "correct": "A"
   }
 ]
-
