@@ -99,7 +99,7 @@ if (PAGE === "exam") {
   const nextBtn = document.getElementById("nextBtn");
   const submitBtn = document.getElementById("submitBtn");
 
-  const EXAM_DURATION_MINUTES = 15;
+  const EXAM_DURATION_MINUTES = 60;
   const MAX_WARNINGS = 3;
 
   let warningCount = 0;
