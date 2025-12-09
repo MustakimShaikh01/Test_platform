@@ -1,6 +1,9 @@
-/* ==================== main.js (FINAL) ==================== */
-/* Anti-cheat global handlers (Copy/Paste/Devtools/Tab switch etc.) */
+/* ==================== main.js (FINAL ADVANCED) ==================== */
+/* Anti-cheat handlers — Block copy/paste/devtools/screenshots/tab switch etc. */
+
 (function setupGlobalGuards() {
+
+  /* ---------- Utility: Warning trigger ---------- */
   function triggerExamWarning(reason, code) {
     const page = document.body?.dataset?.page;
     if (page === "exam" && typeof window.examAddWarning === "function") {
@@ -8,21 +11,21 @@
     }
   }
 
+  /* ---------- Block Copy/Cut/Paste ---------- */
   ["copy", "cut", "paste"].forEach((evt) => {
     document.addEventListener(evt, (e) => {
       e.preventDefault();
-      triggerExamWarning(
-        `Attempted ${evt} – not allowed in exam.`,
-        evt.toUpperCase()
-      );
+      triggerExamWarning(`Attempted ${evt}`, evt.toUpperCase());
     });
   });
 
+  /* ---------- Block Right Click ---------- */
   document.addEventListener("contextmenu", (e) => {
     e.preventDefault();
     triggerExamWarning("Right click blocked", "CONTEXT_MENU");
   });
 
+  /* ---------- Block DevTools Shortcuts ---------- */
   document.addEventListener("keydown", (e) => {
     const k = e.key.toLowerCase();
 
@@ -31,22 +34,68 @@
       triggerExamWarning("Developer Tools Attempt", "F12");
       return;
     }
+
     if (e.ctrlKey || e.metaKey) {
-      const block = ["c", "v", "x", "s", "u", "p"];
+      const block = ["c", "v", "x", "s", "u", "p"]; // add more if needed
       if (block.includes(k)) {
         e.preventDefault();
-        triggerExamWarning(
-          `Blocked Ctrl+${k.toUpperCase()}`,
-          `CTRL_${k.toUpperCase()}`
-        );
+        triggerExamWarning(`Blocked Ctrl+${k.toUpperCase()}`, `CTRL_${k.toUpperCase()}`);
       }
+
       if (e.shiftKey && k === "i") {
         e.preventDefault();
         triggerExamWarning("DevTools Shortcut", "CTRL_SHIFT_I");
       }
     }
+
+    /* ---------- Detect PrintScreen Screenshot Key ---------- */
+    if (e.key === "PrintScreen") {
+      triggerExamWarning("Screenshot Attempt Detected", "SCREENSHOT");
+      document.body.style.filter = "blur(10px)";
+      setTimeout(() => document.body.style.filter = "none", 2000);
+    }
   });
+
+  /* ---------- Blur content when window loses focus ---------- */
+  window.addEventListener("blur", () => {
+    document.body.classList.add("exam-blur");
+    triggerExamWarning("Window focus lost / Possible screenshot attempt", "FOCUS_LOST");
+  });
+
+  window.addEventListener("focus", () => {
+    document.body.classList.remove("exam-blur");
+  });
+
+  /* ---------- Block Print / Save as PDF ---------- */
+  window.addEventListener("beforeprint", (e) => {
+    triggerExamWarning("Print/PDF Attempt Blocked", "PRINT");
+    alert("Printing is disabled for this exam.");
+    e.preventDefault();
+  });
+
+  /* ---------- Anti-DevTools Interval Detection ---------- */
+  setInterval(() => {
+    const threshold = 160;
+
+    if (window.outerWidth - window.innerWidth > threshold ||
+        window.outerHeight - window.innerHeight > threshold) {
+
+      triggerExamWarning("Possible DevTools Open Detected", "DEVTOOLS");
+      document.body.classList.add("exam-blur");
+    }
+  }, 1000);
+
 })();
+
+/* ---------- CSS helper use in index.html ----------
+
+<style>
+  .exam-blur { filter: blur(12px); pointer-events:none; }
+  * { user-select: none; }
+</style>
+
+------------------------------------------------------ */
+
 
 /* ================= LOGIN PAGE ================= */
 if (document.body.dataset.page === "login") {

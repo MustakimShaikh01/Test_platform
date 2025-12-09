@@ -178,5 +178,190 @@
         "isCorrect": false
       }
     ]
+  },
+  {
+    "id": 8,
+    "userName": "test",
+    "email": "test@gmail.in",
+    "correct": 0,
+    "total": 350,
+    "percentage": 0,
+    "submittedAt": "2025-12-09T09:43:05.794Z",
+    "warnings": [
+      {
+        "count": 1,
+        "msg": "Window lost focus",
+        "code": "WINDOW_BLUR",
+        "at": "2025-12-09T09:42:58.730Z"
+      },
+      {
+        "count": 2,
+        "msg": "Tab Switch detected",
+        "code": "TAB_SWITCH",
+        "at": "2025-12-09T09:43:02.665Z"
+      },
+      {
+        "count": 3,
+        "msg": "Tab Switch detected",
+        "code": "TAB_SWITCH",
+        "at": "2025-12-09T09:43:05.767Z"
+      }
+    ],
+    "answers": []
+  },
+  {
+    "id": 9,
+    "userName": "test",
+    "email": "Test@gmail.com",
+    "correct": 8,
+    "total": 350,
+    "percentage": 2.29,
+    "submittedAt": "2025-12-09T09:46:23.705Z",
+    "warnings": [],
+    "answers": [
+      {
+        "questionId": 330,
+        "question": "What is the maximum BSON document size in MongoDB?",
+        "options": [
+          "1MB",
+          "10MB",
+          "16MB",
+          "1GB"
+        ],
+        "selectedOption": "B",
+        "correctOption": "C",
+        "isCorrect": false
+      },
+      {
+        "questionId": 299,
+        "question": "In a Node.js + MongoDB system, which metric is MOST important to watch for DB saturation?",
+        "options": [
+          "Number of files",
+          "Connection count, operation latency, queue length",
+          "CPU of clients only",
+          "Size of node_modules"
+        ],
+        "selectedOption": "B",
+        "correctOption": "B",
+        "isCorrect": true
+      },
+      {
+        "questionId": 344,
+        "question": "What mitigates cache stampede?",
+        "options": [
+          "Random TTL + lock + stale-while-revalidate",
+          "Disable cache",
+          "Push load to DB",
+          "Restart server"
+        ],
+        "selectedOption": "B",
+        "correctOption": "A",
+        "isCorrect": false
+      },
+      {
+        "questionId": 399,
+        "question": "API idempotency required for?",
+        "options": [
+          "Safe retry without duplicate effects",
+          "Always unique response",
+          "Cache removal",
+          "Rendering"
+        ],
+        "selectedOption": "B",
+        "correctOption": "A",
+        "isCorrect": false
+      },
+      {
+        "questionId": 294,
+        "question": "In Node.js cluster mode behind a reverse proxy, which header is used to get real client IP?",
+        "options": [
+          "Host",
+          "X-Forwarded-For",
+          "Content-Type",
+          "ETag"
+        ],
+        "selectedOption": "B",
+        "correctOption": "B",
+        "isCorrect": true
+      },
+      {
+        "questionId": 216,
+        "question": "When using $lookup across large collections, which is a key performance recommendation?",
+        "options": [
+          "Avoid indexes",
+          "Ensure appropriate indexes on join fields",
+          "Always $unwind first",
+          "Always $group first"
+        ],
+        "selectedOption": "B",
+        "correctOption": "B",
+        "isCorrect": true
+      },
+      {
+        "questionId": 207,
+        "question": "Which is TRUE about Node.js async stack traces?",
+        "options": [
+          "Always show full async chain",
+          "May lose async context unless using async_hooks or --async-stack-traces",
+          "Never show error origin",
+          "Show only native code"
+        ],
+        "selectedOption": "B",
+        "correctOption": "B",
+        "isCorrect": true
+      },
+      {
+        "questionId": 131,
+        "question": "Which is the BEST practice for pagination in REST APIs?",
+        "options": [
+          "Return all records",
+          "page & limit query params",
+          "Offset only without limit",
+          "Random subset"
+        ],
+        "selectedOption": "B",
+        "correctOption": "B",
+        "isCorrect": true
+      },
+      {
+        "questionId": 179,
+        "question": "Which is a likely cause of 'MongoNetworkError: failed to connect to server' in production?",
+        "options": [
+          "Missing index",
+          "Wrong connection string or firewall rules",
+          "Too many documents",
+          "Slow aggregation"
+        ],
+        "selectedOption": "B",
+        "correctOption": "B",
+        "isCorrect": true
+      },
+      {
+        "questionId": 39,
+        "question": "Which protects headers security?",
+        "options": [
+          "helmet",
+          "bcrypt",
+          "jwt",
+          "pm2"
+        ],
+        "selectedOption": "A",
+        "correctOption": "A",
+        "isCorrect": true
+      },
+      {
+        "questionId": 231,
+        "question": "In Node.js, how can you detect event loop lag?",
+        "options": [
+          "Using setTimeout only",
+          "Measure delay of timers or use perf_hooks.monitorEventLoopDelay",
+          "Using fs.readFile",
+          "Using dns.lookup"
+        ],
+        "selectedOption": "B",
+        "correctOption": "B",
+        "isCorrect": true
+      }
+    ]
   }
 ]
