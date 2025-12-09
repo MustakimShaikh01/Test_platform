@@ -1501,5 +1501,610 @@
     "question": "Which is a strong indicator that your MongoDB query is not using an index efficiently?",
     "options": ["totalDocsExamined ≈ nReturned", "totalDocsExamined >> nReturned in explain plan", "Low latency", "Small collection size"],
     "correct": "B"
+  },
+  
+  {
+    "id": 301,
+    "question": "What is the main purpose of using a Worker Thread in Node.js?",
+    "options": ["To handle I/O faster", "To run CPU-intensive tasks off the event loop", "To increase HTTP concurrency", "To replace clustering entirely"],
+    "correct": "B"
+  },
+  {
+    "id": 302,
+    "question": "Which MongoDB index helps when filtering by range and sorting by another field?",
+    "options": ["Hashed index", "Wildcard index", "Compound index", "TTL index"],
+    "correct": "C"
+  },
+  {
+    "id": 303,
+    "question": "Which caching strategy prevents multiple concurrent cache misses from hitting DB simultaneously?",
+    "options": ["Cache-aside", "Write-through", "Read-through", "Lock/Stampede protection with single-flight"],
+    "correct": "D"
+  },
+  {
+    "id": 304,
+    "question": "What is the biggest drawback of EventEmitter heavy usage?",
+    "options": ["Slower JSON parsing", "Hidden memory leaks if listeners not removed", "Unable to log output", "High network bandwidth"],
+    "correct": "B"
+  },
+  {
+    "id": 305,
+    "question": "MongoDB WiredTiger uses which mechanism for data durability?",
+    "options": ["Append-only binary logs", "Checkpoint + journal", "No persistence", "Blockchain-style blocks"],
+    "correct": "B"
+  },
+  {
+    "id": 306,
+    "question": "Which system design principle reduces blast radius during failure?",
+    "options": ["Single database architecture", "Monolithic runtime deployment", "Circuit breakers + bulkheads + isolation", "Increasing thread pools"],
+    "correct": "C"
+  },
+  {
+    "id": 307,
+    "question": "Which Node.js method monitors event loop blockage?",
+    "options": ["setImmediate", "perf_hooks.monitorEventLoopDelay", "process.stdin", "timeout.unref"],
+    "correct": "B"
+  },
+  {
+    "id": 308,
+    "question": "When designing globally distributed microservices, which consistency model offers best performance?",
+    "options": ["Strong consistency only", "Eventual consistency", "No consistency", "Always synchronous writes"],
+    "correct": "B"
+  },
+  {
+    "id": 309,
+    "question": "Which MongoDB pattern is best for real-time counters like likes & views?",
+    "options": ["Array push for each event", "Client-side increment batching", "Atomic $inc updates", "Full document rewrite"],
+    "correct": "C"
+  },
+  {
+    "id": 310,
+    "question": "What problem does 'backpressure' solve in Node streams?",
+    "options": ["CPU Overclocking", "Producer sends faster than consumer can process", "DNS Resolution", "TLS Handshake delay"],
+    "correct": "B"
+  },
+  {
+    "id": 311,
+    "question": "Which architecture suits 10M+ concurrent users?",
+    "options": ["Single Node.js server", "Vertically scaled monolith", "Horizontally scaled microservices behind load balancer", "Cron-based execution"],
+    "correct": "C"
+  },
+  {
+    "id": 312,
+    "question": "Best option to implement distributed locks?",
+    "options": ["Redis Redlock", "Session cookies", "JWT tokens", "Local mutex"],
+    "correct": "A"
+  },
+  {
+    "id": 313,
+    "question": "MongoDB 'hot document problem' occurs when:",
+    "options": ["Queries hit random shards", "Same document updated extremely frequently", "Cluster is under memory pressure only", "Indexes are too many"],
+    "correct": "B"
+  },
+  {
+    "id": 314,
+    "question": "To debug memory leaks in Node production safely use:",
+    "options": ["console.log(loop)", "heapdump & chrome devtools", "netstat only", "DNS flush"],
+    "correct": "B"
+  },
+  {
+    "id": 315,
+    "question": "Which queue system ensures message persistence + retry?",
+    "options": ["WebSocket", "Kafka / RabbitMQ", "UDP multicast", "REST polling"],
+    "correct": "B"
+  },
+  {
+    "id": 316,
+    "question": "What feature allows horizontal scaling without sticky sessions?",
+    "options": ["In-memory session store", "Cookie-based JWT stateless auth", "Local cache only", "Disable load balancer"],
+    "correct": "B"
+  },
+  {
+    "id": 317,
+    "question": "MongoDB aggregation pipeline $lookup internally behaves like:",
+    "options": ["Client side join", "Left outer join", "Right join", "No join"],
+    "correct": "B"
+  },
+  {
+    "id": 318,
+    "question": "When should you avoid using MongoDB transactions?",
+    "options": ["Multi-document updates", "High throughput write heavy workloads", "When correctness is critical", "When using sharded cluster"],
+    "correct": "B"
+  },
+  {
+    "id": 319,
+    "question": "What avoids log flooding in distributed tracing?",
+    "options": ["Sample rate limiting", "Increase logs to DEBUG", "Disable tracing", "Flush logs every ms"],
+    "correct": "A"
+  },
+  {
+    "id": 320,
+    "question": "Which hashing ensures shard key uniformity?",
+    "options": ["md4", "Plain ObjectId", "Hashed shard key", "String concatenation"],
+    "correct": "C"
+  },
+  
+  {
+    "id": 321,
+    "question": "What is the best way to reduce cold start latency in serverless Node functions?",
+    "options": ["Use heavy dependencies", "Bundle + tree-shake + keep warm mechanism", "Increase timeout", "Use synchronous code always"],
+    "correct": "B"
+  },
+  {
+    "id": 322,
+    "question": "MongoDB write concern w:majority guarantees what?",
+    "options": ["Write stored on at least one node", "Write replicated to majority of nodes before success", "No replication required", "Write goes only to secondary"],
+    "correct": "B"
+  },
+  {
+    "id": 323,
+    "question": "Which event loop phase handles setTimeout callbacks?",
+    "options": ["Timers", "Idle/Prepare", "Poll", "Close"],
+    "correct": "A"
+  },
+  {
+    "id": 324,
+    "question": "What technique reduces DB load during traffic spikes?",
+    "options": ["Long polling DB directly", "Write throttling + caching + batch processing", "Removing indexes", "More logs"],
+    "correct": "B"
+  },
+  {
+    "id": 325,
+    "question": "Which MongoDB operator prevents document growth overhead?",
+    "options": ["$push unlimited", "$setOnInsert", "$inc", "$addToSet with size limit"],
+    "correct": "D"
+  },
+  {
+    "id": 326,
+    "question": "Microservices database pattern preventing tight coupling?",
+    "options": ["Shared monolithic DB", "Each service owns its DB", "Central DB with shared write access", "No DB used"],
+    "correct": "B"
+  },
+  {
+    "id": 327,
+    "question": "To secure APIs at scale, the best practice is?",
+    "options": ["Hardcode API keys", "Rate limiting + JWT + OAuth2", "CORS disabled", "Allow all origins"],
+    "correct": "B"
+  },
+  {
+    "id": 328,
+    "question": "Node.js cluster module improves throughput by?",
+    "options": ["Running multiple processes using multi-core", "Replacing event loop", "Stopping async I/O", "Only supports single core"],
+    "correct": "A"
+  },
+  {
+    "id": 329,
+    "question": "What causes MongoDB write contention?",
+    "options": ["Indexes missing", "Frequent updates on same document", "Low RAM only", "Small dataset"],
+    "correct": "B"
+  },
+  {
+    "id": 330,
+    "question": "What is the maximum BSON document size in MongoDB?",
+    "options": ["1MB", "10MB", "16MB", "1GB"],
+    "correct": "C"
+  },
+  {
+    "id": 331,
+    "question": "Which communication is best for async microservice processing?",
+    "options": ["HTTP sync", "gRPC streaming", "Kafka event streaming", "SSH remote pipe"],
+    "correct": "C"
+  },
+  {
+    "id": 332,
+    "question": "To avoid memory leaks in Node, always remove?",
+    "options": ["console.log()", "Event listeners after use", "require cache", "node_modules"],
+    "correct": "B"
+  },
+  {
+    "id": 333,
+    "question": "MongoDB $facet stage is used for?",
+    "options": ["Schema design", "Multi-pipeline analytics in one aggregation", "Security only", "Backup jobs"],
+    "correct": "B"
+  },
+  {
+    "id": 334,
+    "question": "JWT expiration improves security by reducing?",
+    "options": ["Performance", "Token replay window", "Network usage", "DB load only"],
+    "correct": "B"
+  },
+  {
+    "id": 335,
+    "question": "What is CAP theorem tradeoff in distributed systems?",
+    "options": ["Choose any 1", "Choose any 2 between Consistency, Availability, Partition Tolerance", "Choose all 3 always", "None relevant"],
+    "correct": "B"
+  },
+  {
+    "id":336,
+    "question":"Which improves indexing performance in MongoDB?",
+    "options":["Wildcard index on all", "Limit index count and use compound indexes wisely", "No index at all", "Huge indexes always help"],
+    "correct":"B"
+  },
+  {
+    "id":337,
+    "question":"Which is ideal for file streaming to clients?",
+    "options":["fs.readFile()", "fs.createReadStream()", "fs.writeFileSync()", "Buffer everything"],
+    "correct":"B"
+  },
+  {
+    "id":338,
+    "question":"To prevent DOS login attacks, implement?",
+    "options":["Infinite retries", "Rate limiting + captcha", "Store plaintext passwords", "Disable HTTPS"],
+    "correct":"B"
+  },
+  {
+    "id":339,
+    "question":"MongoDB TTL index mainly used for?",
+    "options":["Auto deletion of old logs/sessions", "Faster joins", "Sorting only", "Schema migration"],
+    "correct":"A"
+  },
+  {
+    "id":340,
+    "question":"When response streaming is useful?",
+    "options":["Small JSON payload", "Large file/video transfer", "Static HTML only", "If CPU heavy"],
+    "correct":"B"
+  },
+  {
+    "id":341,
+    "question":"Node libuv manages?",
+    "options":["Browser renderer", "Thread pool + event loop", "Mongo pipeline", "Front-end rendering"],
+    "correct":"B"
+  },
+  {
+    "id":342,
+    "question":"Which pattern handles DB migrations in microservices?",
+    "options":["Hot reload", "Versioned schema evolution", "Drop DB directly", "Commit logs only"],
+    "correct":"B"
+  },
+  {
+    "id":343,
+    "question":"MongoDB sharding improves performance when?",
+    "options":["Write hits one shard heavily", "Data evenly distributed by shard key", "Single node only", "Low traffic apps"],
+    "correct":"B"
+  },
+  {
+    "id":344,
+    "question":"What mitigates cache stampede?",
+    "options":["Random TTL + lock + stale-while-revalidate", "Disable cache", "Push load to DB", "Restart server"],
+    "correct":"A"
+  },
+  {
+    "id":345,
+    "question":"Which improves cold query performance?",
+    "options":["Warmup queries + cache + indexing", "Disable index", "Store images in DB", "Always use full table scan"],
+    "correct":"A"
+  },
+  {
+    "id":346,
+    "question":"Event loop starvation appears when?",
+    "options":["Short tasks only", "Long blocking CPU sync code", "Async awaited", "When DB slow"],
+    "correct":"B"
+  },
+  {
+    "id":347,
+    "question":"When to use read replicas?",
+    "options":["Increase read throughput and reduce primary load", "More writes only", "Backup only", "Shard replacement"],
+    "correct":"A"
+  },
+  {
+    "id":348,
+    "question":"Zero-downtime deploy achieved using?",
+    "options":["Terminate process quickly", "Rolling deploy + load balancer", "Single instance kills", "Hard restart"],
+    "correct":"B"
+  },
+  {
+    "id":349,
+    "question":"MongoDB write-heavy scaling recommendation?",
+    "options":["Embed everything", "Shard by high-cardinality key", "Always use lookup joins", "Create too many indexes"],
+    "correct":"B"
+  },
+  {
+    "id":350,
+    "question":"Which avoids node crash on unhandled errors?",
+    "options":["process.on('uncaughtException') only", "Graceful fallback + restart using PM2", "ignore errors", "disable try-catch everywhere"],
+    "correct":"B"
+  },
+  {
+    "id":351,
+    "question":"Best messaging system for event-driven architecture?",
+    "options":["Redis only", "Kafka/RabbitMQ", "FTP", "SMTP"],
+    "correct":"B"
+  },
+  {
+    "id":352,
+    "question":"Which Mongo stage is most expensive in aggregation?",
+    "options":["$match early", "$sort on unindexed fields", "$group with reduce", "$skip"],
+    "correct":"B"
+  },
+  {
+    "id":353,
+    "question":"gRPC advantage over REST?",
+    "options":["Slower", "Binary protocol faster than JSON", "No streaming", "Hard to scale"],
+    "correct":"B"
+  },
+  {
+    "id":354,
+    "question":"Use CDN for?",
+    "options":["Database traffic", "Static assets, images, scripts", "JWT signing", "Server memory"],
+    "correct":"B"
+  },
+  {
+    "id":355,
+    "question":"Ideal session storage for distributed servers?",
+    "options":["Local memory", "Redis centralized store", "File system", "Client only"],
+    "correct":"B"
+  },
+  {
+    "id":356,
+    "question":"MongoDB schema best practice?",
+    "options":["Embed frequently accessed subdocs", "Normalize everything always", "Store unlimited array", "No indexes"],
+    "correct":"A"
+  },
+  {
+    "id":357,
+    "question":"CPU-bound tasks solution in Node?",
+    "options":["While(true) loops", "Worker Threads/child processes", "More logs", "Async I/O"],
+    "correct":"B"
+  },
+  {
+    "id":358,
+    "question":"Which prevents replay attacks?",
+    "options":["No expiry tokens", "JWT rotation + nonce", "Public APIs only", "Allow all origins"],
+    "correct":"B"
+  },
+  {
+    "id":359,
+    "question":"MongoDB $slice used for?",
+    "options":["Partial array return", "Group join", "Trigger schema", "Regex match"],
+    "correct":"A"
+  },
+  {
+    "id":360,
+    "question":"Which helps multi-region availability?",
+    "options":["Single DC", "Global load balancer + multi-region replicas", "One VM only", "Stop sharding"],
+    "correct":"B"
+  },
+  {
+    "id":361,
+    "question":"How to analyze slow queries?",
+    "options":["explain() + profiler + APM", "Guessing only", "Count documents", "Restart server"],
+    "correct":"A"
+  },
+  {
+    "id":362,
+    "question":"Pagination best for large dataset?",
+    "options":["skip/limit always", "Range-based pagination using indexed field", "Return all results", "Client sorts"],
+    "correct":"B"
+  },
+  {
+    "id":363,
+    "question":"Reduce Node startup time?",
+    "options":["Large dependencies", "Lazy import + bundle", "More sync code", "Limit RAM"],
+    "correct":"B"
+  },
+  {
+    "id":364,
+    "question":"Microservices communication reliability technique?",
+    "options":["Fire and forget only", "Retries + exponential backoff", "No logs", "Kill queue"],
+    "correct":"B"
+  },
+  {
+    "id":365,
+    "question":"MongoDB gridFS is used for?",
+    "options":["Storing large files >16MB", "JSON indexing", "Schema rules", "Caching"],
+    "correct":"A"
+  },
+  {
+    "id":366,
+    "question":"Circuit breaker prevents?",
+    "options":["Caching", "Cascading failures from downstream service", "Scaling", "Load balancer"],
+    "correct":"B"
+  },
+  {
+    "id":367,
+    "question":"Best logging format for microservices?",
+    "options":["Plain text", "Structured JSON logs", "Emoji logs", "Silent logs"],
+    "correct":"B"
+  },
+  {
+    "id":368,
+    "question":"MongoDB connection pool helps?",
+    "options":["Reduce handshake time per query", "Slow queries", "Remove locks", "Nothing"],
+    "correct":"A"
+  },
+  {
+    "id":369,
+    "question":"Avoid N+1 query issue by?",
+    "options":["Lookup/join/batching/cache", "More logs", "Nested for loops", "Multiple DB hits"],
+    "correct":"A"
+  },
+  {
+    "id":370,
+    "question":"REST alternative for real-time?",
+    "options":["WebSockets/GraphQL subscriptions", "CSV", "FTP", "SOAP only"],
+    "correct":"A"
+  },
+  {
+    "id":371,
+    "question":"Scaling DB horizontally requires?",
+    "options":["Sharding/partitioning", "Single replica", "Low RAM", "Disable writes"],
+    "correct":"A"
+  },
+  {
+    "id":372,
+    "question":"Node event loop freezes when?",
+    "options":["Async DB running", "CPU synchronous loops", "Promise chains", "Timers"],
+    "correct":"B"
+  },
+  {
+    "id":373,
+    "question":"MongoDB $project used to?",
+    "options":["Filter fields in pipeline", "Join tables", "Sort", "Backup DB"],
+    "correct":"A"
+  },
+  {
+    "id":374,
+    "question":"JWT should always be stored in?",
+    "options":["LocalStorage unrestricted", "HttpOnly Secure cookies", "URL params", "Plain file"],
+    "correct":"B"
+  },
+  {
+    "id":375,
+    "question":"Load balancer sticky session required when?",
+    "options":["Stateless auth used", "State stored memory local", "Redis used for session", "JWT implemented"],
+    "correct":"B"
+  },
+  {
+    "id":376,
+    "question":"Database partition key must be?",
+    "options":["Low cardinality", "High cardinality + evenly distributed", "Random", "Primary key always"],
+    "correct":"B"
+  },
+  {
+    "id":377,
+    "question":"Compression helps reduce?",
+    "options":["CPU load", "Network payload", "DB disk writes only", "Event loop"],
+    "correct":"B"
+  },
+  {
+    "id":378,
+    "question":"Which avoids full collection scan?",
+    "options":["Indexing", "More RAM", "Large arrays", "Regex everywhere"],
+    "correct":"A"
+  },
+  {
+    "id":379,
+    "question":"Webhooks reliability pattern?",
+    "options":["Fire once", "Retry + signature verification", "No logs needed", "FTP backup"],
+    "correct":"B"
+  },
+  {
+    "id":380,
+    "question":"API gateway features include?",
+    "options":["Rate limit, auth, routing, analytics", "Only DNS", "UI bundle", "Database sharding"],
+    "correct":"A"
+  },
+  {
+    "id":381,
+    "question":"MongoDB Change Streams used for?",
+    "options":["Real-time DB event notifications", "Exports only", "Cron jobs", "Backup"],
+    "correct":"A"
+  },
+  {
+    "id":382,
+    "question":"Node memory leak debugging?",
+    "options":["pprof + heap snapshots", "guessing", "console only", "kill app"],
+    "correct":"A"
+  },
+  {
+    "id":383,
+    "question":"Which prevents object cloning cost?",
+    "options":["Deep copy everything", "Use references carefully", "JSON.stringify always", "Buffers only"],
+    "correct":"B"
+  },
+  {
+    "id":384,
+    "question":"Mongo $unwind useful for?",
+    "options":["Flatten array documents", "Group fields", "Index creation", "Remove TTL"],
+    "correct":"A"
+  },
+  {
+    "id":385,
+    "question":"Distributed ID generation solution?",
+    "options":["Auto increment DB", "UUID/Snowflake/KSUID", "File counter", "Manual increment"],
+    "correct":"B"
+  },
+  {
+    "id":386,
+    "question":"GraphQL advantage?",
+    "options":["Overfetching eliminated", "Only DB queries", "Slower", "No caching"],
+    "correct":"A"
+  },
+  {
+    "id":387,
+    "question":"MongoDB write amplification solved using?",
+    "options":["Batched writes + bulk ops", "Single inserts only", "Disable journal", "Drop index"],
+    "correct":"A"
+  },
+  {
+    "id":388,
+    "question":"Distributed cache invalidation hardest problem is?",
+    "options":["TTL reset", "Consistency across nodes", "Memory", "Bandwidth only"],
+    "correct":"B"
+  },
+  {
+    "id":389,
+    "question":"Long-lived WebSocket scaling solution?",
+    "options":["Sticky sessions + Redis pub/sub", "Single node only", "Polling", "FTP"],
+    "correct":"A"
+  },
+  {
+    "id":390,
+    "question":"Handling graceful shutdown?",
+    "options":["Kill Immediately", "Close connections, drain requests, then exit", "Ignore SIGTERM", "Force exit"],
+    "correct":"B"
+  },
+  {
+    "id":391,
+    "question":"What reduces SSR response load?",
+    "options":["Client hydration + caching + streaming", "More loops sync", "No compilers", "Logging spam"],
+    "correct":"A"
+  },
+  {
+    "id":392,
+    "question":"Data archival strategy?",
+    "options":["Keep everything hot", "Cold storage for old inactive data", "Always delete", "None"],
+    "correct":"B"
+  },
+  {
+    "id":393,
+    "question":"CQRS separates?",
+    "options":["Reads & writes paths", "Network layers", "Frontend/Backend", "Cache only"],
+    "correct":"A"
+  },
+  {
+    "id":394,
+    "question":"MongoDB multi-key index applies to?",
+    "options":["Array fields", "Numeric only", "Null fields", "Text only"],
+    "correct":"A"
+  },
+  {
+    "id":395,
+    "question":"Log aggregation tools?",
+    "options":["ELK/EFK stack", "Manual reading", "FTP logs", "Excel"],
+    "correct":"A"
+  },
+  {
+    "id":396,
+    "question":"API rate limit token bucket allows?",
+    "options":["Burst traffic then slows", "Infinite traffic", "No retry", "Flood allowed"],
+    "correct":"A"
+  },
+  {
+    "id":397,
+    "question":"Caching DB query results benefits?",
+    "options":["No effect", "Greatly reduces read latency + DB load", "Increases CPU", "Slower"],
+    "correct":"B"
+  },
+  {
+    "id":398,
+    "question":"Distributed system clock sync solution?",
+    "options":["NTP/PTP time sync", "Console log", "Random timer", "Manual setup"],
+    "correct":"A"
+  },
+  {
+    "id":399,
+    "question":"API idempotency required for?",
+    "options":["Safe retry without duplicate effects", "Always unique response", "Cache removal", "Rendering"],
+    "correct":"A"
+  },
+  {
+    "id":400,
+    "question":"Final bottleneck indicator when scaling?",
+    "options":["CPU/memory, DB IOPS, latency metrics", "UI color", "Webpack build", "Developer machine"],
+    "correct":"A"
   }
+
+
+
 ]
