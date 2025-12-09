@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,62 +7,53 @@
   <meta name="robots" content="noindex, nofollow" />
   <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body data-page="exam">
-  <div class="container">
+<div class="container">
 
-    <header class="exam-header">
-      <div>
-        <h2>Secure Online Test</h2>
-        <div id="userInfo"></div>
-      </div>
-      <div class="status-panel">
-        <div id="timer">Time left: --:--</div>
-        <div id="warnings">Warnings: 0 / 3</div>
-      </div>
-    </header>
+  <!-- Header -->
+  <header class="exam-header">
+    <h2>Secure Online Test</h2>
+    <div id="userInfo"></div>
 
-    <!-- Webcam box -->
-    <section class="webcam-section">
-      <h3>Webcam Monitoring</h3>
-      <p id="webcamStatus">Initializing webcam…</p>
-      <video id="webcamVideo" autoplay muted playsinline></video>
-    </section>
-
-    <!-- Mobile / device warning -->
-    <div id="deviceBlocker" class="overlay hidden">
-      <div class="overlay-content">
-        <h3>Desktop/Laptop Required</h3>
-        <p>
-          The exam is not allowed on mobile phones or very small screens.
-          Please use a laptop or desktop device.
-        </p>
-      </div>
+    <div class="status-box">
+      <span id="timer">00:00</span>
+      <span id="warnings">Warnings: 0/3</span>
     </div>
+  </header>
 
-    <!-- Exam content -->
-    <section id="examSection" class="exam-section hidden">
-      <div id="questionText"></div>
-      <div id="options"></div>
-
-      <div class="exam-controls">
-        <button id="prevBtn" class="secondary-btn">Previous</button>
-        <button id="nextBtn" class="secondary-btn">Next</button>
-        <button id="submitBtn" class="primary-btn">Submit Test</button>
-      </div>
-
-      <div id="questionProgress"></div>
-    </section>
-
-    <section id="resultSection" class="hidden">
-      <h3>Test Finished</h3>
-      <p id="resultText"></p>
-      <button onclick="window.location.href='/'" class="primary-btn">
-        Back to Login
-      </button>
-    </section>
-
+  <!-- Device Check -->
+  <div id="deviceBlocker" class="overlay hidden">
+    <div class="overlay-content">
+      <h3>Desktop/Laptop Required</h3>
+      <p>The exam is blocked on mobile or small screens.</p>
+    </div>
   </div>
 
-  <script src="/main.js"></script>
+  <!-- Exam Section -->
+  <section id="examSection" class="hidden">
+
+    <div id="questionProgress"></div>
+    <h3 id="questionText"></h3>
+
+    <div id="options"></div>
+
+    <div class="exam-controls">
+      <button id="prevBtn" class="secondary-btn">Previous</button>
+      <button id="nextBtn" class="secondary-btn">Next</button>
+      <button id="submitBtn" class="primary-btn danger">Submit Exam</button>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section id="resultSection" class="hidden">
+    <h2>Test Completed</h2>
+    <pre id="resultText"></pre>
+    <button class="primary-btn" onclick="location.href='/'">Return to Login</button>
+  </section>
+
+</div>
+
+<script src="/main.js"></script>
 </body>
 </html>

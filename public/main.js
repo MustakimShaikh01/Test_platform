@@ -1,51 +1,68 @@
-// ===================== main.js =====================
-
-// ===== General anti-copy / anti-inspect (kept as per Version B) =====
+/* ==================== main.js (FINAL) ==================== */
+/* Anti-cheat global handlers (Copy/Paste/Devtools/Tab switch etc.) */
 (function setupGlobalGuards() {
+  function triggerExamWarning(reason, code) {
+    const page = document.body?.dataset?.page;
+    if (page === "exam" && typeof window.examAddWarning === "function") {
+      window.examAddWarning(reason, code);
+    }
+  }
+
   ["copy", "cut", "paste"].forEach((evt) => {
-    document.addEventListener(evt, (e) => e.preventDefault());
+    document.addEventListener(evt, (e) => {
+      e.preventDefault();
+      triggerExamWarning(
+        `Attempted ${evt} – not allowed in exam.`,
+        evt.toUpperCase()
+      );
+    });
   });
 
-  document.addEventListener("contextmenu", (e) => e.preventDefault());
+  document.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    triggerExamWarning("Right click blocked", "CONTEXT_MENU");
+  });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "F12") e.preventDefault();
+    const k = e.key.toLowerCase();
+
+    if (e.key === "F12") {
+      e.preventDefault();
+      triggerExamWarning("Developer Tools Attempt", "F12");
+      return;
+    }
     if (e.ctrlKey || e.metaKey) {
-      const key = e.key.toLowerCase();
-      const blocked = ["c", "v", "x", "u", "s", "p"];
-      if (blocked.includes(key)) e.preventDefault();
-      if (e.shiftKey && key === "i") e.preventDefault();
+      const block = ["c", "v", "x", "s", "u", "p"];
+      if (block.includes(k)) {
+        e.preventDefault();
+        triggerExamWarning(
+          `Blocked Ctrl+${k.toUpperCase()}`,
+          `CTRL_${k.toUpperCase()}`
+        );
+      }
+      if (e.shiftKey && k === "i") {
+        e.preventDefault();
+        triggerExamWarning("DevTools Shortcut", "CTRL_SHIFT_I");
+      }
     }
   });
 })();
 
-const PAGE = document.body.dataset.page;
-
-function isEmailValid(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.toLowerCase());
-}
-
-function showAlert(msg) {
-  alert(msg);
-}
-
-// ================= LOGIN PAGE =================
-if (PAGE === "login") {
-  const loginForm = document.getElementById("loginForm");
-  const emailInput = document.getElementById("email");
-  const nameInput = document.getElementById("name");
-  const emailError = document.getElementById("emailError");
-
-  loginForm.addEventListener("submit", (e) => {
+/* ================= LOGIN PAGE ================= */
+if (document.body.dataset.page === "login") {
+  document.getElementById("loginForm").addEventListener("submit", (e) => {
     e.preventDefault();
-    emailError.textContent = "";
 
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
 
-    if (!name) return showAlert("Name is required.");
-    if (!email) return (emailError.textContent = "Email is required.");
-    if (!isEmailValid(email)) return (emailError.textContent = "Enter a valid email.");
+    if (!name) return alert("Name required");
+    if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))
+      return alert("Invalid Email");
+
+    if (localStorage.getItem("submitted_" + email)) {
+      return alert("⚠ You already submitted exam. Reattempt not allowed.");
+    }
 
     sessionStorage.setItem("examUserName", name);
     sessionStorage.setItem("examUserEmail", email);
@@ -54,179 +71,220 @@ if (PAGE === "login") {
   });
 }
 
-// ================= EXAM PAGE =================
-if (PAGE === "exam") {
+/* ================= EXAM PAGE ================= */
+if (document.body.dataset.page === "exam") {
   const userName = sessionStorage.getItem("examUserName");
   const userEmail = sessionStorage.getItem("examUserEmail");
 
   if (!userName || !userEmail) window.location.href = "/";
-
-  const userInfoEl = document.getElementById("userInfo");
-  const timerEl = document.getElementById("timer");
-  const warningsEl = document.getElementById("warnings");
-  const questionTextEl = document.getElementById("questionText");
-  const optionsEl = document.getElementById("options");
-  const questionProgressEl = document.getElementById("questionProgress");
-  const examSectionEl = document.getElementById("examSection");
-  const resultSectionEl = document.getElementById("resultSection");
-  const resultTextEl = document.getElementById("resultText");
-  const deviceBlockerEl = document.getElementById("deviceBlocker");
-
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const submitBtn = document.getElementById("submitBtn");
-
-  const EXAM_DURATION_MINUTES = 60;
-  const MAX_WARNINGS = 3;
-
-  let warningCount = 0;
-  let warningLastTimestamp = 0;
-  let timerInterval = null;
-  let remainingSeconds = EXAM_DURATION_MINUTES * 60;
-  let questions = [];
-  let answers = [];
-  let currentIndex = 0;
-
-  userInfoEl.textContent = `${userName} (${userEmail})`;
-
-  // === Device check remains active ===
-  function checkDevice() {
-    const mobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    const small = window.innerWidth < 700 || window.innerHeight < 500;
-
-    if (mobile || small) {
-      deviceBlockerEl.classList.remove("hidden");
-      return false;
-    }
-    deviceBlockerEl.classList.add("hidden");
-    return true;
+  if (localStorage.getItem("submitted_" + userEmail)) {
+    alert("Exam already submitted - redirecting");
+    window.location.href = "/";
   }
 
-  // == Warning System remains ==
-  function addWarning(reason) {
+  document.getElementById(
+    "userInfo"
+  ).textContent = `${userName} (${userEmail})`;
+
+  let questions = [];
+  let answers = [];
+  let warningLog = [];
+  let currentIndex = 0;
+  let warningCount = 0;
+  let warningLastTimestamp = 0;
+  let examFinished = false;
+
+  const MAX_WARNINGS = 3;
+  const EXAM_DURATION_SECONDS = 60 * 60; // 60 minutes
+  let remainingSeconds = EXAM_DURATION_SECONDS;
+  let timerInterval = null;
+
+  // ===== Warning System =====
+  window.examAddWarning = (msg, code) => {
+    if (examFinished) return;
     const now = Date.now();
-    if (now - warningLastTimestamp < 2000) return;
+    if (now - warningLastTimestamp < 1500) return;
     warningLastTimestamp = now;
 
     warningCount++;
-    warningsEl.textContent = `Warnings: ${warningCount}/${MAX_WARNINGS}`;
-    showAlert(`Warning ${warningCount}/${MAX_WARNINGS}: ${reason}`);
+    warningLog.push({
+      count: warningCount,
+      msg,
+      code: code || null,
+      at: new Date().toISOString(),
+    });
 
-    if (warningCount >= MAX_WARNINGS) finishExam("Exam ended due to violations.");
-  }
+    document.getElementById(
+      "warnings"
+    ).textContent = `Warnings: ${warningCount}/${MAX_WARNINGS}`;
+    alert(`⚠ Warning ${warningCount}/${MAX_WARNINGS}:\n${msg}`);
+
+    if (warningCount >= MAX_WARNINGS) {
+      finishExam("Exam auto-submitted due to repeated violations.");
+    }
+  };
 
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden) addWarning("Tab change detected.");
+    if (document.hidden) {
+      window.examAddWarning("Tab Switch detected", "TAB_SWITCH");
+    }
   });
 
   window.addEventListener("blur", () => {
-    addWarning("Window lost focus.");
+    window.examAddWarning("Window lost focus", "WINDOW_BLUR");
   });
 
-  // Timer
-  function formatTime(sec) {
-    return `${String(Math.floor(sec/60)).padStart(2,"0")}:${String(sec%60).padStart(2,"0")}`;
+  // ===== Load Questions =====
+  async function loadQuestions() {
+    const res = await fetch("/api/questions");
+    const data = await res.json();
+    questions = data.questions || [];
+    answers = new Array(questions.length).fill(null);
   }
 
+  // ===== Timer =====
   function startTimer() {
-    timerEl.textContent = formatTime(remainingSeconds);
     timerInterval = setInterval(() => {
       remainingSeconds--;
-      timerEl.textContent = formatTime(remainingSeconds);
-      if (remainingSeconds <= 0) finishExam("Time over.");
+      if (remainingSeconds < 0) remainingSeconds = 0;
+      const min = String(Math.floor(remainingSeconds / 60)).padStart(2, "0");
+      const sec = String(remainingSeconds % 60).padStart(2, "0");
+      document.getElementById("timer").textContent = `${min}:${sec}`;
+      if (remainingSeconds <= 0) {
+        finishExam("Time over.");
+      }
     }, 1000);
   }
 
-  // Render Question
+  // ===== Render Question =====
   function renderQuestion(index) {
     const q = questions[index];
-    questionTextEl.textContent = `${index+1}. ${q.question}`;
+    if (!q) return;
+
+    const qTextEl = document.getElementById("questionText");
+    const optionsEl = document.getElementById("options");
+    const progressEl = document.getElementById("questionProgress");
+
+    qTextEl.textContent = `${index + 1}. ${q.question}`;
     optionsEl.innerHTML = "";
 
     const selected = answers[index]?.selectedOption;
 
-    q.options.forEach((opt,i)=>{
-      const letter = String.fromCharCode(65+i);
+    q.options.forEach((opt, i) => {
+      const letter = String.fromCharCode(65 + i);
 
-      const label=document.createElement("label");
-      label.className="option-item";
+      const label = document.createElement("label");
+      label.className = "option-item";
 
-      const input=document.createElement("input");
-      input.type="radio"; input.name="option"; input.value=letter;
-      input.checked=selected===letter;
-      input.onchange=()=>answers[index]={questionId:q.id,selectedOption:letter};
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = "option";
+      input.value = letter;
+      input.checked = selected === letter;
+      input.onchange = () => {
+        answers[index] = { questionId: q.id, selectedOption: letter };
+      };
 
-      label.append(input,`${letter}. ${opt}`);
+      label.append(input, `${letter}. ${opt}`);
       optionsEl.append(label);
     });
 
-    questionProgressEl.textContent=`Question ${index+1} of ${questions.length}`;
-    prevBtn.disabled=index===0;
-    nextBtn.disabled=index===questions.length-1;
+    progressEl.textContent = `Question ${index + 1} of ${questions.length}`;
+    document.getElementById("prevBtn").disabled = index === 0;
+    document.getElementById("nextBtn").disabled =
+      index === questions.length - 1;
   }
 
-  // Finish Exam
-  async function finishExam(reason="Submitted.") {
-    clearInterval(timerInterval);
+  // ===== Finish Exam =====
+  async function finishExam(reason = "Submitted.") {
+    if (examFinished) return;
+    examFinished = true;
 
-    try{
-      const res=await fetch("/api/submit",{
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({userName,email:userEmail,answers:answers.filter(Boolean)})
+    if (timerInterval) clearInterval(timerInterval);
+
+    localStorage.setItem("submitted_" + userEmail, "1");
+
+    try {
+      const res = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userName,
+          email: userEmail,
+          answers: answers.filter(Boolean),
+          warnings: warningLog,
+        }),
       });
 
-      const{correct,total,percentage}=await res.json();
+      const data = await res.json();
+
+      const examSectionEl = document.getElementById("examSection");
+      const resultSectionEl = document.getElementById("resultSection");
+      const resultTextEl = document.getElementById("resultText");
 
       examSectionEl.classList.add("hidden");
       resultSectionEl.classList.remove("hidden");
-      resultTextEl.textContent=`${reason}\nScore: ${correct}/${total} (${percentage}%)`;
-    }
-    catch{
+
+      let text = `${reason}\nScore: ${data.correct}/${data.total} (${data.percentage}%)`;
+
+      // optional: show per-question review for student
+      if (Array.isArray(data.answers)) {
+        text += `\n\n--- Your Answers ---\n`;
+        data.answers.forEach((a, i) => {
+          text += `\n${i + 1}. ${a.question}\n`;
+          text += `Your answer: ${a.selectedOption || "-"}\n`;
+          text += `Correct answer: ${a.correctOption}\n`;
+          text += `Result: ${a.isCorrect ? "Correct ✅" : "Wrong ❌"}\n`;
+        });
+      }
+
+      resultTextEl.textContent = text;
+    } catch (err) {
+      console.error(err);
+      const resultSectionEl = document.getElementById("resultSection");
+      const resultTextEl = document.getElementById("resultText");
       resultSectionEl.classList.remove("hidden");
-      resultTextEl.textContent="Submission error. Contact admin.";
-    }
-    finally{
+      resultTextEl.textContent = "Submission error. Contact admin.";
+    } finally {
       sessionStorage.clear();
     }
   }
 
-  // ===== Webcam Removed — exam starts without camera =====
-  function startExamDirect() {
-    document.getElementById("webcamStatus").textContent="Webcam not required.";
-    examSectionEl.classList.remove("hidden");
+  // Buttons
+  document.getElementById("prevBtn").onclick = () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      renderQuestion(currentIndex);
+    }
+  };
+
+  document.getElementById("nextBtn").onclick = () => {
+    if (currentIndex < questions.length - 1) {
+      currentIndex++;
+      renderQuestion(currentIndex);
+    }
+  };
+
+  document.getElementById("submitBtn").onclick = () => {
+    if (confirm("Submit exam?")) {
+      finishExam("You submitted the exam.");
+    }
+  };
+
+  (async () => {
+    await loadQuestions();
+    if (!questions.length) {
+      alert("No questions configured.");
+      return;
+    }
+    document.getElementById("examSection").classList.remove("hidden");
     startTimer();
     renderQuestion(currentIndex);
-  }
-
-  prevBtn.onclick=()=>{ if(currentIndex>0) renderQuestion(--currentIndex); }
-  nextBtn.onclick=()=>{ if(currentIndex<questions.length-1) renderQuestion(++currentIndex); }
-  submitBtn.onclick=()=>confirm("Submit exam?")&&finishExam("You submitted the exam.");
-
-  async function loadQuestions(){
-    const res=await fetch("/api/questions");
-    const data=await res.json();
-    questions=data.questions||[];
-    answers=new Array(questions.length).fill(null);
-    if(!questions.length) showAlert("No questions configured.");
-  }
-
-  (async()=>{
-    if(!checkDevice()) return addWarning("Invalid device.");
-    await loadQuestions();
-    if(!questions.length) return;
-    startExamDirect(); // 🔥 without webcam
   })();
-
-  window.onresize=checkDevice;
 }
 
-// ================= ADMIN PAGE (unchanged) =================
-/* your entire admin section stays same */
-
-
-// ===== ADMIN PAGE =====
-if (PAGE === "admin") {
+/* ================= ADMIN PAGE ================= */
+if (document.body.dataset.page === "admin") {
   const adminLoginSection = document.getElementById("adminLoginSection");
   const adminPanelSection = document.getElementById("adminPanelSection");
   const adminPasswordInput = document.getElementById("adminPassword");
@@ -269,7 +327,7 @@ if (PAGE === "admin") {
       }
     } catch (err) {
       console.error(err);
-      showAlert("Invalid admin password.");
+      alert("Invalid admin password.");
     }
   }
 
@@ -280,9 +338,7 @@ if (PAGE === "admin") {
       await fetch("/api/admin/logout", {
         method: "POST",
       });
-    } catch (e) {
-      // ignore errors on logout
-    }
+    } catch (e) {}
     adminPanelSection.classList.add("hidden");
     adminLoginSection.classList.remove("hidden");
   });
@@ -351,8 +407,42 @@ if (PAGE === "admin") {
       });
     } catch (err) {
       console.error(err);
-      showAlert("Error loading questions.");
+      alert("Error loading questions.");
     }
+  }
+
+  // ====== Show full result detail (questions + options + answers + warnings) ======
+  function showResultDetails(result) {
+    let text = `Student: ${result.userName} (${result.email})
+Score: ${result.correct}/${result.total} (${result.percentage}%)
+Submitted: ${new Date(result.submittedAt).toLocaleString()}
+Warnings: ${Array.isArray(result.warnings) ? result.warnings.length : 0}
+`;
+
+    if (Array.isArray(result.warnings) && result.warnings.length) {
+      text += `\n--- Warnings ---\n`;
+      result.warnings.forEach((w) => {
+        text += `#${w.count} [${w.code}] at ${w.at}\n  ${w.msg}\n`;
+      });
+    }
+
+    if (Array.isArray(result.answers) && result.answers.length) {
+      text += `\n--- Question-wise Answers ---\n`;
+      result.answers.forEach((a, i) => {
+        text += `\n${i + 1}. ${a.question}
+Options: 
+  A. ${a.options[0]}
+  B. ${a.options[1]}
+  C. ${a.options[2]}
+  D. ${a.options[3]}
+User Answer: ${a.selectedOption || "-"}
+Correct Answer: ${a.correctOption}
+Result: ${a.isCorrect ? "Correct ✅" : "Wrong ❌"}
+`;
+      });
+    }
+
+    alert(text);
   }
 
   async function renderResultsTable() {
@@ -378,21 +468,34 @@ if (PAGE === "admin") {
         const tdPercentage = document.createElement("td");
         tdPercentage.textContent = `${r.percentage}%`;
 
+        const tdWarnings = document.createElement("td");
+        const count = Array.isArray(r.warnings) ? r.warnings.length : 0;
+        tdWarnings.textContent = count;
+
         const tdSubmittedAt = document.createElement("td");
         tdSubmittedAt.textContent = new Date(r.submittedAt).toLocaleString();
+
+        const tdDetails = document.createElement("td");
+        const viewBtn = document.createElement("button");
+        viewBtn.textContent = "View";
+        viewBtn.className = "secondary-btn";
+        viewBtn.addEventListener("click", () => showResultDetails(r));
+        tdDetails.appendChild(viewBtn);
 
         tr.appendChild(tdIndex);
         tr.appendChild(tdName);
         tr.appendChild(tdEmail);
         tr.appendChild(tdScore);
         tr.appendChild(tdPercentage);
+        tr.appendChild(tdWarnings);
         tr.appendChild(tdSubmittedAt);
+        tr.appendChild(tdDetails);
 
         resultsTableBody.appendChild(tr);
       });
     } catch (err) {
       console.error(err);
-      showAlert("Error loading results.");
+      alert("Error loading results.");
     }
   }
 
@@ -455,12 +558,12 @@ if (PAGE === "admin") {
     const correct = correctOptionInput.value.trim().toUpperCase();
 
     if (!questionText || !optA || !optB || !optC || !optD) {
-      showAlert("Please fill in all question and option fields.");
+      alert("Please fill in all question and option fields.");
       return;
     }
 
     if (!["A", "B", "C", "D"].includes(correct)) {
-      showAlert("Correct option must be one of A, B, C, or D.");
+      alert("Correct option must be one of A, B, C, or D.");
       return;
     }
 
@@ -477,7 +580,7 @@ if (PAGE === "admin") {
       await renderQuestionsTable();
     } catch (err) {
       console.error(err);
-      showAlert("Error saving question.");
+      alert("Error saving question.");
     }
   });
 

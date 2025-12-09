@@ -303,306 +303,1203 @@
     "correct": "D"
   },
   {
-    "id": 51,
-    "question": "To validate request data?",
-    "options": ["Joi", "Yup", "Zod", "All"],
-    "correct": "D"
-  },
-  {
-    "id": 52,
-    "question": "To avoid SQL injection in backend?",
-    "options": ["Sanitization", "Prepared statements", "ORM", "All"],
-    "correct": "D"
-  },
-  {
-    "id": 53,
-    "question": "Session storage library?",
-    "options": ["express-session", "session-cookie", "app-session", "req-store"],
-    "correct": "A"
-  },
-  {
-    "id": 54,
-    "question": "JWT should be stored in?",
-    "options": ["LocalStorage", "HTTP-only cookie", "SessionStorage", "URL params"],
-    "correct": "B"
-  },
-  {
-    "id": 55,
-    "question": "Best password storing approach?",
-    "options": ["Hash + Salt", "Plain text", "Encode only", "LocalStorage"],
-    "correct": "A"
-  },
-  {
-    "id": 56,
-    "question": "API logs should include?",
-    "options": ["IP, Method, Endpoint", "User-Agent", "Response time", "All"],
-    "correct": "D"
-  },
-  {
-    "id": 57,
-    "question": "WebSockets used for?",
-    "options": ["Real-time communication", "Image compression", "Security scan", "DB sharding"],
-    "correct": "A"
-  },
-  {
-    "id": 58,
-    "question": "HTTP keep-alive improves?",
-    "options": ["Multiple request reuse", "CSS rendering", "Image caching", "DNS"],
-    "correct": "A"
-  },
-  {
-    "id": 59,
-    "question": "gRPC uses which protocol?",
-    "options": ["HTTP/1.1", "HTTP/2", "TCP only", "UDP only"],
-    "correct": "B"
-  },
-  {
-    "id": 60,
-    "question": "Throttling means?",
-    "options": ["Limiting request rate", "DB replication", "Server restart", "Image optimization"],
-    "correct": "A"
-  },
-
-
-  {
-    "id": 61,
-    "question": "MongoDB is ______",
-    "options": ["Relational", "NoSQL document DB", "Graph DB", "Key-value only"],
-    "correct": "B"
-  },
-  {
-    "id": 62,
-    "question": "Default _id type?",
-    "options": ["UUID", "String", "ObjectId", "Number"],
+    "id": 101,
+    "question": "In Node.js, which phase of the event loop executes setTimeout callbacks?",
+    "options": ["Poll phase", "Check phase", "Timers phase", "Close callbacks phase"],
     "correct": "C"
   },
   {
-    "id": 63,
-    "question": "Which improves read performance?",
-    "options": ["Indexes", "Aggregation", "Sharding", "Backup"],
-    "correct": "A"
+    "id": 102,
+    "question": "Which queue has higher priority in Node.js?",
+    "options": ["setTimeout callbacks", "setImmediate callbacks", "process.nextTick callbacks", "I/O callbacks"],
+    "correct": "C"
   },
   {
-    "id": 64,
-    "question": "findOne returns?",
-    "options": ["Array", "Single document", "Cursor", "String"],
+    "id": 103,
+    "question": "In Node.js, Promise microtasks run:",
+    "options": ["Before process.nextTick", "After process.nextTick but before timers", "After timers", "At the end of event loop"],
     "correct": "B"
   },
   {
-    "id": 65,
-    "question": "To connect Node with Mongo?",
-    "options": ["mongoose.connect()", "mongo.connect()", "express.db()", "client.connect() only"],
+    "id": 104,
+    "question": "Which Node.js API uses libuv thread pool by default?",
+    "options": ["fs.readFile", "setTimeout", "process.nextTick", "EventEmitter"],
     "correct": "A"
   },
   {
-    "id": 66,
-    "question": "Which operator selects fields?",
-    "options": ["$filter", "$project", "$group", "$match"],
+    "id": 105,
+    "question": "To avoid blocking the event loop with CPU-heavy tasks, you should prefer:",
+    "options": ["Cluster module", "Worker Threads", "More async I/O", "More setTimeout"],
     "correct": "B"
   },
   {
-    "id": 67,
-    "question": "Atomic operations handled using?",
-    "options": ["Transactions", "Indexes", "Replica sets", "Only writes"],
-    "correct": "A"
+    "id": 106,
+    "question": "Which flag sets Node.js maximum old-space (heap) size?",
+    "options": ["--max-heap", "--heap-size", "--max-old-space-size", "--gc-space"],
+    "correct": "C"
   },
   {
-    "id": 68,
-    "question": "MongoDB aggregation pipeline starts with?",
-    "options": ["$start", "$match", "$sort", "$add"],
+    "id": 107,
+    "question": "What is a correct strategy to prevent event loop blocking in an Express API?",
+    "options": ["Use synchronous fs APIs", "Use child_process.spawn or workers for CPU tasks", "Increase timeout of requests", "Disable keep-alive"],
     "correct": "B"
   },
   {
-    "id": 69,
-    "question": "To update a document?",
-    "options": ["updateOne()", "modify()", "updateDoc()", "fixOne()"],
-    "correct": "A"
-  },
-  {
-    "id": 70,
-    "question": "Sharding used for?",
-    "options": ["Scaling horizontally", "Vertical growth", "Backup", "Minor caching"],
-    "correct": "A"
-  },
-  {
-    "id": 71,
-    "question": "Replica set used for?",
-    "options": ["Failover + High availability", "Compression", "Logging", "DNS"],
-    "correct": "A"
-  },
-  {
-    "id": 72,
-    "question": "Which index improves text search?",
-    "options": ["2dsphere", "text", "unique", "hashed"],
+    "id": 108,
+    "question": "In Node.js streams, backpressure refers to:",
+    "options": ["Excess memory usage by heap", "Slow consumer relative to producer", "Network retries", "GC pauses"],
     "correct": "B"
   },
   {
-    "id": 73,
-    "question": "MongoDB stores data in?",
-    "options": ["Tables", "Collections", "Schemas", "Queries"],
+    "id": 109,
+    "question": "Which stream method signals the producer to stop writing temporarily?",
+    "options": ["pause()", "unpipe()", "end()", "write()"],
+    "correct": "A"
+  },
+  {
+    "id": 110,
+    "question": "For implementing zero-downtime restarts in Node.js without external tools, which module is most relevant?",
+    "options": ["cluster", "events", "fs", "os"],
+    "correct": "A"
+  },
+  {
+    "id": 111,
+    "question": "Which Node.js module is recommended for tracking async context across callbacks?",
+    "options": ["cluster", "async_hooks", "inspector", "perf_hooks"],
     "correct": "B"
   },
   {
-    "id": 74,
-    "question": "Best query performance rule?",
-    "options": ["Smaller documents", "Indexes", "Projection usage", "All"],
-    "correct": "D"
-  },
-  {
-    "id": 75,
-    "question": "WriteConcern ensures?",
-    "options": ["Durability", "Cache eviction", "Paging", "Schema validation"],
-    "correct": "A"
-  },
-  {
-    "id": 76,
-    "question": "Mongoose schema represents?",
-    "options": ["DB structure rules", "UI layout", "JWT payload", "Server config"],
-    "correct": "A"
-  },
-  {
-    "id": 77,
-    "question": "populate() is used to?",
-    "options": ["Join related collections", "Sort data", "Shard cluster", "Backups"],
-    "correct": "A"
-  },
-  {
-    "id": 78,
-    "question": "Which prevents duplicate entries?",
-    "options": ["unique index", "replica", "projection", "pipeline"],
-    "correct": "A"
-  },
-  {
-    "id": 79,
-    "question": "TTL index used for?",
-    "options": ["Auto document expiry", "Speed joins", "Validation", "Transactions"],
-    "correct": "A"
-  },
-  {
-    "id": 80,
-    "question": "Mongo backup command?",
-    "options": ["mongodump", "mongo-save", "mongoexport", "db.backup()"],
-    "correct": "A"
-  },
-  {
-    "id": 81,
-    "question": "Aggregation sort stage?",
-    "options": ["$rank", "$sort", "$orderBy", "$sequence"],
+    "id": 112,
+    "question": "Which is TRUE about Node.js cluster module?",
+    "options": ["Shares same event loop among workers", "Uses child processes sharing server port", "Uses threads sharing heap", "Runs only on Windows"],
     "correct": "B"
   },
   {
-    "id": 82,
-    "question": "lookup is similar to?",
-    "options": ["SQL JOIN", "sharding", "select *", "group by"],
+    "id": 113,
+    "question": "The 'uncaughtException' handler on process should be used:",
+    "options": ["As main error handling strategy", "To gracefully log and then exit process", "To ignore runtime errors", "To restart event loop"],
+    "correct": "B"
+  },
+  {
+    "id": 114,
+    "question": "Which is the most secure way to load secrets in a Node.js backend?",
+    "options": ["Hardcode in source code", "Read from .env committed to git", "Use environment variables + secret manager", "Store in public S3 bucket"],
+    "correct": "C"
+  },
+  {
+    "id": 115,
+    "question": "In Express, which middleware order is correct for security?",
+    "options": ["Routes -> helmet -> error handler", "helmet -> routes -> error handler", "error handler -> helmet -> routes", "helmet -> error handler -> routes"],
+    "correct": "B"
+  },
+  {
+    "id": 116,
+    "question": "For CSRF protection in a cookie-based session app, which is MOST appropriate?",
+    "options": ["Store JWT in localStorage", "Use SameSite=None only", "Use CSRF tokens + HTTP-only cookies", "Use CORS *"],
+    "correct": "C"
+  },
+  {
+    "id": 117,
+    "question": "Which is a key risk of storing JWT in localStorage?",
+    "options": ["CSRF", "XSS token theft", "CORS errors", "SQL injection"],
+    "correct": "B"
+  },
+  {
+    "id": 118,
+    "question": "For a high-traffic API, which logging configuration is BEST?",
+    "options": ["console.log in production", "Sync file writes", "Structured JSON logs to stdout", "Log full request bodies always"],
+    "correct": "C"
+  },
+  {
+    "id": 119,
+    "question": "Which HTTP header is used to implement strict HTTPS usage?",
+    "options": ["X-Frame-Options", "Strict-Transport-Security", "X-Content-Type-Options", "Content-Security-Policy"],
+    "correct": "B"
+  },
+  {
+    "id": 120,
+    "question": "To mitigate clickjacking, which header is most relevant?",
+    "options": ["X-Frame-Options", "Strict-Transport-Security", "Referrer-Policy", "ETag"],
     "correct": "A"
   },
   {
-    "id": 83,
-    "question": "Which saves multiple docs?",
-    "options": ["insertMany()", "createDoc()", "saveBulk()", "writeAll()"],
+    "id": 121,
+    "question": "For file uploads in Node.js, which approach scales best?",
+    "options": ["Buffer entire file in memory", "Stream to object storage (e.g., S3)", "Store in MongoDB as base64", "Store in session"],
+    "correct": "B"
+  },
+  {
+    "id": 122,
+    "question": "Which is TRUE about HTTP/2 server push in Node.js?",
+    "options": ["Supported only via http module", "Available via http2 module", "Available only with Express", "Not possible in Node"],
+    "correct": "B"
+  },
+  {
+    "id": 123,
+    "question": "In Node.js, which module can measure function-level performance metrics?",
+    "options": ["perf_hooks", "inspector", "vm", "dns"],
     "correct": "A"
   },
   {
-    "id": 84,
-    "question": "Better for caching?",
-    "options": ["Redis", "Mongo", "Elastic", "MySQL"],
+    "id": 124,
+    "question": "Which scenario is the BEST use-case for worker_threads in Node?",
+    "options": ["Handling many HTTP requests", "CPU-bound image processing", "Database queries", "Reading files asynchronously"],
+    "correct": "B"
+  },
+  {
+    "id": 125,
+    "question": "A memory leak in an Express app is MOST likely caused by:",
+    "options": ["Using async/await", "Holding large objects in global scope", "Using arrow functions", "Using const instead of let"],
+    "correct": "B"
+  },
+  {
+    "id": 126,
+    "question": "In Node.js, which pattern best isolates configuration per environment?",
+    "options": ["Single config.json checked into git", "Switch via if(process.env.NODE_ENV)", "Hardcode dev/prod flags", "Use global variable envMode"],
+    "correct": "B"
+  },
+  {
+    "id": 127,
+    "question": "Which layer should contain business logic in a well-structured Node backend?",
+    "options": ["Controller layer only", "Service layer", "Route definitions", "Database driver"],
+    "correct": "B"
+  },
+  {
+    "id": 128,
+    "question": "For graceful shutdown of a Node.js HTTP server, which is CORRECT?",
+    "options": ["Immediately call process.exit()", "Close server, stop accepting new connections, wait for in-flight", "Force close all sockets instantly", "Ignore SIGTERM"],
+    "correct": "B"
+  },
+  {
+    "id": 129,
+    "question": "Which Express pattern improves maintainability for large APIs?",
+    "options": ["Single app.js with all routes", "Feature-based modular routers", "Inline business logic in routes", "Single global error handler only"],
+    "correct": "B"
+  },
+  {
+    "id": 130,
+    "question": "Which is the MOST appropriate HTTP status for validation error in REST?",
+    "options": ["200", "400", "404", "500"],
+    "correct": "B"
+  },
+  {
+    "id": 131,
+    "question": "Which is the BEST practice for pagination in REST APIs?",
+    "options": ["Return all records", "page & limit query params", "Offset only without limit", "Random subset"],
+    "correct": "B"
+  },
+  {
+    "id": 132,
+    "question": "For idempotent resource updates, which combination is best?",
+    "options": ["POST with random body", "PUT with full resource", "PATCH with full replace", "DELETE with body"],
+    "correct": "B"
+  },
+  {
+    "id": 133,
+    "question": "Which is the MOST appropriate pattern for distributed transactions across services?",
+    "options": ["2PC everywhere", "Saga pattern", "Single global DB lock", "Retry until success"],
+    "correct": "B"
+  },
+  {
+    "id": 134,
+    "question": "Which queue system is commonly used with Node.js for background jobs?",
+    "options": ["Redis + Bull", "MongoDB cursors", "Plain arrays", "Local files"],
     "correct": "A"
   },
   {
-    "id": 85,
-    "question": "Mongo scale vertically means?",
-    "options": ["More CPU/RAM", "More servers", "Sharding", "Proxy caching"],
-    "correct": "A"
-  },
-
-  {
-    "id": 86,
-    "question": "Load Balancer function?",
-    "options": ["Distribute traffic", "Handle CSS", "Compress JS", "Email service"],
+    "id": 135,
+    "question": "Which pattern ensures at-least-once processing semantics?",
+    "options": ["Process and then ack", "Ack then process", "Drop duplicate messages always", "Disable retries"],
     "correct": "A"
   },
   {
-    "id": 87,
-    "question": "Caching reduces?",
-    "options": ["Database load", "Response time", "CPU load", "All"],
+    "id": 136,
+    "question": "In a microservice system, API gateway is responsible for:",
+    "options": ["Database partitioning", "Auth, routing, rate limiting", "Schema migrations", "GC tuning"],
+    "correct": "B"
+  },
+  {
+    "id": 137,
+    "question": "Which is the MOST appropriate Node.js module to secure HTTPS directly?",
+    "options": ["tls", "https", "http2 only", "net"],
+    "correct": "B"
+  },
+  {
+    "id": 138,
+    "question": "What is the effect of Node’s --inspect flag?",
+    "options": ["Enables cluster", "Enables V8 inspector protocol", "Enables stricter GC", "Enables debug logs"],
+    "correct": "B"
+  },
+  {
+    "id": 139,
+    "question": "In Express, how to ensure async route errors reach error middleware?",
+    "options": ["Throw inside setTimeout", "Return rejected Promise without handler", "Use async/await and next(err) or wrapper", "Use try/catch around app.listen"],
+    "correct": "C"
+  },
+  {
+    "id": 140,
+    "question": "Which HTTP header is MOST relevant for content sniffing protection?",
+    "options": ["X-Content-Type-Options: nosniff", "X-Frame-Options: DENY", "Content-Security-Policy", "Referrer-Policy"],
+    "correct": "A"
+  },
+  {
+    "id": 141,
+    "question": "In MongoDB, which index type is best for geospatial queries?",
+    "options": ["text", "hashed", "2d / 2dsphere", "sparse"],
+    "correct": "C"
+  },
+  {
+    "id": 142,
+    "question": "Which is TRUE about compound indexes in MongoDB?",
+    "options": ["Field order does not matter", "Prefix fields can be used separately", "Only last field can be queried", "They cannot be unique"],
+    "correct": "B"
+  },
+  {
+    "id": 143,
+    "question": "A 'multikey index' in MongoDB is created when:",
+    "options": ["Indexing arrays", "Indexing ObjectId", "Indexing numbers", "Indexing ObjectIds and numbers"],
+    "correct": "A"
+  },
+  {
+    "id": 144,
+    "question": "Which index is most efficient for range queries on a numeric field?",
+    "options": ["text index", "hashed index", "single-field B-tree index", "2dsphere index"],
+    "correct": "C"
+  },
+  {
+    "id": 145,
+    "question": "MongoDB 'partial index' is used to:",
+    "options": ["Index entire collection", "Index only documents matching filter expression", "Index only first N docs", "Index only system collections"],
+    "correct": "B"
+  },
+  {
+    "id": 146,
+    "question": "Which command shows index usage statistics?",
+    "options": ["db.stats()", "db.collection.explain()", "db.collection.aggregate()", "db.collection.indexStats()"],
+    "correct": "B"
+  },
+  {
+    "id": 147,
+    "question": "Which is MOST likely to cause a collection scan instead of index scan?",
+    "options": ["Using $eq on indexed field", "Using regex without prefix on indexed string", "Using sort on indexed field", "Using exact match on unique index"],
+    "correct": "B"
+  },
+  {
+    "id": 148,
+    "question": "In MongoDB aggregation, which stage should appear as early as possible for optimization?",
+    "options": ["$project", "$group", "$match", "$sort"],
+    "correct": "C"
+  },
+  {
+    "id": 149,
+    "question": "Which aggregation stage can produce multiple documents per input document?",
+    "options": ["$group", "$unwind", "$limit", "$skip"],
+    "correct": "B"
+  },
+  {
+    "id": 150,
+    "question": "Which read concern guarantees reading only committed data acknowledged by majority?",
+    "options": ["local", "available", "majority", "linearizable"],
+    "correct": "C"
+  },
+  {
+    "id": 151,
+    "question": "Which MongoDB writeConcern ensures highest durability but may impact latency?",
+    "options": ["w:1", "w:0", "w:majority, j:true", "w:1, j:false"],
+    "correct": "C"
+  },
+  {
+    "id": 152,
+    "question": "Which is TRUE about MongoDB replica set primary election?",
+    "options": ["Primary is fixed forever", "Only secondaries with priority > 0 can be elected", "Arbiters can become primary", "Hidden nodes can be primary"],
+    "correct": "B"
+  },
+  {
+    "id": 153,
+    "question": "Which is an important requirement for choosing a shard key in MongoDB?",
+    "options": ["Low cardinality", "Monotonically increasing value", "High cardinality and good distribution", "Only _id can be shard key"],
+    "correct": "C"
+  },
+  {
+    "id": 154,
+    "question": "A monotonic shard key like timestamp can cause:",
+    "options": ["Uniform distribution", "Hot shard problem", "More secondaries", "Faster aggregation"],
+    "correct": "B"
+  },
+  {
+    "id": 155,
+    "question": "Which feature enables multi-document ACID transactions in MongoDB?",
+    "options": ["Replica sets and sessions", "TTL indexes", "Change streams", "Capped collections"],
+    "correct": "A"
+  },
+  {
+    "id": 156,
+    "question": "MongoDB change streams are built on top of:",
+    "options": ["TTL index", "oplog", "Aggregation $lookup", "Balancers"],
+    "correct": "B"
+  },
+  {
+    "id": 157,
+    "question": "Which MongoDB stage is best suited for bucketing numeric ranges?",
+    "options": ["$unwind", "$bucket", "$facet", "$project"],
+    "correct": "B"
+  },
+  {
+    "id": 158,
+    "question": "Which aggregation stage allows running multiple pipelines in parallel on same input?",
+    "options": ["$facet", "$project", "$group", "$unwind"],
+    "correct": "A"
+  },
+  {
+    "id": 159,
+    "question": "Which MongoDB feature allows graph-like traversal within a collection?",
+    "options": ["$graphLookup", "$redact", "$unwind", "$sample"],
+    "correct": "A"
+  },
+  {
+    "id": 160,
+    "question": "MongoDB collation is used for:",
+    "options": ["Sharding", "Text search only", "Locale-aware string comparison", "Compression"],
+    "correct": "C"
+  },
+  {
+    "id": 161,
+    "question": "Which write method is preferred to avoid race conditions when upserting?",
+    "options": ["insert()", "updateMany()", "updateOne() with upsert true and query filter", "save() without filter"],
+    "correct": "C"
+  },
+  {
+    "id": 162,
+    "question": "Which is TRUE about Mongoose middleware?",
+    "options": ["Post hooks run before save", "Pre hooks can be used to validate/transform before operations", "Hooks cannot be async", "Only find() supports middleware"],
+    "correct": "B"
+  },
+  {
+    "id": 163,
+    "question": "In Mongoose, 'lean()' on queries primarily improves:",
+    "options": ["Write throughput", "Read performance and memory usage", "Indexes creation", "Replica set election"],
+    "correct": "B"
+  },
+  {
+    "id": 164,
+    "question": "Mongoose 'validateBeforeSave' option controls:",
+    "options": ["Index validation", "Schema validation prior to save", "MongoDB server validation", "Transaction commit"],
+    "correct": "B"
+  },
+  {
+    "id": 165,
+    "question": "Which is MOST suitable to enforce complex validation logic in Mongoose?",
+    "options": ["Mongo shell scripts", "Custom validators in schema paths", "Using only required: true", "Relying on frontend check"],
+    "correct": "B"
+  },
+  {
+    "id": 166,
+    "question": "In MongoDB, what is a 'capped collection'?",
+    "options": ["Collection with TTL index", "Fixed-size collection that overwrites oldest documents", "Encrypted collection", "Sharded collection"],
+    "correct": "B"
+  },
+  {
+    "id": 167,
+    "question": "Which is a drawback of overly embedding documents in MongoDB?",
+    "options": ["Too many collections", "Large document size causing slower writes and reads", "No indexes allowed", "No sharding support"],
+    "correct": "B"
+  },
+  {
+    "id": 168,
+    "question": "Which is a drawback of over-referencing instead of embedding?",
+    "options": ["Larger documents", "More complex queries and joins ($lookup)", "No indexes allowed", "Replica sets disabled"],
+    "correct": "B"
+  },
+  {
+    "id": 169,
+    "question": "In a high-read workload, which is MOST important?",
+    "options": ["Frequent full scans", "Appropriate indexes and projections", "Always using aggregation", "Always writing to primary only"],
+    "correct": "B"
+  },
+  {
+    "id": 170,
+    "question": "Which is an effect of adding many unused indexes?",
+    "options": ["Faster writes", "Slower writes and more disk usage", "More CPU available", "No impact"],
+    "correct": "B"
+  },
+  {
+    "id": 171,
+    "question": "When using MongoDB transactions from Node.js, which is essential?",
+    "options": ["Reusing same session for all operations", "Using different sessions per operation", "Disabling retryWrites", "Using only local readConcern"],
+    "correct": "A"
+  },
+  {
+    "id": 172,
+    "question": "MongoDB 'maxTimeMS' option is primarily used to:",
+    "options": ["Limit result size", "Limit query execution time", "Limit number of connections", "Limit index size"],
+    "correct": "B"
+  },
+  {
+    "id": 173,
+    "question": "Which is the safest approach for migrations in production MongoDB?",
+    "options": ["Update schema in-place without backups", "Create backup, apply migrations in small batches, monitor", "Drop collection and recreate", "Change shard key directly"],
+    "correct": "B"
+  },
+  {
+    "id": 174,
+    "question": "Which pattern helps avoid downtime during schema changes in MongoDB?",
+    "options": ["Blue/green schema", "Big-bang migration", "Drop and recreate DB", "Single-step update"],
+    "correct": "A"
+  },
+  {
+    "id": 175,
+    "question": "In a Node.js + MongoDB app, connection pooling helps to:",
+    "options": ["Increase memory usage only", "Decrease connection overhead and improve throughput", "Slow down queries", "Disable transactions"],
+    "correct": "B"
+  },
+  {
+    "id": 176,
+    "question": "Which is TRUE about MongoDB connection pooling in Node.js?",
+    "options": ["Each request should create a new client", "Client should be singleton reused across requests", "Pool size must be 1", "Pooling is not supported"],
+    "correct": "B"
+  },
+  {
+    "id": 177,
+    "question": "In a Node.js REST API with MongoDB, which retry pattern is BEST for transient network errors?",
+    "options": ["Immediate retry indefinitely", "Exponential backoff with max attempts", "No retries", "Retry with zero delay 100 times"],
+    "correct": "B"
+  },
+  {
+    "id": 178,
+    "question": "Which Node.js ORM/ODM is specifically built for MongoDB?",
+    "options": ["Sequelize", "TypeORM", "Mongoose", "Prisma for SQL only"],
+    "correct": "C"
+  },
+  {
+    "id": 179,
+    "question": "Which is a likely cause of 'MongoNetworkError: failed to connect to server' in production?",
+    "options": ["Missing index", "Wrong connection string or firewall rules", "Too many documents", "Slow aggregation"],
+    "correct": "B"
+  },
+  {
+    "id": 180,
+    "question": "For auditing changes in MongoDB documents, which approach is MOST flexible?",
+    "options": ["No logs", "Maintain history collection with change documents", "Overwrite documents always", "Use capped collection for all data"],
+    "correct": "B"
+  },
+  {
+    "id": 181,
+    "question": "What is the main benefit of using $project early in an aggregation pipeline?",
+    "options": ["Increase memory usage", "Reduce document size and improve later stages", "Disable index usage", "Increase network latency"],
+    "correct": "B"
+  },
+  {
+    "id": 182,
+    "question": "Which is a good reason to denormalize data in MongoDB?",
+    "options": ["To strictly follow 3NF", "To reduce number of disk seeks and joins", "To increase number of collections", "To disable sharding"],
+    "correct": "B"
+  },
+  {
+    "id": 183,
+    "question": "Which MongoDB feature can be used to listen to real-time DB changes in Node.js?",
+    "options": ["TTL index", "Change streams", "Profiler", "Balancers"],
+    "correct": "B"
+  },
+  {
+    "id": 184,
+    "question": "In Mongoose, 'select: false' on a schema path means:",
+    "options": ["Field is required", "Field won't be returned by default queries", "Field cannot be indexed", "Field is always null"],
+    "correct": "B"
+  },
+  {
+    "id": 185,
+    "question": "Which is the MOST appropriate index for queries filtering on { status, createdAt } and sorting by createdAt?",
+    "options": ["{ createdAt: 1 }", "{ status: 1 }", "{ status: 1, createdAt: 1 }", "{ createdAt: 1, status: 1 }"],
+    "correct": "C"
+  },
+  {
+    "id": 186,
+    "question": "In MongoDB, an index with 'sparse: true' will:",
+    "options": ["Index all docs", "Index only docs where field exists", "Index only docs where field is null", "Disable TTL"],
+    "correct": "B"
+  },
+  {
+    "id": 187,
+    "question": "Which scenario can lead to 'duplicate key error' in MongoDB?",
+    "options": ["No index on field", "Unique index and inserting duplicate value", "Using $match", "Using $group"],
+    "correct": "B"
+  },
+  {
+    "id": 188,
+    "question": "In MongoDB, what happens if document size exceeds the maximum allowed (16MB)?",
+    "options": ["It is silently truncated", "Insert/update will fail with error", "It is split automatically", "It is stored in multiple collections"],
+    "correct": "B"
+  },
+  {
+    "id": 189,
+    "question": "Which is TRUE about sharded cluster writes?",
+    "options": ["Write always goes to all shards", "Write is routed to shard owning the chunk containing shard key value", "Write always goes to primary shard only", "Write always goes to config server"],
+    "correct": "B"
+  },
+  {
+    "id": 190,
+    "question": "Which MongoDB deployment is REQUIRED for transactions across multiple documents?",
+    "options": ["Standalone", "Replica set or sharded cluster", "Mongos only", "Arbiter only"],
+    "correct": "B"
+  },
+  {
+    "id": 191,
+    "question": "Which is a correct behavior of MongoDB 'readPreference: secondary'?",
+    "options": ["Reads from primary only", "Reads from any secondary eligible node", "Disables elections", "Reads and writes to secondary"],
+    "correct": "B"
+  },
+  {
+    "id": 192,
+    "question": "In Node.js, which header is critical to prevent CORS preflight failures when supporting credentials?",
+    "options": ["Access-Control-Allow-Headers: *", "Access-Control-Allow-Origin: * with credentials", "Access-Control-Allow-Credentials: true with specific origin", "X-Powered-By"],
+    "correct": "C"
+  },
+  {
+    "id": 193,
+    "question": "Which is the BEST way to secure Express from leaking technology details?",
+    "options": ["Use app.disable('x-powered-by')", "Use console.log", "Use body-parser", "Use morgan"],
+    "correct": "A"
+  },
+  {
+    "id": 194,
+    "question": "To prevent brute-force attacks on login endpoints, which is MOST effective?",
+    "options": ["Client-side validation", "Strong password rules only", "Rate limiting + account lockout policy", "Storing passwords in plain text"],
+    "correct": "C"
+  },
+  {
+    "id": 195,
+    "question": "For storing refresh tokens securely in a web app, which is MOST recommended?",
+    "options": ["LocalStorage", "HTTP-only secure cookie", "URL query parameters", "JavaScript global variable"],
+    "correct": "B"
+  },
+  {
+    "id": 196,
+    "question": "Which HTTP method is MOST appropriate for partial resource updates?",
+    "options": ["GET", "PUT", "PATCH", "DELETE"],
+    "correct": "C"
+  },
+  {
+    "id": 197,
+    "question": "For concurrency control in a Node.js + MongoDB API, 'optimistic locking' can be implemented using:",
+    "options": ["process.nextTick", "Version field in document (e.g., __v)", "Multiple primary nodes", "TTL index"],
+    "correct": "B"
+  },
+  {
+    "id": 198,
+    "question": "Which HTTP status is MOST suitable when a client is authenticated but not authorized?",
+    "options": ["400 Bad Request", "401 Unauthorized", "403 Forbidden", "404 Not Found"],
+    "correct": "C"
+  },
+  {
+    "id": 199,
+    "question": "Which strategy helps in rolling out new backend features safely?",
+    "options": ["Big-bang deploy", "Feature flags / toggles", "Disable logging", "Hard restart all servers"],
+    "correct": "B"
+  },
+  {
+    "id": 200,
+    "question": "In Node.js, which module provides a standardized interface for metrics collection (e.g., histogram, counter)?",
+    "options": ["perf_hooks only", "prom-client library", "cluster", "fs"],
+    "correct": "B"
+  },
+  {
+    "id": 201,
+    "question": "For securing a public REST API from automated abuse, which combination is BEST?",
+    "options": ["CORS + CSP only", "Rate limiting + API keys + logging", "Disable HTTPS", "Rely on frontend checks"],
+    "correct": "B"
+  },
+  {
+    "id": 202,
+    "question": "In Node.js, what is a 'hot path'?",
+    "options": ["A rarely executed function", "An execution path optimized by V8 JIT due to frequent use", "A memory leak", "A blocked event loop"],
+    "correct": "B"
+  },
+  {
+    "id": 203,
+    "question": "Which can degrade V8 optimization for hot functions?",
+    "options": ["Monomorphic parameter types", "Consistent shapes of objects", "Changing parameter types frequently (megamorphic)", "Using const"],
+    "correct": "C"
+  },
+  {
+    "id": 204,
+    "question": "Which Node.js module allows sandboxed execution of code?",
+    "options": ["vm", "dns", "tls", "url"],
+    "correct": "A"
+  },
+  {
+    "id": 205,
+    "question": "To protect an upload API from large payload attacks, which is MOST important?",
+    "options": ["Disable HTTPS", "Set body size limits and validate content-type", "Use HTTP/2", "Disable CORS"],
+    "correct": "B"
+  },
+  {
+    "id": 206,
+    "question": "For long-running HTTP requests, which scenario is MOST problematic in Node.js?",
+    "options": ["Streaming responses", "Synchronous CPU-heavy loops", "Pipelined I/O", "Using Promises"],
+    "correct": "B"
+  },
+  {
+    "id": 207,
+    "question": "Which is TRUE about Node.js async stack traces?",
+    "options": ["Always show full async chain", "May lose async context unless using async_hooks or --async-stack-traces", "Never show error origin", "Show only native code"],
+    "correct": "B"
+  },
+  {
+    "id": 208,
+    "question": "Which strategy helps reduce cold-start time for a large Node.js app?",
+    "options": ["Require everything eagerly in app.js", "Lazy-load route modules and features", "Increase heap size", "Disable logging"],
+    "correct": "B"
+  },
+  {
+    "id": 209,
+    "question": "In a Node.js microservice, which is MOST appropriate for service-to-service auth?",
+    "options": ["Basic auth over HTTP", "Mutual TLS or signed tokens", "Anonymous access", "Rely on CORS"],
+    "correct": "B"
+  },
+  {
+    "id": 210,
+    "question": "Which header prevents browsers from sending referrer information to other sites?",
+    "options": ["X-Frame-Options", "Referrer-Policy", "X-Content-Type-Options", "Accept-Encoding"],
+    "correct": "B"
+  },
+  {
+    "id": 211,
+    "question": "Which is MOST appropriate for soft-deletes in MongoDB?",
+    "options": ["Physically delete documents", "Add isDeleted flag and filter in all queries", "Move to another DB always", "Use TTL index on all docs"],
+    "correct": "B"
+  },
+  {
+    "id": 212,
+    "question": "Which of these can cause 'write amplification' in MongoDB?",
+    "options": ["Small documents", "Many secondary indexes on frequently updated fields", "Using replica sets", "Using sharding"],
+    "correct": "B"
+  },
+  {
+    "id": 213,
+    "question": "Which is TRUE about MongoDB journaling?",
+    "options": ["Disabled by default", "Provides crash recovery by writing operations to journal before data files", "Replaces writeConcern", "Only on Windows"],
+    "correct": "B"
+  },
+  {
+    "id": 214,
+    "question": "In MongoDB, which tool can analyze slow queries at server level?",
+    "options": ["Profiler", "Shell only", "TTL index", "Oplog"],
+    "correct": "A"
+  },
+  {
+    "id": 215,
+    "question": "Which is a recommended way to implement full-text search at scale with MongoDB backend?",
+    "options": ["LIKE queries in MongoDB", "Mongo text index or external search engine like Elasticsearch", "Regex scans on all docs", "Store text in JSON only"],
+    "correct": "B"
+  },
+  {
+    "id": 216,
+    "question": "When using $lookup across large collections, which is a key performance recommendation?",
+    "options": ["Avoid indexes", "Ensure appropriate indexes on join fields", "Always $unwind first", "Always $group first"],
+    "correct": "B"
+  },
+  {
+    "id": 217,
+    "question": "Which is TRUE about Node.js 'domain' module?",
+    "options": ["Recommended for new code", "Deprecated legacy error handling mechanism", "Used for clusters", "Used for TLS"],
+    "correct": "B"
+  },
+  {
+    "id": 218,
+    "question": "Which is the safest way to handle untrusted JSON input in Node.js?",
+    "options": ["eval(JSON)", "JSON.parse with try/catch and validation", "vm.runInThisContext", "Function() constructor"],
+    "correct": "B"
+  },
+  {
+    "id": 219,
+    "question": "Which of the following can mitigate XSS in a Node/Express app?",
+    "options": ["Disable HTTPS", "Escape user input in templates and use CSP", "Store passwords in plain text", "Use GET for all requests"],
+    "correct": "B"
+  },
+  {
+    "id": 220,
+    "question": "In a distributed Node.js system, which pattern helps handle cascading failures?",
+    "options": ["Bulkhead + circuit breaker", "Single global lock", "Always retry infinitely", "Disable timeouts"],
+    "correct": "A"
+  },
+  {
+    "id": 221,
+    "question": "Which is TRUE about Node.js 'EventEmitter'?",
+    "options": ["Events are synchronous by default", "Events are always async", "Events run in separate threads", "Cannot pass arguments with events"],
+    "correct": "A"
+  },
+  {
+    "id": 222,
+    "question": "If you emit too many 'error' events without listeners on an EventEmitter:",
+    "options": ["They are ignored", "Process crashes if 'error' has no listener", "They are queued", "They are logged silently"],
+    "correct": "B"
+  },
+  {
+    "id": 223,
+    "question": "Which is the PRIMARY reason to use 'helmet' in Express?",
+    "options": ["Optimize performance", "Set sensible security-related HTTP headers", "Create indexes", "Handle sessions"],
+    "correct": "B"
+  },
+  {
+    "id": 224,
+    "question": "For secure cookie usage in production over HTTPS, which flags are IMPORTANT?",
+    "options": ["secure, httpOnly, SameSite", "domain only", "path only", "maxAge only"],
+    "correct": "A"
+  },
+  {
+    "id": 225,
+    "question": "Which is TRUE about ETags in HTTP?",
+    "options": ["Used for auth", "Used for caching and conditional requests", "Used for CSRF", "Used for rate limiting"],
+    "correct": "B"
+  },
+  {
+    "id": 226,
+    "question": "In a high availability Node.js deployment behind a load balancer, sticky sessions are:",
+    "options": ["Always required", "Sometimes needed when using in-memory sessions", "Never used", "Required for stateless JWT"],
+    "correct": "B"
+  },
+  {
+    "id": 227,
+    "question": "Which is a major drawback of storing sessions in Node's memory store?",
+    "options": ["Fast access", "Sessions lost on restart and not shared across instances", "Strong security", "Low CPU usage"],
+    "correct": "B"
+  },
+  {
+    "id": 228,
+    "question": "For distributed sessions in Node.js, which store is commonly used?",
+    "options": ["Local array", "In-memory Map", "Redis", "Text files"],
+    "correct": "C"
+  },
+  {
+    "id": 229,
+    "question": "In a REST API, which status code is suitable when a resource is not found but the client MAY be authorized?",
+    "options": ["200", "401", "403", "404"],
     "correct": "D"
   },
   {
-    "id": 88,
-    "question": "Horizontal scaling means?",
-    "options": ["More servers", "More RAM", "DB compression", "Single machine model"],
+    "id": 230,
+    "question": "Which is a correct design for idempotent 'delete user' API?",
+    "options": ["DELETE /users/:id always returns 200 even if user missing", "DELETE /users/:id returns 404 if already deleted and is error", "Use POST /deleteUser", "Use GET /deleteUser"],
     "correct": "A"
   },
   {
-    "id": 89,
-    "question": "Rate limiting prevents?",
-    "options": ["DDoS", "Spam", "API abuse", "All"],
+    "id": 231,
+    "question": "In Node.js, how can you detect event loop lag?",
+    "options": ["Using setTimeout only", "Measure delay of timers or use perf_hooks.monitorEventLoopDelay", "Using fs.readFile", "Using dns.lookup"],
+    "correct": "B"
+  },
+  {
+    "id": 232,
+    "question": "Which is TRUE about Node.js 'global' object?",
+    "options": ["Same as window", "Different from window but similar purpose in Node", "Not accessible", "Only in strict mode"],
+    "correct": "B"
+  },
+  {
+    "id": 233,
+    "question": "Which Node.js feature helps avoid callback pyramid and keeps async code readable?",
+    "options": ["Nested callbacks", "Async/await with Promises", "Global variables", "Synchronous API"],
+    "correct": "B"
+  },
+  {
+    "id": 234,
+    "question": "In a heavily-used MongoDB collection, which is a sign of index not being used?",
+    "options": ["High index hit ratio", "Frequent COLLSCAN in explain plan", "Low latency", "Small working set"],
+    "correct": "B"
+  },
+  {
+    "id": 235,
+    "question": "Which MongoDB index can support prefix search like /^abc/ ?",
+    "options": ["Hashed index", "Text index", "Regular B-tree index on field", "2dsphere index"],
+    "correct": "C"
+  },
+  {
+    "id": 236,
+    "question": "Which is TRUE about MongoDB '_id' field?",
+    "options": ["Optional on documents", "Required and unique per collection", "Can be duplicated", "Cannot be indexed"],
+    "correct": "B"
+  },
+  {
+    "id": 237,
+    "question": "Which can cause 'document moved' and extra work in MongoDB?",
+    "options": ["Reducing document size", "Growing document beyond allocated space causing record relocation", "Using transactions", "Using TTL indexes"],
+    "correct": "B"
+  },
+  {
+    "id": 238,
+    "question": "Which is the main drawback of using '$where' operator in MongoDB queries?",
+    "options": ["Faster than indexes", "Executes JavaScript and is slow and unsafe for untrusted input", "Always uses index", "Only works on primary"],
+    "correct": "B"
+  },
+  {
+    "id": 239,
+    "question": "In Node.js, to prevent prototype pollution from untrusted JSON body, you should:",
+    "options": ["Directly merge into objects", "Use safe deep-merge libraries and whitelist fields", "Use eval", "Disable JSON parsing"],
+    "correct": "B"
+  },
+  {
+    "id": 240,
+    "question": "In an API design, which is a good reason to choose GraphQL over REST for Node backend?",
+    "options": ["Simple CRUD only", "To reduce over-fetching/under-fetching and support flexible queries", "To simplify server scaling", "To secure API automatically"],
+    "correct": "B"
+  },
+  {
+    "id": 241,
+    "question": "For implementing rate limiting in a distributed Node.js deployment, which store is BEST?",
+    "options": ["In-memory per instance", "Redis or external shared store", "Local JSON file", "Session cookie only"],
+    "correct": "B"
+  },
+  {
+    "id": 242,
+    "question": "Which is a good practice when exposing a public REST API from a Node.js backend?",
+    "options": ["No authentication", "Use TLS, versioning, rate limit, proper error contracts", "Rely on frontend auth only", "Return stack traces to clients"],
+    "correct": "B"
+  },
+  {
+    "id": 243,
+    "question": "Which is the MOST appropriate error response pattern?",
+    "options": ["Return raw stack trace", "Return consistent error structure with code and message", "Return HTML error pages", "Return 200 for all errors"],
+    "correct": "B"
+  },
+  {
+    "id": 244,
+    "question": "To handle long-running jobs from Node.js API, which design is BEST?",
+    "options": ["Do everything in HTTP request", "Offload to background worker via queue and return job-id", "Use infinite loop in route", "Block event loop until complete"],
+    "correct": "B"
+  },
+  {
+    "id": 245,
+    "question": "Which Node.js library is often used to validate and parse environment variables schema-safely?",
+    "options": ["dotenv only", "Joi/Zod with process.env", "fs", "http"],
+    "correct": "B"
+  },
+  {
+    "id": 246,
+    "question": "Which is TRUE about MongoDB's $sample stage?",
+    "options": ["Returns deterministic order", "Randomly selects documents", "Only works with text index", "Cannot run on sharded cluster"],
+    "correct": "B"
+  },
+  {
+    "id": 247,
+    "question": "Which type of consistency model does MongoDB primarily offer by default?",
+    "options": ["Strong everywhere", "Eventual for secondaries, strong for primary reads", "No consistency", "Linearizable for all reads"],
+    "correct": "B"
+  },
+  {
+    "id": 248,
+    "question": "Which operation is MOST expensive in MongoDB?",
+    "options": ["Point read with index", "Full collection scan with aggregation and $group", "Projection of single field", "Simple insert"],
+    "correct": "B"
+  },
+  {
+    "id": 249,
+    "question": "Which is a common cause of 'connection pool exhausted' in Node.js MongoDB driver?",
+    "options": ["Too many indexes", "Not closing cursors/streams or too few poolSize for traffic", "Using lean()", "Using replica sets"],
+    "correct": "B"
+  },
+  {
+    "id": 250,
+    "question": "Which pattern ensures 'at most once' processing for a message consumer?",
+    "options": ["Process then ack with retry", "Ack before processing and avoid retries", "Multiple consumers on same message", "Replay log forever"],
+    "correct": "B"
+  },
+  {
+    "id": 251,
+    "question": "In Node.js, when using process.on('SIGTERM'), a good practice is:",
+    "options": ["Ignore it", "Gracefully stop accepting new requests and close DB connections", "Immediately call process.exit(1)", "Restart process"],
+    "correct": "B"
+  },
+  {
+    "id": 252,
+    "question": "Which is TRUE for Node.js streams in object mode?",
+    "options": ["Only buffers allowed", "Can stream arbitrary JS values (objects)", "Only strings allowed", "Not supported"],
+    "correct": "B"
+  },
+  {
+    "id": 253,
+    "question": "In a Node.js backend, which is a correct approach to configuration management?",
+    "options": ["Hardcode config per environment", "Use environment variables and configuration files with layering", "Use single global JSON only", "Read from package.json only"],
+    "correct": "B"
+  },
+  {
+    "id": 254,
+    "question": "Which is TRUE about BSON vs JSON in MongoDB?",
+    "options": ["JSON supports more types", "BSON supports additional types like Date, Binary, ObjectId", "They are identical", "BSON is only used in shell"],
+    "correct": "B"
+  },
+  {
+    "id": 255,
+    "question": "Which is a benefit of using 'ObjectId' as MongoDB _id?",
+    "options": ["Sequential always", "Contains timestamp and is globally unique", "Not indexable", "Very large size"],
+    "correct": "B"
+  },
+  {
+    "id": 256,
+    "question": "In Node.js APIs, which is the MOST secure way to handle file download paths?",
+    "options": ["Concat user path directly", "Validate whitelist and use path.join with root, prevent path traversal", "Allow '../' segments", "Use eval on path"],
+    "correct": "B"
+  },
+  {
+    "id": 257,
+    "question": "Which MongoDB driver option in Node.js ensures auto-reconnect by default?",
+    "options": ["retryWrites and topology management", "disableAutoReconnect", "No reconnect possible", "journal:true"],
+    "correct": "A"
+  },
+  {
+    "id": 258,
+    "question": "Which is TRUE about 'explain(\"executionStats\")' in MongoDB?",
+    "options": ["Provides only query shape", "Provides details like nReturned, totalKeysExamined, totalDocsExamined", "Drops indexes", "Runs query without stats"],
+    "correct": "B"
+  },
+  {
+    "id": 259,
+    "question": "In GraphQL with Node.js, N+1 query problem happens when:",
+    "options": ["Using a single query", "Resolver issues separate DB queries per item", "Using DataLoader", "Using schema stitching"],
+    "correct": "B"
+  },
+  {
+    "id": 260,
+    "question": "Which tool helps to avoid N+1 problem in Node GraphQL servers?",
+    "options": ["DataLoader", "dotenv", "helmet", "morgan"],
+    "correct": "A"
+  },
+  {
+    "id": 261,
+    "question": "Which is a downside of using 'long-lived' MongoDB cursors from Node.js?",
+    "options": ["Less memory usage", "Can hold locks/resources and impact performance", "Faster reads", "Fewer network calls"],
+    "correct": "B"
+  },
+  {
+    "id": 262,
+    "question": "To guarantee ordering of writes to the same document in MongoDB, it is enough to:",
+    "options": ["Use writeConcern 0", "Send writes sequentially from client", "Rely on primary serializing writes per document", "Write to secondary"],
+    "correct": "C"
+  },
+  {
+    "id": 263,
+    "question": "In Node.js, 'tls termination' usually occurs:",
+    "options": ["In the DB", "At a load balancer or reverse proxy", "In localStorage", "In Redis"],
+    "correct": "B"
+  },
+  {
+    "id": 264,
+    "question": "For handling high cardinality logs and metrics from Node.js services, which is BEST?",
+    "options": ["Write logs to local files only", "Ship structured logs to centralized system (ELK, Loki, etc.)", "Ignore logs", "Use console.log only"],
+    "correct": "B"
+  },
+  {
+    "id": 265,
+    "question": "Which is TRUE about Node.js 'http.Agent'?",
+    "options": ["Creates new TCP connection per request by default", "Manages connection pooling and reuse for HTTP clients", "Used only for servers", "Not configurable"],
+    "correct": "B"
+  },
+  {
+    "id": 266,
+    "question": "In Node.js, to prevent SSRF when fetching URLs provided by user, you should:",
+    "options": ["Allow all hosts", "Validate hostname/IP against allowlist and block internal addresses", "Disable HTTPS", "Use eval"],
+    "correct": "B"
+  },
+  {
+    "id": 267,
+    "question": "Which MongoDB deployment type is recommended for production?",
+    "options": ["Standalone single node", "Replica set with at least 3 members", "Only arbiter", "Config server only"],
+    "correct": "B"
+  },
+  {
+    "id": 268,
+    "question": "Which is TRUE about MongoDB primary step down?",
+    "options": ["No impact on clients", "Clients may experience transient errors and should retry", "Always data loss", "Secondaries stop working"],
+    "correct": "B"
+  },
+  {
+    "id": 269,
+    "question": "In a Node.js + MongoDB transaction, which is a common cause for 'TransientTransactionError'?",
+    "options": ["Unique index", "Replication failover or write conflict", "Using readConcern local", "Using lean()"],
+    "correct": "B"
+  },
+  {
+    "id": 270,
+    "question": "Which is TRUE about 'retryable writes' in MongoDB?",
+    "options": ["Only for inserts", "Certain single-document writes can be retried safely by driver", "All writes are retryable", "Disables writeConcern"],
+    "correct": "B"
+  },
+  {
+    "id": 271,
+    "question": "In a Node.js API, a 'circuit breaker' typically transitions from CLOSED to OPEN when:",
+    "options": ["Success rate is high", "Failure threshold exceeded", "Service is idle", "GC runs"],
+    "correct": "B"
+  },
+  {
+    "id": 272,
+    "question": "Which library can help implement rate limits in Express with Redis?",
+    "options": ["express-rate-limit with Redis store", "helmet", "morgan", "cookie-parser"],
+    "correct": "A"
+  },
+  {
+    "id": 273,
+    "question": "Which is the MOST appropriate HTTP status for 'Too many login attempts'?",
+    "options": ["400", "401", "403", "429"],
     "correct": "D"
   },
   {
-    "id": 90,
-    "question": "Circuit breaker prevents?",
-    "options": ["Repeated failed calls", "Memory leak", "Strong caching", "Slow frontend"],
+    "id": 274,
+    "question": "In MongoDB, which feature lets you watch specific collection changes only?",
+    "options": ["Change streams on collection", "Profiler", "TTL", "Sharding"],
     "correct": "A"
   },
   {
-    "id": 91,
-    "question": "Microservice benefit?",
-    "options": ["Independent deploy", "Scalable", "Fault isolation", "All"],
-    "correct": "D"
-  },
-  {
-    "id": 92,
-    "question": "Queue increases?",
-    "options": ["Async reliability", "Load handling", "Decoupling", "All"],
-    "correct": "D"
-  },
-  {
-    "id": 93,
-    "question": "API versioning example?",
-    "options": ["/api/v1", "/new-api", "/latest", "/vNext"],
+    "id": 275,
+    "question": "In Node.js, which method ensures that unhandled Promise rejections are handled globally?",
+    "options": ["process.on('unhandledRejection', handler)", "console.error", "setTimeout", "fs.readFile"],
     "correct": "A"
   },
   {
-    "id": 94,
-    "question": "Webhook means?",
-    "options": ["Server sends event push", "Client pulls events", "Cache strategy", "Socket wrapper"],
+    "id": 276,
+    "question": "Which is TRUE about using 'eval' in a Node.js backend?",
+    "options": ["Safe with any input", "Dangerous and should be avoided with untrusted input", "Required for JSON parsing", "Recommended for performance"],
+    "correct": "B"
+  },
+  {
+    "id": 277,
+    "question": "For a multi-tenant Node.js + MongoDB SaaS app, which isolation approach is STRONGEST?",
+    "options": ["Single DB and collection, tenantId filter only", "Separate databases or clusters per tenant", "Separate collections only", "Single field for tenant without index"],
+    "correct": "B"
+  },
+  {
+    "id": 278,
+    "question": "In MongoDB, high 'page faults' may indicate:",
+    "options": ["Enough RAM", "Working set larger than available RAM", "No replicas", "Too many indexes used"],
+    "correct": "B"
+  },
+  {
+    "id": 279,
+    "question": "Which is TRUE about Node.js and CPU-bound work?",
+    "options": ["Node is ideal for CPU-bound tasks only", "CPU-bound work blocks event loop and should be offloaded", "CPU-bound work is automatically parallelized", "setTimeout solves CPU load"],
+    "correct": "B"
+  },
+  {
+    "id": 280,
+    "question": "Which is a downside of using 'long-lived WebSocket connections' at massive scale?",
+    "options": ["Less latency", "Increased resource usage per connection and need for careful capacity planning", "No need for load balancing", "No authentication required"],
+    "correct": "B"
+  },
+  {
+    "id": 281,
+    "question": "In a Node.js + MongoDB system, 'idempotent consumer' means:",
+    "options": ["Processes the same message multiple times with same effect", "Never processes messages", "Always crashes", "Processes messages out of order"],
     "correct": "A"
   },
   {
-    "id": 95,
-    "question": "Distributed DB issue?",
-    "options": ["Replication lag", "Network partitions", "Inconsistency", "All"],
-    "correct": "D"
+    "id": 282,
+    "question": "Which Node.js option prints GC and memory-related logs?",
+    "options": ["--inspect", "--trace-gc", "--max-old-space", "--trace-event"],
+    "correct": "B"
   },
   {
-    "id": 96,
-    "question": "CAP theorem: pick two?",
-    "options": ["Consistency, Availability, Partition tolerance", "CPU, RAM, Disk", "Cache, DB, Broker", "Scale, latency, cost"],
+    "id": 283,
+    "question": "Which practice improves security for a Node.js Docker image?",
+    "options": ["Run as root user", "Use slim base image, non-root user, minimal dependencies", "Expose all ports", "Bundle devDependencies"],
+    "correct": "B"
+  },
+  {
+    "id": 284,
+    "question": "Which is TRUE about 'ttlMonitor' in MongoDB?",
+    "options": ["Runs continuously per second", "Runs periodically to remove expired documents", "Creates indexes", "Handles elections"],
+    "correct": "B"
+  },
+  {
+    "id": 285,
+    "question": "In Node.js, which header is used to implement HSTS?",
+    "options": ["Strict-Transport-Security", "X-Frame-Options", "X-Content-Type-Options", "Access-Control-Allow-Origin"],
     "correct": "A"
   },
   {
-    "id": 97,
-    "question": "CDN stores?",
-    "options": ["Static assets", "DB queries", "Server logs", "JWT secret"],
-    "correct": "A"
+    "id": 286,
+    "question": "Which is a potential risk when using 'findOneAndUpdate' without proper filter?",
+    "options": ["No document updated", "Wrong document updated", "Broken index", "Replica set failure"],
+    "correct": "B"
   },
   {
-    "id": 98,
-    "question": "Reverse proxy used for?",
-    "options": ["Security layer", "Load balancing", "SSL termination", "All"],
-    "correct": "D"
+    "id": 287,
+    "question": "In MongoDB, which type of index is efficient for equality and range queries combined?",
+    "options": ["Hashed index only", "Compound B-tree index", "Text index only", "No index"],
+    "correct": "B"
   },
   {
-    "id": 99,
-    "question": "Zero downtime deploy?",
-    "options": ["Rolling update", "Blue/Green", "Canary", "All"],
-    "correct": "D"
+    "id": 288,
+    "question": "Which is TRUE about BSON 'NumberLong' type in MongoDB?",
+    "options": ["Same as 32-bit int", "Used to represent 64-bit integers", "Same as string", "Used for ObjectId"],
+    "correct": "B"
   },
   {
-    "id": 100,
-    "question": "Best practice for large file upload?",
-    "options": ["Stream files", "Load in memory fully", "Use JSON", "Block event loop"],
-    "correct": "A"
+    "id": 289,
+    "question": "In Node.js, 'process.hrtime.bigint()' is used for:",
+    "options": ["Low-resolution timing", "High-resolution time measurement", "Date formatting", "Random generation"],
+    "correct": "B"
+  },
+  {
+    "id": 290,
+    "question": "Which is a common anti-pattern in a Node.js + MongoDB repository layer?",
+    "options": ["Abstracting queries behind functions", "Returning raw driver result and mixing business logic with queries", "Using interfaces", "Using DTOs"],
+    "correct": "B"
+  },
+  {
+    "id": 291,
+    "question": "Which is TRUE about 'Object.freeze(config)' in a Node.js app?",
+    "options": ["Improves conf mutability", "Prevents runtime modification of config object", "Improves GC", "Enables clustering"],
+    "correct": "B"
+  },
+  {
+    "id": 292,
+    "question": "In MongoDB aggregation, which stage limits number of documents passed to following stages?",
+    "options": ["$skip", "$limit", "$group", "$project"],
+    "correct": "B"
+  },
+  {
+    "id": 293,
+    "question": "Which is TRUE about MongoDB's $merge stage?",
+    "options": ["Only logs output", "Can write aggregation results to a collection with upsert/replace", "Deletes collections", "Only works in replica sets"],
+    "correct": "B"
+  },
+  {
+    "id": 294,
+    "question": "In Node.js cluster mode behind a reverse proxy, which header is used to get real client IP?",
+    "options": ["Host", "X-Forwarded-For", "Content-Type", "ETag"],
+    "correct": "B"
+  },
+  {
+    "id": 295,
+    "question": "Which practice helps prevent 'thundering herd' problem on cache miss?",
+    "options": ["No cache", "Single flight / request coalescing per key", "Disable TTL", "Random failures"],
+    "correct": "B"
+  },
+  {
+    "id": 296,
+    "question": "In MongoDB, which metric indicates that an index is being heavily used?",
+    "options": ["Low index hit ratio", "High index hit ratio and low COLLSCAN", "High page faults", "High TTL deletions"],
+    "correct": "B"
+  },
+  {
+    "id": 297,
+    "question": "Which is TRUE about using '$regex' with case-insensitive search on a large collection?",
+    "options": ["Always uses index", "May cause collection scan if not anchored and properly indexed", "Always fast", "Only works on numbers"],
+    "correct": "B"
+  },
+  {
+    "id": 298,
+    "question": "For telemetry and tracing in Node.js microservices, which protocol/standard is commonly used?",
+    "options": ["HTTP/0.9", "OpenTelemetry", "FTP", "SMTP"],
+    "correct": "B"
+  },
+  {
+    "id": 299,
+    "question": "In a Node.js + MongoDB system, which metric is MOST important to watch for DB saturation?",
+    "options": ["Number of files", "Connection count, operation latency, queue length", "CPU of clients only", "Size of node_modules"],
+    "correct": "B"
+  },
+  {
+    "id": 300,
+    "question": "Which is a strong indicator that your MongoDB query is not using an index efficiently?",
+    "options": ["totalDocsExamined ≈ nReturned", "totalDocsExamined >> nReturned in explain plan", "Low latency", "Small collection size"],
+    "correct": "B"
   }
 ]
