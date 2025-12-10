@@ -1,177 +1,87 @@
 [
   {
     "id": 1,
-    "userName": "test",
-    "email": "test123@gmail.com",
-    "correct": 0,
-    "total": 250,
-    "percentage": 0,
-    "submittedAt": "2025-12-09T05:08:41.049Z",
-    "warnings": [
-      {
-        "count": 1,
-        "msg": "DevTools Shortcut",
-        "code": "CTRL_SHIFT_I",
-        "at": "2025-12-09T05:08:34.966Z"
-      },
-      {
-        "count": 2,
-        "msg": "Window focus lost",
-        "code": "BLUR",
-        "at": "2025-12-09T05:08:36.658Z"
-      },
-      {
-        "count": 3,
-        "msg": "DevTools Shortcut",
-        "code": "CTRL_SHIFT_I",
-        "at": "2025-12-09T05:08:39.919Z"
-      }
-    ],
-    "answers": []
-  },
-  {
-    "id": 2,
-    "userName": "test",
-    "email": "test@gmail.com",
-    "correct": 0,
-    "total": 250,
-    "percentage": 0,
-    "submittedAt": "2025-12-09T05:09:15.205Z",
-    "warnings": [
-      {
-        "count": 1,
-        "msg": "Window focus lost",
-        "code": "BLUR",
-        "at": "2025-12-09T05:07:56.256Z"
-      },
-      {
-        "count": 2,
-        "msg": "Window focus lost",
-        "code": "BLUR",
-        "at": "2025-12-09T05:09:10.761Z"
-      },
-      {
-        "count": 3,
-        "msg": "Window focus lost",
-        "code": "BLUR",
-        "at": "2025-12-09T05:09:13.590Z"
-      }
-    ],
-    "answers": []
-  },
-  {
-    "id": 3,
-    "userName": "t",
-    "email": "test1@gmail.com",
-    "correct": 0,
-    "total": 250,
-    "percentage": 0,
-    "submittedAt": "2025-12-09T05:11:27.561Z",
-    "warnings": [],
-    "answers": []
-  },
-  {
-    "id": 4,
-    "userName": "test",
-    "email": "test!@gmail.com",
-    "correct": 0,
-    "total": 250,
-    "percentage": 0,
-    "submittedAt": "2025-12-09T05:12:06.476Z",
-    "warnings": [],
-    "answers": []
-  },
-  {
-    "id": 5,
     "userName": "m",
-    "email": "Mustakim@gmail.com",
-    "correct": 0,
-    "total": 350,
-    "percentage": 0,
-    "submittedAt": "2025-12-09T05:37:31.796Z",
-    "warnings": [
-      {
-        "count": 1,
-        "msg": "Window lost focus",
-        "code": "WINDOW_BLUR",
-        "at": "2025-12-09T05:37:13.308Z"
-      },
-      {
-        "count": 2,
-        "msg": "Window lost focus",
-        "code": "WINDOW_BLUR",
-        "at": "2025-12-09T05:37:15.889Z"
-      },
-      {
-        "count": 3,
-        "msg": "Window lost focus",
-        "code": "WINDOW_BLUR",
-        "at": "2025-12-09T05:37:31.752Z"
-      }
-    ],
-    "answers": []
-  },
-  {
-    "id": 6,
-    "userName": "m",
-    "email": "m@gmail.com",
-    "correct": 0,
-    "total": 350,
-    "percentage": 0,
-    "submittedAt": "2025-12-09T08:39:53.903Z",
-    "warnings": [
-      {
-        "count": 1,
-        "msg": "Window lost focus",
-        "code": "WINDOW_BLUR",
-        "at": "2025-12-09T08:39:41.069Z"
-      },
-      {
-        "count": 2,
-        "msg": "Window lost focus",
-        "code": "WINDOW_BLUR",
-        "at": "2025-12-09T08:39:47.647Z"
-      },
-      {
-        "count": 3,
-        "msg": "Window lost focus",
-        "code": "WINDOW_BLUR",
-        "at": "2025-12-09T08:39:52.196Z"
-      }
-    ],
-    "answers": []
-  },
-  {
-    "id": 7,
-    "userName": "m",
-    "email": "m1@gmail.com",
-    "correct": 0,
-    "total": 350,
-    "percentage": 0,
-    "submittedAt": "2025-12-09T08:40:25.239Z",
+    "email": "m654@gmail.com",
+    "correct": 2,
+    "total": 200,
+    "percentage": 1,
+    "submittedAt": "2025-12-10T08:55:40.811Z",
     "warnings": [],
     "answers": [
       {
-        "questionId": 319,
-        "question": "What avoids log flooding in distributed tracing?",
+        "questionId": 129,
+        "question": "Which Node.js API is best for CPU heavy parallel tasks?",
         "options": [
-          "Sample rate limiting",
-          "Increase logs to DEBUG",
-          "Disable tracing",
-          "Flush logs every ms"
+          "EventEmitter",
+          "Worker Threads",
+          "Streams",
+          "microtasks"
         ],
         "selectedOption": "B",
+        "correctOption": "B",
+        "isCorrect": true
+      },
+      {
+        "questionId": 191,
+        "question": "Which ensures consistency across distributed cluster?",
+        "options": [
+          "sticky requests",
+          "writeConcern majority",
+          "read local only",
+          "null safety"
+        ],
+        "selectedOption": "C",
+        "correctOption": "B",
+        "isCorrect": false
+      },
+      {
+        "questionId": 159,
+        "question": "Which aggregation stage enables parallel sub pipelines?",
+        "options": [
+          "$facet",
+          "$group",
+          "$sort",
+          "$unset"
+        ],
+        "selectedOption": "C",
         "correctOption": "A",
         "isCorrect": false
       },
       {
-        "questionId": 161,
-        "question": "Which write method is preferred to avoid race conditions when upserting?",
+        "questionId": 137,
+        "question": "Which middleware restricts rate of user requests?",
         "options": [
-          "insert()",
-          "updateMany()",
-          "updateOne() with upsert true and query filter",
-          "save() without filter"
+          "morgan",
+          "express-rate-limit",
+          "cookie-parser",
+          "compression"
+        ],
+        "selectedOption": "B",
+        "correctOption": "B",
+        "isCorrect": true
+      },
+      {
+        "questionId": 37,
+        "question": "In MongoDB, which feature lets you react to real-time changes in a collection directly from a Node.js backend?",
+        "options": [
+          "TTL indexes",
+          "Capped collections",
+          "Change streams",
+          "Profiling"
+        ],
+        "selectedOption": "B",
+        "correctOption": "C",
+        "isCorrect": false
+      },
+      {
+        "questionId": 141,
+        "question": "Which Express function registers 404 handler?",
+        "options": [
+          "app.drop()",
+          "app.catch()",
+          "app.use((req,res)=>{})",
+          "app.listen(404)"
         ],
         "selectedOption": "B",
         "correctOption": "C",
@@ -180,187 +90,559 @@
     ]
   },
   {
-    "id": 8,
+    "id": 2,
     "userName": "test",
-    "email": "test@gmail.in",
+    "email": "m1234r3tr@gmail.in",
     "correct": 0,
-    "total": 350,
+    "total": 200,
     "percentage": 0,
-    "submittedAt": "2025-12-09T09:43:05.794Z",
+    "submittedAt": "2025-12-10T08:57:40.365Z",
     "warnings": [
       {
         "count": 1,
-        "msg": "Window lost focus",
-        "code": "WINDOW_BLUR",
-        "at": "2025-12-09T09:42:58.730Z"
+        "msg": "Window focus lost / Possible screenshot attempt",
+        "code": "FOCUS_LOST",
+        "at": "2025-12-10T08:56:39.908Z"
       },
       {
         "count": 2,
-        "msg": "Tab Switch detected",
-        "code": "TAB_SWITCH",
-        "at": "2025-12-09T09:43:02.665Z"
+        "msg": "Window focus lost / Possible screenshot attempt",
+        "code": "FOCUS_LOST",
+        "at": "2025-12-10T08:56:43.090Z"
       },
       {
         "count": 3,
-        "msg": "Tab Switch detected",
-        "code": "TAB_SWITCH",
-        "at": "2025-12-09T09:43:05.767Z"
+        "msg": "Window lost focus",
+        "code": "WINDOW_BLUR",
+        "at": "2025-12-10T08:57:38.821Z"
       }
     ],
     "answers": []
   },
   {
-    "id": 9,
+    "id": 3,
+    "userName": "m",
+    "email": "m_123@gmail.com",
+    "correct": 0,
+    "total": 200,
+    "percentage": 0,
+    "submittedAt": "2025-12-10T09:01:02.248Z",
+    "warnings": [
+      {
+        "count": 1,
+        "msg": "Window focus lost / Possible screenshot attempt",
+        "code": "FOCUS_LOST",
+        "at": "2025-12-10T09:00:35.554Z"
+      },
+      {
+        "count": 2,
+        "msg": "Window lost focus",
+        "code": "WINDOW_BLUR",
+        "at": "2025-12-10T09:00:37.102Z"
+      },
+      {
+        "count": 3,
+        "msg": "Tab Switch detected",
+        "code": "TAB_SWITCH",
+        "at": "2025-12-10T09:01:01.143Z"
+      }
+    ],
+    "answers": []
+  },
+  {
+    "id": 4,
     "userName": "test",
-    "email": "Test@gmail.com",
-    "correct": 8,
-    "total": 350,
-    "percentage": 2.29,
-    "submittedAt": "2025-12-09T09:46:23.705Z",
+    "email": "t@gmail.com",
+    "correct": 0,
+    "total": 200,
+    "percentage": 0,
+    "submittedAt": "2025-12-10T09:01:14.709Z",
     "warnings": [],
     "answers": [
       {
-        "questionId": 330,
-        "question": "What is the maximum BSON document size in MongoDB?",
+        "questionId": 189,
+        "question": "Which aggregation operation fans out pipelines?",
         "options": [
-          "1MB",
-          "10MB",
-          "16MB",
-          "1GB"
+          "$facet",
+          "$group",
+          "$sort",
+          "$unwind"
+        ],
+        "selectedOption": "C",
+        "correctOption": "A",
+        "isCorrect": false
+      },
+      {
+        "questionId": 77,
+        "question": "In Node.js, which mechanism allows you to offload CPU-bound work while sharing memory with the main thread?",
+        "options": [
+          "child_process.fork()",
+          "cluster module",
+          "worker_threads",
+          "setImmediate()"
+        ],
+        "selectedOption": "B",
+        "correctOption": "C",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "userName": "test",
+    "email": "te@gmail.com",
+    "correct": 1,
+    "total": 200,
+    "percentage": 0.5,
+    "submittedAt": "2025-12-10T09:03:35.588Z",
+    "warnings": [],
+    "answers": [
+      {
+        "questionId": 95,
+        "question": "In MongoDB, which feature is specifically designed for storing files larger than 16MB efficiently?",
+        "options": [
+          "Capped collections",
+          "GridFS",
+          "Change streams",
+          "Text indexes"
+        ],
+        "selectedOption": "C",
+        "correctOption": "B",
+        "isCorrect": false
+      },
+      {
+        "questionId": 20,
+        "question": "Which MongoDB query operator is used to match documents where a field value is within an array of possible values?",
+        "options": [
+          "$gt",
+          "$regex",
+          "$in",
+          "$and"
         ],
         "selectedOption": "B",
         "correctOption": "C",
         "isCorrect": false
       },
       {
-        "questionId": 299,
-        "question": "In a Node.js + MongoDB system, which metric is MOST important to watch for DB saturation?",
+        "questionId": 57,
+        "question": "In MongoDB aggregation, which stage allows running multiple sub-pipelines on the same input in parallel?",
         "options": [
-          "Number of files",
-          "Connection count, operation latency, queue length",
-          "CPU of clients only",
-          "Size of node_modules"
-        ],
-        "selectedOption": "B",
-        "correctOption": "B",
-        "isCorrect": true
-      },
-      {
-        "questionId": 344,
-        "question": "What mitigates cache stampede?",
-        "options": [
-          "Random TTL + lock + stale-while-revalidate",
-          "Disable cache",
-          "Push load to DB",
-          "Restart server"
-        ],
-        "selectedOption": "B",
-        "correctOption": "A",
-        "isCorrect": false
-      },
-      {
-        "questionId": 399,
-        "question": "API idempotency required for?",
-        "options": [
-          "Safe retry without duplicate effects",
-          "Always unique response",
-          "Cache removal",
-          "Rendering"
-        ],
-        "selectedOption": "B",
-        "correctOption": "A",
-        "isCorrect": false
-      },
-      {
-        "questionId": 294,
-        "question": "In Node.js cluster mode behind a reverse proxy, which header is used to get real client IP?",
-        "options": [
-          "Host",
-          "X-Forwarded-For",
-          "Content-Type",
-          "ETag"
-        ],
-        "selectedOption": "B",
-        "correctOption": "B",
-        "isCorrect": true
-      },
-      {
-        "questionId": 216,
-        "question": "When using $lookup across large collections, which is a key performance recommendation?",
-        "options": [
-          "Avoid indexes",
-          "Ensure appropriate indexes on join fields",
-          "Always $unwind first",
-          "Always $group first"
-        ],
-        "selectedOption": "B",
-        "correctOption": "B",
-        "isCorrect": true
-      },
-      {
-        "questionId": 207,
-        "question": "Which is TRUE about Node.js async stack traces?",
-        "options": [
-          "Always show full async chain",
-          "May lose async context unless using async_hooks or --async-stack-traces",
-          "Never show error origin",
-          "Show only native code"
-        ],
-        "selectedOption": "B",
-        "correctOption": "B",
-        "isCorrect": true
-      },
-      {
-        "questionId": 131,
-        "question": "Which is the BEST practice for pagination in REST APIs?",
-        "options": [
-          "Return all records",
-          "page & limit query params",
-          "Offset only without limit",
-          "Random subset"
-        ],
-        "selectedOption": "B",
-        "correctOption": "B",
-        "isCorrect": true
-      },
-      {
-        "questionId": 179,
-        "question": "Which is a likely cause of 'MongoNetworkError: failed to connect to server' in production?",
-        "options": [
-          "Missing index",
-          "Wrong connection string or firewall rules",
-          "Too many documents",
-          "Slow aggregation"
-        ],
-        "selectedOption": "B",
-        "correctOption": "B",
-        "isCorrect": true
-      },
-      {
-        "questionId": 39,
-        "question": "Which protects headers security?",
-        "options": [
-          "helmet",
-          "bcrypt",
-          "jwt",
-          "pm2"
+          "$group",
+          "$facet",
+          "$sort",
+          "$limit"
         ],
         "selectedOption": "A",
-        "correctOption": "A",
-        "isCorrect": true
+        "correctOption": "B",
+        "isCorrect": false
       },
       {
-        "questionId": 231,
-        "question": "In Node.js, how can you detect event loop lag?",
+        "questionId": 177,
+        "question": "Which Express field receives uploaded file?",
         "options": [
-          "Using setTimeout only",
-          "Measure delay of timers or use perf_hooks.monitorEventLoopDelay",
-          "Using fs.readFile",
-          "Using dns.lookup"
+          "helmet",
+          "multer",
+          "cookie-parser",
+          "cluster"
+        ],
+        "selectedOption": "C",
+        "correctOption": "B",
+        "isCorrect": false
+      },
+      {
+        "questionId": 51,
+        "question": "In Node.js, which interface is responsible for managing connection pooling and reuse for outgoing HTTP requests?",
+        "options": [
+          "http.Server",
+          "http.Agent",
+          "tls.Server",
+          "net.Socket"
+        ],
+        "selectedOption": "B",
+        "correctOption": "D",
+        "isCorrect": false
+      },
+      {
+        "questionId": 185,
+        "question": "Which operator truncates array content?",
+        "options": [
+          "$slice",
+          "$map",
+          "$pull",
+          "$gt"
+        ],
+        "selectedOption": "B",
+        "correctOption": "A",
+        "isCorrect": false
+      },
+      {
+        "questionId": 53,
+        "question": "In MongoDB, which feature is used to listen to changes across the OPLOG for a replica set?",
+        "options": [
+          "TTL monitor",
+          "Profiler",
+          "Change streams",
+          "Balancers only"
+        ],
+        "selectedOption": "B",
+        "correctOption": "C",
+        "isCorrect": false
+      },
+      {
+        "questionId": 187,
+        "question": "Which ensures retry safe API calls?",
+        "options": [
+          "non-idempotent POST",
+          "idempotent PUT/DELETE",
+          "GET caching only",
+          "random call"
         ],
         "selectedOption": "B",
         "correctOption": "B",
         "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "userName": "test",
+    "email": "test123123@gmail.com",
+    "correct": 0,
+    "total": 200,
+    "percentage": 0,
+    "submittedAt": "2025-12-10T09:10:38.291Z",
+    "warnings": [
+      {
+        "count": 1,
+        "msg": "Window focus lost",
+        "code": "WINDOW_BLUR",
+        "at": "2025-12-10T09:09:01.169Z"
+      },
+      {
+        "count": 2,
+        "msg": "Window focus lost",
+        "code": "WINDOW_BLUR",
+        "at": "2025-12-10T09:09:07.134Z"
+      },
+      {
+        "count": 3,
+        "msg": "Window focus lost",
+        "code": "WINDOW_BLUR",
+        "at": "2025-12-10T09:10:37.435Z"
+      }
+    ],
+    "answers": []
+  },
+  {
+    "id": 7,
+    "userName": "test",
+    "email": "te123@gmail.com",
+    "correct": 0,
+    "total": 200,
+    "percentage": 0,
+    "submittedAt": "2025-12-10T09:11:58.479Z",
+    "warnings": [
+      {
+        "count": 1,
+        "msg": "Window focus lost",
+        "code": "WINDOW_BLUR",
+        "at": "2025-12-10T09:11:09.366Z"
+      },
+      {
+        "count": 2,
+        "msg": "Window focus lost",
+        "code": "WINDOW_BLUR",
+        "at": "2025-12-10T09:11:38.095Z"
+      },
+      {
+        "count": 3,
+        "msg": "Window focus lost",
+        "code": "WINDOW_BLUR",
+        "at": "2025-12-10T09:11:58.336Z"
+      }
+    ],
+    "answers": []
+  },
+  {
+    "id": 8,
+    "userName": "t",
+    "email": "t1@gmail.com",
+    "correct": 0,
+    "total": 200,
+    "percentage": 0,
+    "submittedAt": "2025-12-10T09:17:01.600Z",
+    "warnings": [
+      {
+        "count": 1,
+        "msg": "Window focus lost",
+        "code": "WINDOW_BLUR",
+        "at": "2025-12-10T09:14:53.754Z"
+      }
+    ],
+    "answers": [
+      {
+        "questionId": 5,
+        "question": "What is the default port used by MongoDB if not overridden?",
+        "options": [
+          "80",
+          "443",
+          "3306",
+          "27017"
+        ],
+        "selectedOption": "C",
+        "correctOption": "D",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "userName": "test",
+    "email": "test121212@gmail.com",
+    "correct": 0,
+    "total": 200,
+    "percentage": 0,
+    "submittedAt": "2025-12-10T09:22:26.792Z",
+    "warnings": [
+      {
+        "count": 1,
+        "msg": "Tab Switch detected",
+        "code": "TAB_CHANGE",
+        "at": "2025-12-10T09:17:22.440Z"
+      },
+      {
+        "count": 2,
+        "msg": "Tab Switch detected",
+        "code": "TAB_SWITCH",
+        "at": "2025-12-10T09:17:26.343Z"
+      }
+    ],
+    "answers": [
+      {
+        "questionId": 171,
+        "question": "Which ensures eventual consistency reads from secondary?",
+        "options": [
+          "readPreference secondary",
+          "primary only",
+          "nearest only",
+          "none applicable"
+        ],
+        "selectedOption": "B",
+        "correctOption": "A",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "userName": "t",
+    "email": "test2121@gmail.com",
+    "correct": 4,
+    "total": 200,
+    "percentage": 2,
+    "submittedAt": "2025-12-10T09:23:33.025Z",
+    "warnings": [
+      {
+        "count": 1,
+        "msg": "Window focus lost",
+        "code": "WINDOW_BLUR",
+        "at": "2025-12-10T09:23:03.771Z"
+      },
+      {
+        "count": 2,
+        "msg": "Window focus lost",
+        "code": "WINDOW_BLUR",
+        "at": "2025-12-10T09:23:05.975Z"
+      },
+      {
+        "count": 3,
+        "msg": "Blocked Shortcut CMD+V",
+        "code": "SHORTCUT_V",
+        "at": "2025-12-10T09:23:31.021Z"
+      }
+    ],
+    "answers": [
+      {
+        "questionId": 114,
+        "question": "Which MongoDB stage flattens nested arrays for aggregation?",
+        "options": [
+          "$unwind",
+          "$group",
+          "$sort",
+          "$sample"
+        ],
+        "selectedOption": "C",
+        "correctOption": "A",
+        "isCorrect": false
+      },
+      {
+        "questionId": 186,
+        "question": "Which Express middleware must be last?",
+        "options": [
+          "parser",
+          "router",
+          "error handler",
+          "helmet"
+        ],
+        "selectedOption": "B",
+        "correctOption": "C",
+        "isCorrect": false
+      },
+      {
+        "questionId": 128,
+        "question": "Which command views installed npm packages list?",
+        "options": [
+          "npm tree",
+          "npm show",
+          "npm list",
+          "npm graph"
+        ],
+        "selectedOption": "B",
+        "correctOption": "C",
+        "isCorrect": false
+      },
+      {
+        "questionId": 109,
+        "question": "Which Node.js API schedules a callback after current event loop phase?",
+        "options": [
+          "setTimeout(0)",
+          "process.nextTick()",
+          "queueMicrotask()",
+          "setImmediate()"
+        ],
+        "selectedOption": "C",
+        "correctOption": "D",
+        "isCorrect": false
+      },
+      {
+        "questionId": 61,
+        "question": "In MongoDB, which aggregation stage is BEST suited for bucketing documents into numeric ranges like [0–10), [10–20), etc.?",
+        "options": [
+          "$group",
+          "$bucket",
+          "$redact",
+          "$lookup"
+        ],
+        "selectedOption": "C",
+        "correctOption": "C",
+        "isCorrect": true
+      },
+      {
+        "questionId": 183,
+        "question": "Which avoids heavy request blocking?",
+        "options": [
+          "sync crypto",
+          "worker threads",
+          "single loop",
+          "timeout queue"
+        ],
+        "selectedOption": "C",
+        "correctOption": "B",
+        "isCorrect": false
+      },
+      {
+        "questionId": 73,
+        "question": "In a Node.js backend, which is a GOOD reason to use GraphQL instead of pure REST with MongoDB?",
+        "options": [
+          "You want only simple CRUD",
+          "You need strongly typed SQL joins",
+          "You want flexible queries that avoid over-fetching/under-fetching",
+          "You want to automatically shard MongoDB"
+        ],
+        "selectedOption": "B",
+        "correctOption": "C",
+        "isCorrect": false
+      },
+      {
+        "questionId": 125,
+        "question": "Which read concern ensures reading committed data from majority?",
+        "options": [
+          "available",
+          "local",
+          "majority",
+          "linearizable"
+        ],
+        "selectedOption": "C",
+        "correctOption": "C",
+        "isCorrect": true
+      },
+      {
+        "questionId": 151,
+        "question": "Which Node.js method schedules microtasks synchronously?",
+        "options": [
+          "setImmediate",
+          "process.nextTick",
+          "setTimeout",
+          "delayTask"
+        ],
+        "selectedOption": "A",
+        "correctOption": "B",
+        "isCorrect": false
+      },
+      {
+        "questionId": 136,
+        "question": "Which MongoDB type stores binary large objects like images?",
+        "options": [
+          "ObjectId",
+          "Binary",
+          "Decimal128",
+          "MinKey"
+        ],
+        "selectedOption": "B",
+        "correctOption": "B",
+        "isCorrect": true
+      },
+      {
+        "questionId": 5,
+        "question": "What is the default port used by MongoDB if not overridden?",
+        "options": [
+          "80",
+          "443",
+          "3306",
+          "27017"
+        ],
+        "selectedOption": "D",
+        "correctOption": "D",
+        "isCorrect": true
+      },
+      {
+        "questionId": 149,
+        "question": "Which stream method temporarily stops with backpressure?",
+        "options": [
+          "stop()",
+          "block()",
+          "pause()",
+          "freeze()"
+        ],
+        "selectedOption": "A",
+        "correctOption": "C",
+        "isCorrect": false
+      },
+      {
+        "questionId": 91,
+        "question": "In MongoDB, which metric from an explain plan STRONGLY indicates that your query is not using indexes efficiently?",
+        "options": [
+          "nReturned is small",
+          "totalDocsExamined is close to total indexed keys",
+          "totalDocsExamined is much larger than nReturned (COLLSCAN)",
+          "executionTimeMillis is very low"
+        ],
+        "selectedOption": "D",
+        "correctOption": "C",
+        "isCorrect": false
+      },
+      {
+        "questionId": 187,
+        "question": "Which ensures retry safe API calls?",
+        "options": [
+          "non-idempotent POST",
+          "idempotent PUT/DELETE",
+          "GET caching only",
+          "random call"
+        ],
+        "selectedOption": "A",
+        "correctOption": "B",
+        "isCorrect": false
       }
     ]
   }

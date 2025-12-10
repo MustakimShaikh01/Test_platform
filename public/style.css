@@ -1,14 +1,16 @@
-
+/* ==================== GLOBAL RESET ==================== */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   background: #f5f7fb;
   color: #222;
 }
@@ -20,19 +22,23 @@ body {
   user-select: none;
 }
 
+/* Main card container */
 .container {
   max-width: 900px;
   margin: 2rem auto;
   padding: 1.5rem;
   background: #ffffff;
   border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin-top: 0;
 }
 
+/* Generic field */
 .field {
   margin-bottom: 1rem;
   display: flex;
@@ -40,20 +46,32 @@ h1, h2, h3 {
   gap: 0.3rem;
 }
 
-input, textarea, button {
+input,
+textarea,
+button {
   font: inherit;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 0.5rem 0.6rem;
   border-radius: 0.5rem;
   border: 1px solid #ccc;
+  background: #fff;
+  color: #111827;
 }
 
 textarea {
   min-height: 70px;
 }
 
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* Buttons */
 .primary-btn,
 .secondary-btn {
   padding: 0.6rem 1.2rem;
@@ -61,6 +79,8 @@ textarea {
   border: none;
   cursor: pointer;
   margin-right: 0.5rem;
+  font-weight: 500;
+  transition: background 0.15s ease, transform 0.12s ease;
 }
 
 .primary-btn {
@@ -68,15 +88,26 @@ textarea {
   color: white;
 }
 
+.primary-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
 .secondary-btn {
   background: #e5e7eb;
   color: #111827;
+}
+
+.secondary-btn:hover {
+  background: #d1d5db;
+  transform: translateY(-1px);
 }
 
 .primary-btn:disabled,
 .secondary-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  transform: none;
 }
 
 .required {
@@ -93,7 +124,8 @@ textarea {
   color: #4b5563;
 }
 
-/* Exam page */
+/* ==================== EXAM PAGE ==================== */
+
 .exam-header {
   display: flex;
   justify-content: space-between;
@@ -110,10 +142,12 @@ textarea {
 
 #timer {
   font-weight: 600;
+  color: #16a34a;
 }
 
 #warnings {
   color: #b91c1c;
+  font-weight: 600;
 }
 
 .webcam-section {
@@ -121,6 +155,7 @@ textarea {
   border-radius: 0.75rem;
   padding: 0.75rem;
   margin-bottom: 1rem;
+  background: #f9fafb;
 }
 
 #webcamVideo {
@@ -130,10 +165,11 @@ textarea {
   background: #111827;
 }
 
+/* Generic overlay (for any blocking UI) */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -152,12 +188,14 @@ textarea {
   display: none !important;
 }
 
+/* Question text */
 .exam-section #questionText {
   font-size: 1.1rem;
   margin-bottom: 1rem;
   font-weight: 500;
 }
 
+/* Options list */
 #options {
   display: flex;
   flex-direction: column;
@@ -171,23 +209,34 @@ textarea {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  background: #f9fafb;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.option-item:hover {
+  background: #eef2ff;
+  border-color: #6366f1;
 }
 
 .option-item input[type="radio"] {
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .exam-controls {
   margin-top: 1rem;
 }
 
+/* Tables (Admin Questions / Results) */
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #e5e7eb;
   padding: 0.4rem 0.5rem;
   vertical-align: top;
@@ -195,6 +244,7 @@ th, td {
 
 th {
   background: #f3f4f6;
+  font-weight: 600;
 }
 
 .admin-top-bar {
@@ -203,9 +253,67 @@ th {
   align-items: center;
 }
 
+/* ==================== ANTI-CHEAT VISUAL STATES ==================== */
+
+/* When window loses focus / devtools width detection */
+.exam-blur {
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+/* Screenshot blur mode – "75% blur" style (strong, but shapes still visible) */
+.screenshot-blur {
+  filter: blur(16px) brightness(0.4); /* visually ~75% obscured */
+  transition: filter 0.3s ease;
+}
+
+/* ==================== WATERMARK (NAME + EMAIL) ==================== */
+
+.watermark-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+  padding: 2rem;
+  opacity: 0.12; /* subtle but visible in screenshots */
+}
+
+.watermark-overlay span {
+  font-size: 0.9rem;
+  color: #111827;
+  transform: rotate(-25deg);
+  margin: 0.5rem;
+  white-space: nowrap;
+}
+
+/* slow drift to make it harder for static cropping */
+@keyframes watermarkDrift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-40px, -40px, 0);
+  }
+}
+
+.watermark-overlay {
+  animation: watermarkDrift 28s linear infinite alternate;
+}
+
+/* ==================== MOBILE ==================== */
+
 @media (max-width: 600px) {
   .exam-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .container {
+    margin: 1rem;
+    padding: 1rem;
   }
 }

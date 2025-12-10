@@ -1,17 +1,18 @@
-/* ==================== main.js (FINAL ADVANCED) ==================== */
-/* Anti-cheat handlers — Block copy/paste/devtools/screenshots/tab switch etc. */
+/* ==================== main.js (FINAL ANTI-CHEAT + WATERMARK) ==================== */
+/* Anti-cheat: copy/paste/devtools/multi-tab/screenshot/snipping/print/recording (best-effort) */
 
 (function setupGlobalGuards() {
-
-  /* ---------- Utility: Warning trigger ---------- */
+  /* ---------- Utility: Warning Trigger (only on exam page) ---------- */
   function triggerExamWarning(reason, code) {
-    const page = document.body?.dataset?.page;
-    if (page === "exam" && typeof window.examAddWarning === "function") {
+    const examPage = document.body?.dataset?.page === "exam";
+    if (examPage && typeof window.examAddWarning === "function") {
       window.examAddWarning(reason, code);
     }
   }
 
-  /* ---------- Block Copy/Cut/Paste ---------- */
+  /* ===========================================================
+        BLOCK COPY - PASTE - CUT - RIGHT CLICK
+  =========================================================== */
   ["copy", "cut", "paste"].forEach((evt) => {
     document.addEventListener(evt, (e) => {
       e.preventDefault();
@@ -19,83 +20,176 @@
     });
   });
 
-  /* ---------- Block Right Click ---------- */
   document.addEventListener("contextmenu", (e) => {
     e.preventDefault();
-    triggerExamWarning("Right click blocked", "CONTEXT_MENU");
+    triggerExamWarning("Right Click Blocked", "CONTEXT_MENU");
   });
 
-  /* ---------- Block DevTools Shortcuts ---------- */
-  document.addEventListener("keydown", (e) => {
-    const k = e.key.toLowerCase();
+  /* ===========================================================
+        Screenshot / Blur helper
+  =========================================================== */
+  function blockScreenshot() {
+    // Add body blur (75% style) – also affects live view & screenshot
+    document.body.classList.add("screenshot-blur");
 
+    // Black overlay with backdrop blur
+    const overlay = document.createElement("div");
+    overlay.style = `
+      position:fixed;inset:0;
+      background:rgba(0,0,0,0.95);
+      backdrop-filter:blur(24px);
+      z-index:99999999;
+      pointer-events:none;
+      opacity:1;
+      transition:opacity .7s ease-out;
+    `;
+    document.body.appendChild(overlay);
+
+    // Fade out + remove
+    setTimeout(() => {
+      overlay.style.opacity = "0";
+    }, 500);
+
+    setTimeout(() => {
+      overlay.remove();
+      document.body.classList.remove("screenshot-blur");
+    }, 1500);
+  }
+
+  /* ===========================================================
+        BLOCK DEVTOOLS + SHORTCUT + PRINTSCREEN + SNIPPING
+  =========================================================== */
+  document.addEventListener("keydown", (e) => {
+    const k = (e.key || "").toLowerCase();
+
+    /* F12 Devtools */
     if (e.key === "F12") {
       e.preventDefault();
-      triggerExamWarning("Developer Tools Attempt", "F12");
+      blockScreenshot();
+      triggerExamWarning("DevTools Attempt", "F12");
       return;
     }
 
+    /* Ctrl / Cmd restricted keys */
     if (e.ctrlKey || e.metaKey) {
-      const block = ["c", "v", "x", "s", "u", "p"]; // add more if needed
-      if (block.includes(k)) {
+      const blocked = ["c", "v", "x", "s", "u", "p", "a", "i"];
+      if (blocked.includes(k)) {
         e.preventDefault();
-        triggerExamWarning(`Blocked Ctrl+${k.toUpperCase()}`, `CTRL_${k.toUpperCase()}`);
+        triggerExamWarning(
+          `Blocked Shortcut ${(e.metaKey ? "CMD" : "CTRL") + "+" + k.toUpperCase()}`,
+          `SHORTCUT_${k.toUpperCase()}`
+        );
       }
-
       if (e.shiftKey && k === "i") {
         e.preventDefault();
-        triggerExamWarning("DevTools Shortcut", "CTRL_SHIFT_I");
+        blockScreenshot();
+        triggerExamWarning("DevTools (Ctrl/Cmd+Shift+I)", "CTRL_SHIFT_I");
       }
     }
 
-    /* ---------- Detect PrintScreen Screenshot Key ---------- */
+    /* ALT+TAB Switch (cannot block, but we can warn) */
+    if (e.altKey && k === "tab") {
+      triggerExamWarning("App Switch (Alt+Tab)", "ALT_TAB");
+    }
+
+    /* Windows PrintScreen key (PrtSc) */
     if (e.key === "PrintScreen") {
-      triggerExamWarning("Screenshot Attempt Detected", "SCREENSHOT");
-      document.body.style.filter = "blur(10px)";
-      setTimeout(() => document.body.style.filter = "none", 2000);
+      e.preventDefault();
+      blockScreenshot();
+      triggerExamWarning("Screenshot Attempt Detected (PrintScreen)", "SCREENSHOT");
     }
   });
 
-  /* ---------- Blur content when window loses focus ---------- */
+  /* ============================ MAC Screenshot Prevention ============================ */
+  // CMD+Shift+3 / 4 / 5 → different screenshot modes on macOS
+  window.addEventListener("keydown", (e) => {
+    const k = e.key;
+    if (e.metaKey && e.shiftKey && (k === "3" || k === "4" || k === "5")) {
+      // This cannot fully stop macOS screenshot, but usually intercepts before capture.
+      e.preventDefault();
+      blockScreenshot();
+      triggerExamWarning("Mac Screenshot Attempt Blocked", "MAC_SCREENSHOT");
+    }
+  });
+
+  /* Block Windows Snipping Tool (Win+Shift+S best-effort) */
+  window.addEventListener("keyup", (e) => {
+    if (
+      e.shiftKey &&
+      e.key.toLowerCase() === "s" &&
+      (e.ctrlKey || e.metaKey || e.altKey)
+    ) {
+      blockScreenshot();
+      triggerExamWarning("Snipping Tool / Screen Capture Attempt", "SNIP_TOOL");
+    }
+  });
+
+  /* ===========================================================
+        TAB / Window focus monitor
+  =========================================================== */
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      triggerExamWarning("Tab Switch detected", "TAB_CHANGE");
+      blockScreenshot();
+    }
+  });
+
   window.addEventListener("blur", () => {
     document.body.classList.add("exam-blur");
-    triggerExamWarning("Window focus lost / Possible screenshot attempt", "FOCUS_LOST");
+    triggerExamWarning("Window focus lost", "WINDOW_BLUR");
+    blockScreenshot();
   });
 
   window.addEventListener("focus", () => {
     document.body.classList.remove("exam-blur");
   });
 
-  /* ---------- Block Print / Save as PDF ---------- */
+  /* ===========================================================
+        Block printing & PDF generation
+  =========================================================== */
   window.addEventListener("beforeprint", (e) => {
-    triggerExamWarning("Print/PDF Attempt Blocked", "PRINT");
-    alert("Printing is disabled for this exam.");
     e.preventDefault();
+    triggerExamWarning("Print Blocked", "PRINT");
+    alert("Printing / PDF Export is blocked during the exam.");
+    blockScreenshot();
   });
 
-  /* ---------- Anti-DevTools Interval Detection ---------- */
+  /* ===========================================================
+        Continuous Devtools / Recording style detection (heuristic ONLY)
+        - checks large outer/inner gaps (devtools)
+        - checks very low render rate (window minimized / off-screen / some recorders)
+  =========================================================== */
   setInterval(() => {
-    const threshold = 160;
-
-    if (window.outerWidth - window.innerWidth > threshold ||
-        window.outerHeight - window.innerHeight > threshold) {
-
-      triggerExamWarning("Possible DevTools Open Detected", "DEVTOOLS");
+    const gap = 170;
+    if (
+      window.outerWidth - window.innerWidth > gap ||
+      window.outerHeight - window.innerHeight > gap
+    ) {
+      blockScreenshot();
+      triggerExamWarning("DevTools Detected (Size Gap)", "DEVTOOLS_OPEN");
       document.body.classList.add("exam-blur");
     }
-  }, 1000);
+  }, 1200);
 
+  // Recording / minimized heuristic – best effort only
+  (function recordingGuard() {
+    let last = performance.now();
+    function check(ts) {
+      const delta = ts - last;
+      last = ts;
+      // if frame delay is abnormally huge repeatedly, treat as suspicious
+      if (delta > 2500 && !document.hidden) {
+        triggerExamWarning(
+          "Possible screen recording / background activity detected",
+          "LOW_FPS_CAPTURE"
+        );
+        blockScreenshot();
+      }
+      requestAnimationFrame(check);
+    }
+    requestAnimationFrame(check);
+  })();
 })();
-
-/* ---------- CSS helper use in index.html ----------
-
-<style>
-  .exam-blur { filter: blur(12px); pointer-events:none; }
-  * { user-select: none; }
-</style>
-
------------------------------------------------------- */
-
 
 /* ================= LOGIN PAGE ================= */
 if (document.body.dataset.page === "login") {
@@ -110,7 +204,7 @@ if (document.body.dataset.page === "login") {
       return alert("Invalid Email");
 
     if (localStorage.getItem("submitted_" + email)) {
-      return alert("⚠ You already submitted exam. Reattempt not allowed.");
+      return alert("⚠ You already submitted the exam. Reattempt not allowed.");
     }
 
     sessionStorage.setItem("examUserName", name);
@@ -131,9 +225,7 @@ if (document.body.dataset.page === "exam") {
     window.location.href = "/";
   }
 
-  document.getElementById(
-    "userInfo"
-  ).textContent = `${userName} (${userEmail})`;
+  document.getElementById("userInfo").textContent = `${userName} (${userEmail})`;
 
   let questions = [];
   let answers = [];
@@ -143,15 +235,44 @@ if (document.body.dataset.page === "exam") {
   let warningLastTimestamp = 0;
   let examFinished = false;
 
-  const MAX_WARNINGS = 3;
+  const MAX_WARNINGS = 3; // << as requested
   const EXAM_DURATION_SECONDS = 60 * 60; // 60 minutes
   let remainingSeconds = EXAM_DURATION_SECONDS;
   let timerInterval = null;
+
+  /* ---------- Watermark overlay (name + email) ---------- */
+  function initWatermark() {
+    try {
+      const existing = document.getElementById("examWatermarkOverlay");
+      if (existing) existing.remove();
+
+      const wm = document.createElement("div");
+      wm.id = "examWatermarkOverlay";
+      wm.className = "watermark-overlay";
+
+      const text = `${userName} • ${userEmail}`;
+
+      // Grid of repeated labels
+      for (let i = 0; i < 24; i++) {
+        const span = document.createElement("span");
+        span.textContent = text;
+        wm.appendChild(span);
+      }
+
+      document.body.appendChild(wm);
+    } catch (e) {
+      console.error("Watermark init error:", e);
+    }
+  }
+
+  initWatermark();
 
   // ===== Warning System =====
   window.examAddWarning = (msg, code) => {
     if (examFinished) return;
     const now = Date.now();
+
+    // Debounce warnings so the same event doesn't spam
     if (now - warningLastTimestamp < 1500) return;
     warningLastTimestamp = now;
 
@@ -163,9 +284,8 @@ if (document.body.dataset.page === "exam") {
       at: new Date().toISOString(),
     });
 
-    document.getElementById(
-      "warnings"
-    ).textContent = `Warnings: ${warningCount}/${MAX_WARNINGS}`;
+    document.getElementById("warnings").textContent =
+      `Warnings: ${warningCount}/${MAX_WARNINGS}`;
     alert(`⚠ Warning ${warningCount}/${MAX_WARNINGS}:\n${msg}`);
 
     if (warningCount >= MAX_WARNINGS) {
@@ -173,14 +293,11 @@ if (document.body.dataset.page === "exam") {
     }
   };
 
+  // Tab switch / hidden (extra layer here too)
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
       window.examAddWarning("Tab Switch detected", "TAB_SWITCH");
     }
-  });
-
-  window.addEventListener("blur", () => {
-    window.examAddWarning("Window lost focus", "WINDOW_BLUR");
   });
 
   // ===== Load Questions =====
@@ -240,8 +357,7 @@ if (document.body.dataset.page === "exam") {
 
     progressEl.textContent = `Question ${index + 1} of ${questions.length}`;
     document.getElementById("prevBtn").disabled = index === 0;
-    document.getElementById("nextBtn").disabled =
-      index === questions.length - 1;
+    document.getElementById("nextBtn").disabled = index === questions.length - 1;
   }
 
   // ===== Finish Exam =====
@@ -636,4 +752,13 @@ Result: ${a.isCorrect ? "Correct ✅" : "Wrong ❌"}
   resetFormBtn.addEventListener("click", () => {
     clearForm();
   });
+
+  // Initial table load if already logged in (cookie still present)
+  (async () => {
+    try {
+      await Promise.all([renderQuestionsTable(), renderResultsTable()]);
+    } catch (e) {
+      // ignore if not authorized yet
+    }
+  })();
 }
