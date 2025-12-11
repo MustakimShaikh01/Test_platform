@@ -1,1330 +1,603 @@
 [
   {
     "id": 1,
-    "question": "In a Node.js project, which file primarily stores metadata like name, version, and dependencies?",
-    "options": ["index.js", "server.js", "package.json", "node_modules"],
-    "correct": "C"
+    "question": "Which component distributes client traffic across multiple backend servers?",
+    "options": ["API Gateway", "Load Balancer", "CDN", "Reverse Proxy"],
+    "correct": "B"
   },
   {
     "id": 2,
-    "question": "In Express, which call creates a new application instance?",
-    "options": ["http.createServer()", "new ExpressApp()", "express.Router()", "express()"],
-    "correct": "D"
+    "question": "What is the primary advantage of horizontal scaling?",
+    "options": ["Upgrading server hardware", "Adding more servers to increase capacity", "Reducing code complexity", "Stronger consistency"],
+    "correct": "B"
   },
   {
     "id": 3,
-    "question": "Which HTTP status code typically indicates a successful GET request with a response body?",
-    "options": ["200 OK", "201 Created", "204 No Content", "304 Not Modified"],
-    "correct": "A"
+    "question": "Which type of database is most suitable for storing highly relational structured data?",
+    "options": ["NoSQL", "Graph DB", "Relational DB", "Key-Value Store"],
+    "correct": "C"
   },
   {
     "id": 4,
-    "question": "Which HTTP method is considered safe and idempotent for fetching resources without modifying them?",
-    "options": ["POST", "GET", "PATCH", "CONNECT"],
+    "question": "Which database system provides strong ACID guarantees?",
+    "options": ["MongoDB", "MySQL", "Cassandra", "DynamoDB"],
     "correct": "B"
   },
   {
     "id": 5,
-    "question": "What is the default port used by MongoDB if not overridden?",
-    "options": ["80", "443", "3306", "27017"],
-    "correct": "D"
-  },
-  {
-    "id": 6,
-    "question": "Which command starts the Node.js REPL from the terminal?",
-    "options": ["node", "npm start", "node repl.js", "npm node"],
-    "correct": "A"
-  },
-  {
-    "id": 7,
-    "question": "Which built-in function schedules a callback to run after a specified delay in Node.js?",
-    "options": ["setTimeout()", "setInterval()", "process.nextTick()", "setImmediate()"],
-    "correct": "A"
-  },
-  {
-    "id": 8,
-    "question": "In Express 4+, which built-in middleware is typically used to parse JSON request bodies?",
-    "options": ["bodyParser.json()", "express.urlencoded()", "express.json()", "cookieParser()"],
-    "correct": "C"
-  },
-  {
-    "id": 9,
-    "question": "Which Node.js library is most commonly used as an ODM for MongoDB?",
-    "options": ["Mongoose", "Sequelize", "TypeORM", "Redis"],
-    "correct": "A"
-  },
-  {
-    "id": 10,
-    "question": "Which Node.js property is commonly used to check the current environment (e.g., production, development)?",
-    "options": ["process.env.MODE", "env.NODE", "process.env.NODE_ENV", "global.NODE_ENV"],
-    "correct": "C"
-  },
-  {
-    "id": 11,
-    "question": "In a RESTful API, which status code usually indicates success with a JSON response body?",
-    "options": ["200 OK", "301 Moved Permanently", "400 Bad Request", "500 Internal Server Error"],
-    "correct": "A"
-  },
-  {
-    "id": 12,
-    "question": "Which HTTP header is MOST directly related to enabling CORS in an Express app?",
-    "options": ["Authorization", "Access-Control-Allow-Origin", "Content-Length", "ETag"],
+    "question": "What does CDN mainly improve?",
+    "options": ["Database writes", "Static resource delivery speed", "Backend computation", "Cache eviction"],
     "correct": "B"
   },
   {
+    "id": 6,
+    "question": "Which consistency model ensures that all clients see updates instantly?",
+    "options": ["Eventual Consistency", "Strong Consistency", "Causal Consistency", "Monotonic Reads"],
+    "correct": "B"
+  },
+  {
+    "id": 7,
+    "question": "What system design technique splits a database by rows?",
+    "options": ["Indexing", "Sharding", "Normalization", "Replication"],
+    "correct": "B"
+  },
+  {
+    "id": 8,
+    "question": "Which is an example of message queue middleware?",
+    "options": ["MySQL", "RabbitMQ", "Nginx", "Cassandra"],
+    "correct": "B"
+  },
+  {
+    "id": 9,
+    "question": "Which approach makes a system resilient to server failures?",
+    "options": ["Load Testing", "Replication", "Minification", "DNS Routing"],
+    "correct": "B"
+  },
+  {
+    "id": 10,
+    "question": "Which storage system is ideal for caching frequently requested data?",
+    "options": ["MySQL", "Redis", "Cassandra", "S3"],
+    "correct": "B"
+  },
+  {
+    "id": 11,
+    "question": "In a distributed system, what does idempotency ensure?",
+    "options": ["Request always succeeds", "Multiple identical requests have same effect", "Requests are encrypted", "Lower latency"],
+    "correct": "B"
+  },
+  {
+    "id": 12,
+    "question": "What is the goal of a load balancer?",
+    "options": ["Reduce DB load", "Increase CPU speed", "Distribute incoming traffic evenly", "Improve code quality"],
+    "correct": "C"
+  },
+  {
     "id": 13,
-    "question": "Which command runs an entry file like app.js with Node.js?",
-    "options": ["start app.js", "npm app.js", "node app.js", "run app"],
+    "question": "Which system design principle reduces dependency between services?",
+    "options": ["Monolith", "Tight Coupling", "Microservices", "Single Server Model"],
     "correct": "C"
   },
   {
     "id": 14,
-    "question": "In Express, which object represents the outgoing HTTP response?",
-    "options": ["req", "next", "router", "res"],
-    "correct": "D"
+    "question": "What is the advantage of asynchronous communication between services?",
+    "options": ["Lower bandwidth", "No server required", "Decoupled services and high scalability", "Guaranteed ordering"],
+    "correct": "C"
   },
   {
     "id": 15,
-    "question": "In MongoDB, which shell/driver operation inserts a SINGLE document?",
-    "options": ["db.collection.insertMany()", "db.collection.save()", "db.collection.insertOne()", "db.collection.updateOne()"],
-    "correct": "C"
+    "question": "Which database is optimized for high write throughput with low consistency guarantees?",
+    "options": ["MySQL", "Cassandra", "Postgres", "SQLite"],
+    "correct": "B"
   },
   {
     "id": 16,
-    "question": "Which Express method is used to register middleware that applies to ALL HTTP methods for a given path?",
-    "options": ["app.get()", "app.use()", "app.post()", "app.all('*') only"],
-    "correct": "B"
+    "question": "What does 'eventual consistency' mean?",
+    "options": ["Reads always return latest value", "Writes never fail", "Data becomes consistent after some time", "Data is lost after updates"],
+    "correct": "C"
   },
   {
     "id": 17,
-    "question": "In Node.js, which built-in module is used to work with file paths in a cross-platform way?",
-    "options": ["fs", "http", "dns", "path"],
-    "correct": "D"
+    "question": "Which design is best for high availability?",
+    "options": ["Single node server", "Master-slave replication", "Single DB cluster", "No replication"],
+    "correct": "B"
   },
   {
     "id": 18,
-    "question": "Which MongoDB operator is used to update fields without replacing the entire document?",
-    "options": ["$push", "$unset", "$inc", "$set"],
-    "correct": "D"
+    "question": "Which tool is commonly used for distributed caching?",
+    "options": ["Redis", "MySQL", "Kafka", "ElasticSearch"],
+    "correct": "A"
   },
   {
     "id": 19,
-    "question": "In Express, which method sends a JSON response with automatic content-type?",
-    "options": ["res.sendFile()", "res.end()", "res.redirect()", "res.json()"],
-    "correct": "A"
+    "question": "What does sharding primarily improve?",
+    "options": ["Network security", "Data distribution and scalability", "Compression", "Encryption"],
+    "correct": "B"
   },
   {
     "id": 20,
-    "question": "Which MongoDB query operator is used to match documents where a field value is within an array of possible values?",
-    "options": ["$gt", "$regex", "$in", "$and"],
-    "correct": "C"
+    "question": "Which system component stores static assets near users?",
+    "options": ["Load Balancer", "CDN", "Message Queue", "API Gateway"],
+    "correct": "B"
   },
   {
     "id": 21,
-    "question": "In MongoDB, which write operation completely REPLACES the matched document (unless using operators)?",
-    "options": ["updateOne() with $set", "updateMany() with $set", "findOneAndUpdate() with $set", "replaceOne()"],
-    "correct": "D"
+    "question": "Which component routes API calls to appropriate backend services?",
+    "options": ["CDN", "Load Balancer", "API Gateway", "Worker Node"],
+    "correct": "C"
   },
   {
     "id": 22,
-    "question": "Which MongoDB method returns a single matching document or null if none is found?",
-    "options": ["find()", "findMany()", "findOne()", "aggregate()"],
-    "correct": "C"
+    "question": "What is a key advantage of NoSQL databases?",
+    "options": ["Rigid schema", "Horizontal scalability", "Slow writes", "Strong ACID only"],
+    "correct": "B"
   },
   {
     "id": 23,
-    "question": "In Express, which method is used to handle ALL methods for a particular route (GET, POST, etc.)?",
-    "options": ["app.match()", "app.handle()", "app.all()", "app.routeAny()"],
-    "correct": "D"
+    "question": "What type of system guarantees operation ordering?",
+    "options": ["Eventually consistent system", "Causal consistent system", "Event-driven system", "Cache system"],
+    "correct": "B"
   },
   {
     "id": 24,
-    "question": "In Node.js, which global object represents the current process and environment?",
-    "options": ["window", "document", "process", "console"],
+    "question": "Which system improves throughput by processing tasks asynchronously?",
+    "options": ["Load Balancer", "Message Queue", "CDN", "Proxy"],
+    "correct": "B"
+  },
+  {
+    "id": "25",
+    "question": "What is the primary purpose of indexing a database?",
+    "options": ["Faster reads", "Faster writes", "More storage", "Improved schema"],
     "correct": "A"
   },
   {
-    "id": 25,
-    "question": "Which MongoDB operation is used to create an index on a collection?",
-    "options": ["db.collection.ensure()", "db.collection.shard()", "db.collection.aggregate()", "db.collection.createIndex()"],
-    "correct": "D"
-  },
-
-  {
     "id": 26,
-    "question": "In Node.js, which phase of the event loop executes callbacks scheduled by setTimeout() with expired timers?",
-    "options": ["Poll phase", "Check phase", "Idle/Prepare phase", "Timers phase"],
-    "correct": "D"
+    "question": "Which caching policy evicts the least recently used items?",
+    "options": ["FIFO", "LRU", "MRU", "LFU"],
+    "correct": "B"
   },
   {
     "id": 27,
-    "question": "In an Express app, what is the PRIMARY advantage of extracting route handlers into separate router modules?",
-    "options": ["Faster Node.js startup automatically", "Better organization and separation of concerns", "Less memory usage in V8 heap", "Built-in automatic caching of the routes"],
-    "correct": "B"
+    "question": "Which system is ideal for real-time log streaming?",
+    "options": ["Kafka", "Redis", "MySQL", "ElasticSearch"],
+    "correct": "A"
   },
   {
     "id": 28,
-    "question": "Which MongoDB index type is MOST appropriate for supporting geoNear queries with latitude and longitude data?",
-    "options": ["2d index", "hashed index", "text index", "2dsphere index"],
-    "correct": "D"
-  },
-  {
-    "id": 29,
-    "question": "In a Node.js backend using MongoDB, which approach BEST prevents blocking the event loop for CPU heavy work?",
-    "options": ["Use synchronous bcrypt hashing inside routes", "Use Worker Threads or child processes for CPU tasks", "Increase Node.js heap size only", "Use setTimeout() around heavy loops"],
+    "question": "Which database model stores nodes and relationships?",
+    "options": ["Relational", "Graph", "Columnar", "Document"],
     "correct": "B"
   },
   {
+    "id": 29,
+    "question": "Which scaling approach requires no changes to existing code?",
+    "options": ["Vertical scaling", "Horizontal scaling", "Sharding", "Load Balancing"],
+    "correct": "A"
+  },
+  {
     "id": 30,
-    "question": "When designing an Express error-handling middleware, which function signature is CORRECT?",
-    "options": ["(req, res, next)", "(err, req, res)", "(err, req, res, next)", "(req, res, err, next)"],
-    "correct": "C"
+    "question": "What does replication improve?",
+    "options": ["Latency and availability", "Strong consistency", "CPU usage", "Storage usage"],
+    "correct": "A"
   },
   {
     "id": 31,
-    "question": "In MongoDB, which index type is BEST for efficient equality and range queries on a single numeric field?",
-    "options": ["Hashed index", "Wildcard index", "Standard B-tree single-field index", "Text index"],
-    "correct": "C"
+    "question": "Which tradeoff does the CAP theorem describe?",
+    "options": ["Speed vs storage", "Consistency, Availability, Partition Tolerance", "CPU vs latency", "Caching vs scaling"],
+    "correct": "B"
   },
   {
     "id": 32,
-    "question": "In Mongoose, which option on a schema path prevents the field from being returned by default in find() queries?",
-    "options": ["required: true", "unique: true", "select: false", "immutable: true"],
+    "question": "Which component helps absorb bursts in traffic?",
+    "options": ["Cache", "Load Balancer", "Message Queue", "CDN"],
     "correct": "C"
   },
   {
     "id": 33,
-    "question": "Which Express middleware is MOST appropriate to add standard security-related HTTP headers such as HSTS and X-Frame-Options?",
-    "options": ["morgan", "cors", "helmet", "cookie-parser"],
+    "question": "Which storage system is best for large binary files?",
+    "options": ["SQL", "Redis", "Object Storage (like S3)", "Neo4j"],
     "correct": "C"
   },
   {
     "id": 34,
-    "question": "In a Node.js HTTP server, which property BEST indicates that the event loop is blocked by synchronous work?",
-    "options": ["Low CPU utilization", "High network I/O", "Large event loop delay/lag", "Few open file descriptors"],
-    "correct": "C"
+    "question": "Which design pattern helps prevent cascading failures?",
+    "options": ["Circuit Breaker", "Cache Aside", "LRU Cache", "Bloom Filter"],
+    "correct": "A"
   },
   {
     "id": 35,
-    "question": "In MongoDB, which aggregation stage should usually appear as early as possible to reduce data volume for performance?",
-    "options": ["$bucket", "$group", "$match", "$sort"],
-    "correct": "C"
+    "question": "What is the advantage of microservices architecture?",
+    "options": ["Single deployment", "Independent scaling", "Shared DB always", "Monolithic structure"],
+    "correct": "B"
   },
   {
     "id": 36,
-    "question": "In Express, which statement about async route handlers is TRUE for proper error propagation?",
-    "options": [
-      "Thrown errors in async handlers are always caught by Express automatically",
-      "You must always call res.end() for errors",
-      "Using async/await and allowing rejected promises to bubble is enough in modern Express with a wrapper or library",
-      "Errors inside setTimeout are always caught by Express"
-    ],
-    "correct": "C"
+    "question": "What does rate limiting protect against?",
+    "options": ["Slow queries", "DDoS and excessive requests", "CPU throttling", "Lost packets"],
+    "correct": "B"
   },
   {
     "id": 37,
-    "question": "In MongoDB, which feature lets you react to real-time changes in a collection directly from a Node.js backend?",
-    "options": ["TTL indexes", "Capped collections", "Change streams", "Profiling"],
-    "correct": "C"
+    "question": "Which technique allows reading from replicas to reduce primary DB load?",
+    "options": ["Sharding", "Read Replicas", "Indexing", "Caching"],
+    "correct": "B"
   },
   {
     "id": 38,
-    "question": "In Node.js, which module is MOST appropriate for executing untrusted code in a sandboxed context?",
-    "options": ["child_process", "cluster", "vm", "os"],
+    "question": "Which hashing technique reduces remapping when new servers are added?",
+    "options": ["MD5", "SHA256", "Consistent Hashing", "HMAC"],
     "correct": "C"
   },
   {
     "id": 39,
-    "question": "Which MongoDB feature allows you to perform multi-document ACID transactions from a Node.js driver?",
-    "options": ["Capped collections", "Standalone server", "Sessions in a replica set or sharded cluster", "Text indexes"],
-    "correct": "C"
+    "question": "Which approach improves performance by keeping data closer to computation?",
+    "options": ["Sharding", "Caching", "Indexing", "Pagination"],
+    "correct": "B"
   },
   {
     "id": 40,
-    "question": "In Mongoose, calling lean() on a query primarily improves performance by:",
-    "options": [
-      "Disabling indexes",
-      "Using secondary nodes only",
-      "Returning plain JavaScript objects instead of full Mongoose documents",
-      "Automatically caching the query"
-    ],
-    "correct": "C"
+    "question": "Which term describes splitting services based on business capability?",
+    "options": ["Monolith", "Microservice decomposition", "Vertical scaling", "Data partitioning"],
+    "correct": "B"
   },
   {
     "id": 41,
-    "question": "In MongoDB, which index option ensures that ONLY documents containing the indexed field are included in the index?",
-    "options": ["background: true", "sparse: true", "unique: true", "partialFilterExpression"],
+    "question": "Which queue attribute guarantees message delivery at least once?",
+    "options": ["At-Most-Once", "At-Least-Once", "Exactly-Once", "Delayed Delivery"],
     "correct": "B"
   },
   {
     "id": 42,
-    "question": "Which of the following is a CORRECT way to prevent Express from revealing that it is built with Express in HTTP headers?",
-    "options": ["Set res.set('Server', 'hidden')", "Set process.env.HIDE_SERVER = true", "app.disable('x-powered-by')", "Use helmet.noReveal()"],
+    "question": "What does write-through caching do?",
+    "options": ["Writes only to cache", "Writes to cache and DB simultaneously", "Writes only to DB", "Deletes write logs"],
     "correct": "B"
   },
   {
     "id": 43,
-    "question": "In a Node.js backend, which option is MOST secure for storing refresh tokens in a browser-based application?",
-    "options": ["localStorage", "sessionStorage", "HTTP-only, secure cookie", "JavaScript global variable"],
-    "correct": "C"
-  },
-  {
-    "id": 44,
-    "question": "In MongoDB, which writeConcern provides the strongest durability guarantees but may increase write latency?",
-    "options": ["w:1, j:false", "w:0", "w:majority, j:true", "w:1, j:true, fsync:false"],
-    "correct": "C"
-  },
-  {
-    "id": 45,
-    "question": "In Node.js, which mechanism helps measure the event loop delay to detect blocking operations?",
-    "options": ["process.memoryUsage()", "perf_hooks.monitorEventLoopDelay()", "setImmediate()", "fs.watch()"],
+    "question": "Which DB is best for time-series metrics?",
+    "options": ["MongoDB", "InfluxDB", "Redis", "MySQL"],
     "correct": "B"
   },
   {
+    "id": 44,
+    "question": "Which storage is optimized for key-value reads under 1ms?",
+    "options": ["Redis", "PostgreSQL", "Cassandra", "Kafka"],
+    "correct": "A"
+  },
+  {
+    "id": 45,
+    "question": "What problem does database replication solve?",
+    "options": ["Heavy read load", "Slow writes", "Schema mismatch", "Network bottleneck"],
+    "correct": "A"
+  },
+  {
     "id": 46,
-    "question": "In MongoDB, which operation might trigger a full collection scan instead of using an index on a string field?",
-    "options": [
-      "An equality match on the indexed field",
-      "A prefix-anchored regex like /^abc/ on the indexed field",
-      "A case-insensitive regex without prefix on the indexed field",
-      "A range query using $gte and $lte on the indexed field"
-    ],
-    "correct": "C"
+    "question": "Which component prevents direct access to backend servers?",
+    "options": ["Reverse Proxy", "CDN", "Database Replica", "Load Balancer"],
+    "correct": "A"
   },
   {
     "id": 47,
-    "question": "In Express, what is the MAIN risk of storing session data in the default in-memory store in production?",
-    "options": [
-      "Sessions are automatically encrypted",
-      "Sessions are persisted across restarts",
-      "Sessions are lost on process restart and cannot be shared across instances",
-      "Sessions cannot expire"
-    ],
-    "correct": "C"
+    "question": "Which storage type is immutable and ideal for logs?",
+    "options": ["Filesystem", "Kafka Log", "Redis", "SQL"],
+    "correct": "B"
   },
   {
     "id": 48,
-    "question": "In MongoDB, which kind of index is automatically created on the _id field of every collection?",
-    "options": ["Text index", "Hashed index", "Unique index", "TTL index"],
-    "correct": "C"
+    "question": "Which is a downside of vertical scaling?",
+    "options": ["Harder to configure", "Eventually limited by hardware capacity", "Higher latency", "Poor consistency"],
+    "correct": "B"
   },
   {
     "id": 49,
-    "question": "In a Node.js backend using MongoDB, which configuration pattern BEST avoids creating a new DB connection for every request?",
-    "options": [
-      "Create a new MongoClient inside each route handler",
-      "Use a single, shared MongoClient instance and reuse its connection pool",
-      "Close and reopen the connection for each query",
-      "Use child processes for every query"
-    ],
-    "correct": "C"
+    "question": "What is a common benefit of reverse proxies?",
+    "options": ["Slower response", "Security and caching", "More DB load", "No failover"],
+    "correct": "B"
   },
   {
     "id": 50,
-    "question": "In MongoDB, which aggregation stage is used to deconstruct an array field into multiple documents?",
-    "options": ["$group", "$project", "$unwind", "$sample"],
+    "question": "Which ensures messages are processed in order?",
+    "options": ["Random queue", "Priority queue", "Partition ordering", "Broadcast routing"],
     "correct": "C"
   },
+
   {
     "id": 51,
-    "question": "In Node.js, which interface is responsible for managing connection pooling and reuse for outgoing HTTP requests?",
-    "options": ["http.Server", "http.Agent", "tls.Server", "net.Socket"],
-    "correct": "D"
+    "question": "Which system design helps handle sudden traffic spikes smoothly?",
+    "options": ["Vertical scaling", "Backpressure & queues", "Monolith", "Single thread"],
+    "correct": "B"
   },
   {
     "id": 52,
-    "question": "In an Express API, which HTTP status code is MOST appropriate when a user is authenticated but not allowed to access a specific resource?",
-    "options": ["401 Unauthorized", "403 Forbidden", "404 Not Found", "409 Conflict"],
+    "question": "Which technique stores computed results to avoid recalculation?",
+    "options": ["Indexing", "Caching", "Sharding", "Hashing"],
     "correct": "B"
   },
   {
     "id": 53,
-    "question": "In MongoDB, which feature is used to listen to changes across the OPLOG for a replica set?",
-    "options": ["TTL monitor", "Profiler", "Change streams", "Balancers only"],
-    "correct": "C"
+    "question": "Which component aggregates logs from multiple servers?",
+    "options": ["Redis", "Kafka", "ElasticSearch", "Log Collector"],
+    "correct": "D"
   },
   {
     "id": 54,
-    "question": "In Node.js, which statement about process.nextTick() is TRUE?",
-    "options": [
-      "It schedules a callback in the timers phase after setTimeout",
-      "It runs before any other I/O or timer callbacks in the next iteration",
-      "It always runs after setImmediate callbacks",
-      "It is identical to setTimeout(fn, 0)"
-    ],
-    "correct": "B"
+    "question": "What is a disadvantage of eventual consistency?",
+    "options": ["Lower scalability", "High memory use", "Data temporarily inconsistent", "High write latency"],
+    "correct": "C"
   },
   {
     "id": 55,
-    "question": "In a MongoDB-backed API, which pattern helps avoid race conditions when incrementing counters like page views?",
-    "options": [
-      "Read the document, increment in app, then write back",
-      "Use $inc update operator on the counter field",
-      "Use a separate collection for every increment",
-      "Disable journaling"
-    ],
+    "question": "Which technique speeds up large read-heavy applications?",
+    "options": ["Normalization", "Read Replicas", "Vertical scaling", "Write Ahead Logs"],
     "correct": "B"
   },
   {
     "id": 56,
-    "question": "In Express, which middleware is MOST appropriate for limiting repeated failed login attempts from a single IP?",
-    "options": ["helmet", "cors", "express-rate-limit", "cookie-parser"],
-    "correct": "C"
+    "question": "What is API Gateway mainly used for?",
+    "options": ["Serving images", "Routing APIs & auth", "Database indexing", "Sharding"],
+    "correct": "B"
   },
   {
     "id": 57,
-    "question": "In MongoDB aggregation, which stage allows running multiple sub-pipelines on the same input in parallel?",
-    "options": ["$group", "$facet", "$sort", "$limit"],
+    "question": "Which makes a service recover gracefully after failing?",
+    "options": ["Fail-fast", "Backoff retries", "Retry storm", "Blocking calls"],
     "correct": "B"
   },
   {
     "id": 58,
-    "question": "In a Node.js backend, which is the PRIMARY security risk of storing JWT access tokens in localStorage?",
-    "options": [
-      "They can be stolen via XSS",
-      "They disappear on refresh",
-      "They force HTTP/2 usage",
-      "They break CORS"
-    ],
+    "question": "Which technique removes duplicate requests from clients?",
+    "options": ["Idempotency keys", "Query cache", "Sharding", "Replication"],
     "correct": "A"
   },
   {
     "id": 59,
-    "question": "In MongoDB, which index type is MOST suitable to support text search on multiple string fields?",
-    "options": ["2dsphere index", "Hashed index", "Text index", "Wildcard index with { '$**': 1 }"],
-    "correct": "C"
+    "question": "Which database stores documents in JSON-like structure?",
+    "options": ["Redis", "MongoDB", "MySQL", "Oracle"],
+    "correct": "B"
   },
   {
     "id": 60,
-    "question": "In Node.js, which CLI flag enables printing detailed GC logs useful for diagnosing memory issues?",
-    "options": ["--trace-warnings", "--inspect", "--trace-gc", "--check"],
-    "correct": "D"
-  },
-  {
-    "id": 61,
-    "question": "In MongoDB, which aggregation stage is BEST suited for bucketing documents into numeric ranges like [0–10), [10–20), etc.?",
-    "options": ["$group", "$bucket", "$redact", "$lookup"],
-    "correct": "C"
-  },
-  {
-    "id": 62,
-    "question": "In a Node.js/Express app, which practice BEST helps detect and handle unhandled Promise rejections globally?",
-    "options": [
-      "Using only callbacks",
-      "Wrapping all routes with try/catch",
-      "process.on('unhandledRejection', handler)",
-      "Disabling strict mode"
-    ],
+    "question": "Which is used to reduce write contention?",
+    "options": ["Partitioning", "Normalization", "Vertical scaling", "Indexes"],
     "correct": "A"
   },
   {
+    "id": 61,
+    "question": "Which design ensures minimal impact when a single node fails?",
+    "options": ["Centralized system", "Distributed replica system", "Single DB server", "Single Load Balancer"],
+    "correct": "B"
+  },
+  {
+    "id": 62,
+    "question": "Which cache update strategy fetches from DB on cache miss?",
+    "options": ["Write-through", "Cache-aside", "Write-back", "Lazy cache"],
+    "correct": "B"
+  },
+  {
     "id": 63,
-    "question": "In MongoDB, which readPreference is used when you want to read from secondary nodes to offload reads from the primary?",
-    "options": ["primary", "nearest", "secondary", "primaryPreferred"],
-    "correct": "C"
+    "question": "Which improves UX by preloading frequently used data?",
+    "options": ["Warm cache", "Cold cache", "Eviction", "Partitioning"],
+    "correct": "A"
   },
   {
     "id": 64,
-    "question": "In Node.js, which practice is MOST effective to avoid memory leaks from EventEmitter usage?",
-    "options": [
-      "Never using once()",
-      "Increasing the maxListeners limit",
-      "Removing listeners when they are no longer needed",
-      "Emitting 'error' frequently"
-    ],
-    "correct": "C"
+    "question": "Which indexing structure is most common in relational databases?",
+    "options": ["Hash tree", "B-tree", "Trie", "Skip list"],
+    "correct": "B"
   },
   {
     "id": 65,
-    "question": "In Express, which header MOST helps to protect against MIME type sniffing vulnerabilities?",
-    "options": [
-      "X-Frame-Options: DENY",
-      "Referrer-Policy: no-referrer",
-      "X-Content-Type-Options: nosniff",
-      "Strict-Transport-Security: max-age=31536000"
-    ],
-    "correct": "C"
+    "question": "Which pattern prevents system overload?",
+    "options": ["Fan-out", "Load shedding", "Synchronous calls", "Blocking DB"],
+    "correct": "B"
   },
   {
     "id": 66,
-    "question": "In MongoDB, which operator is MOST suitable for preventing unbounded array growth when you only need to keep the N most recent items?",
-    "options": ["$push without options", "$setOnInsert", "$pull", "$push with $each and $slice"],
-    "correct": "D"
+    "question": "Which process stores logs for analytics?",
+    "options": ["CDC", "ETL pipeline", "Sharding", "Replication"],
+    "correct": "B"
   },
   {
     "id": 67,
-    "question": "In a Node.js backend, which storage is MOST suitable for shared rate-limiting counters across multiple instances?",
-    "options": ["In-memory Map per process", "Local JSON file", "Redis or another centralized store", "process.env variables"],
-    "correct": "C"
+    "question": "Which system helps maintain real-time chat?",
+    "options": ["WebSockets", "Load Balancer", "ETL", "UDP logs"],
+    "correct": "A"
   },
   {
     "id": 68,
-    "question": "In MongoDB, which feature is primarily responsible for storing operations before they are flushed to data files, enabling crash recovery?",
-    "options": ["TTL monitor", "oplog", "journal", "balancer"],
-    "correct": "C"
+    "question": "What is the purpose of a write-ahead log?",
+    "options": ["Eviction", "Crash recovery", "Sharding", "Reverse proxy"],
+    "correct": "B"
   },
   {
     "id": 69,
-    "question": "In Node.js, which strategy REALLY helps reduce cold start time for large applications?",
-    "options": [
-      "Requiring every module eagerly in app.js",
-      "Using heavy synchronous initialization at startup",
-      "Lazy-loading feature modules only when routes are hit",
-      "Disabling clustering"
-    ],
-    "correct": "C"
+    "question": "Which improves search performance in large datasets?",
+    "options": ["Indexing", "Replication", "CDN", "Load Balancing"],
+    "correct": "A"
   },
   {
     "id": 70,
-    "question": "In MongoDB, which option is MOST crucial when performing long-running queries to avoid them consuming too many resources indefinitely?",
-    "options": ["writeConcern", "readPreference", "maxTimeMS", "hint"],
-    "correct": "C"
+    "question": "What does throttling limit?",
+    "options": ["RAM", "Concurrent requests", "Disk I/O", "Cache writes"],
+    "correct": "B"
   },
   {
     "id": 71,
-    "question": "In Node.js, which practice improves security for environment configuration handling?",
-    "options": [
-      "Hard-coding secrets in the source",
-      "Committing .env with secrets to git",
-      "Reading environment variables and validating them with a schema library like Joi/Zod",
-      "Putting all secrets in package.json"
-    ],
+    "question": "Which helps isolate failures in microservices?",
+    "options": ["API Gateway", "Rate Limiting", "Circuit Breaker", "CDN"],
     "correct": "C"
   },
   {
     "id": 72,
-    "question": "In MongoDB, which index option allows indexing only documents that match a specific filter expression?",
-    "options": ["sparse: true", "background: true", "unique: true", "partialFilterExpression"],
-    "correct": "D"
-  },
-  {
-    "id": 73,
-    "question": "In a Node.js backend, which is a GOOD reason to use GraphQL instead of pure REST with MongoDB?",
-    "options": [
-      "You want only simple CRUD",
-      "You need strongly typed SQL joins",
-      "You want flexible queries that avoid over-fetching/under-fetching",
-      "You want to automatically shard MongoDB"
-    ],
-    "correct": "C"
-  },
-  {
-    "id": 74,
-    "question": "In MongoDB aggregation, which stage can RANDOMLY sample a subset of documents for analytics or testing?",
-    "options": ["$sample", "$bucket", "$unwind", "$addFields"],
-    "correct": "A"
-  },
-  {
-    "id": 75,
-    "question": "In a Node.js/Express JWT-based auth system, which practice MOST helps to prevent replay attacks with stolen refresh tokens?",
-    "options": [
-      "Using static refresh tokens forever",
-      "Storing tokens in localStorage",
-      "Rotating refresh tokens and invalidating old ones on use",
-      "Disabling HTTPS"
-    ],
-    "correct": "C"
-  },
-  {
-    "id": 76,
-    "question": "In MongoDB, which problem occurs when using a monotonically increasing shard key such as a timestamp?",
-    "options": ["Even distribution across shards", "Hot shard where all new writes hit the same chunk", "Inability to create indexes", "Replica sets stop working"],
+    "question": "Which offers fastest data access?",
+    "options": ["Disk", "Memory cache", "Network storage", "Object storage"],
     "correct": "B"
   },
   {
-    "id": 77,
-    "question": "In Node.js, which mechanism allows you to offload CPU-bound work while sharing memory with the main thread?",
-    "options": ["child_process.fork()", "cluster module", "worker_threads", "setImmediate()"],
+    "id": 73,
+    "question": "Which design pattern stores frequently accessed DB data in cache?",
+    "options": ["Cache aside", "Write-through", "Write-behind", "Copy-on-write"],
+    "correct": "A"
+  },
+  {
+    "id": 74,
+    "question": "Which scaling pattern distributes independent services?",
+    "options": ["Vertical scaling", "Functional decomposition", "Replication", "CDN"],
+    "correct": "B"
+  },
+  {
+    "id": 75,
+    "question": "Which system is ideal for append-only operations?",
+    "options": ["Redis", "Kafka", "SQL", "ElasticSearch"],
+    "correct": "B"
+  },
+  {
+    "id": 76,
+    "question": "What causes a hot partition in sharded DBs?",
+    "options": ["Even key distribution", "Auto-scaling", "Sequential shard keys", "Large indexes"],
     "correct": "C"
   },
   {
+    "id": 77,
+    "question": "Which algorithm is widely used in load balancing?",
+    "options": ["SHA-512", "Round Robin", "Floyd Warshall", "Knapsack"],
+    "correct": "B"
+  },
+  {
     "id": 78,
-    "question": "In MongoDB, which stage in an aggregation pipeline is MOST likely to be expensive if done BEFORE a selective $match?",
-    "options": ["$match", "$limit", "$group", "$project"],
+    "question": "What makes a service stateless?",
+    "options": ["Stores data locally", "Requires session replication", "No persistent session storage on server", "Uses sticky sessions"],
     "correct": "C"
   },
   {
     "id": 79,
-    "question": "In an Express API, which combination is MOST appropriate to protect a login endpoint from brute-force attacks?",
-    "options": [
-      "Strong password policy only",
-      "Helmet headers only",
-      "Rate limiting plus optional captcha and account lockout",
-      "Using GET instead of POST"
-    ],
-    "correct": "C"
+    "question": "Which component stores temporary task data?",
+    "options": ["Redis", "CDN", "API Gateway", "Log Collector"],
+    "correct": "A"
   },
   {
     "id": 80,
-    "question": "In MongoDB, what is a likely consequence of having many unused secondary indexes on a collection with frequent updates?",
-    "options": [
-      "Faster writes",
-      "Less disk usage",
-      "Slower writes and increased disk consumption",
-      "Automatic index compaction"
-    ],
-    "correct": "C"
+    "question": "Which system design helps scale reads massively?",
+    "options": ["Vertical scaling", "Read replicas", "Load shedding", "Index removal"],
+    "correct": "B"
   },
   {
     "id": 81,
-    "question": "In MongoDB, which feature allows you to traverse documents in a collection as if they were nodes in a graph?",
-    "options": ["$unwind", "$graphLookup", "$facet", "$text"],
-    "correct": "C"
+    "question": "Which technique avoids heavy DB scans?",
+    "options": ["Normalization", "Secondary indexes", "Sharding", "Replication"],
+    "correct": "B"
   },
   {
     "id": 82,
-    "question": "In Node.js, which practice BEST helps to prevent SSRF (Server-Side Request Forgery) in an HTTP client that fetches user-provided URLs?",
-    "options": [
-      "Allowing any URL and relying on CORS",
-      "Disabling HTTPS",
-      "Validating the hostname/IP against an allowlist and blocking internal addresses",
-      "Using eval() to parse the URL"
-    ],
-    "correct": "C"
+    "question": "Which strategy decreases dependency between services?",
+    "options": ["Sync calls", "Message queues", "Shared DB", "Polling"],
+    "correct": "B"
   },
   {
     "id": 83,
-    "question": "In MongoDB, which deployment topology is MOST appropriate for a production environment requiring high availability?",
-    "options": ["Single standalone node", "One primary plus one arbiter", "Replica set with at least three data-bearing nodes", "Mongos router alone"],
+    "question": "Which communication style reduces latency for real-time apps?",
+    "options": ["Polling", "HTTP long polling", "WebSockets", "ETL"],
     "correct": "C"
   },
   {
     "id": 84,
-    "question": "In a Node.js app, which strategy MOST reduces the risk of leakage of technology details and stack traces in production error responses?",
-    "options": [
-      "Returning raw error.stack to the client",
-      "Using a centralized error handler that logs detailed errors but returns sanitized messages",
-      "Disabling try/catch",
-      "Using console.log only"
-    ],
+    "question": "Which pattern avoids duplicate expensive computations?",
+    "options": ["Cache invalidation", "Memoization", "Sharding", "Replication"],
     "correct": "B"
   },
   {
     "id": 85,
-    "question": "In MongoDB, which index is MOST appropriate for queries filtering by { status, createdAt } and sorting by createdAt?",
-    "options": [
-      "{ createdAt: 1 }",
-      "{ status: 1 }",
-      "{ status: 1, createdAt: 1 }",
-      "{ createdAt: -1, status: 1 }"
-    ],
-    "correct": "C"
+    "question": "Which technique handles millions of writes per second?",
+    "options": ["SQL replication", "Log structured storage", "Vertical scaling", "Row locks"],
+    "correct": "B"
   },
   {
     "id": 86,
-    "question": "In Node.js, which event is typically handled to perform graceful shutdown on container orchestrators like Kubernetes?",
-    "options": ["SIGKILL", "SIGUSR1", "SIGTERM", "SIGPIPE"],
-    "correct": "C"
+    "question": "Which scaling increases server hardware power?",
+    "options": ["Horizontal", "Vertical", "Distributed", "Cache-level"],
+    "correct": "B"
   },
   {
     "id": 87,
-    "question": "In MongoDB, which query option is MOST useful to analyze execution statistics like totalDocsExamined and totalKeysExamined?",
-    "options": ["db.collection.stats()", "explain('executionStats')", "db.currentOp()", "db.serverStatus()"],
+    "question": "Which component stores frequently-accessed static files?",
+    "options": ["Load Balancer", "CDN", "Proxy", "Message Broker"],
     "correct": "B"
   },
   {
     "id": 88,
-    "question": "In a Node.js backend, which approach BEST avoids prototype pollution from untrusted JSON bodies?",
-    "options": [
-      "Directly merging request body into existing objects",
-      "Using eval() on JSON",
-      "Using safe deep-merge libraries and whitelisting allowed fields",
-      "Storing the body in global variables"
-    ],
-    "correct": "C"
+    "question": "Which architecture allows multiple services to deploy independently?",
+    "options": ["Monolith", "Microservices", "Client-server", "Pipeline"],
+    "correct": "B"
   },
   {
     "id": 89,
-    "question": "In MongoDB, which collection type is best suited for storing logs that should expire automatically after a fixed time?",
-    "options": ["Capped collection without TTL", "Standard collection with many indexes", "Collection with TTL index on a date field", "System collection"],
-    "correct": "C"
+    "question": "Which helps maintain session persistence?",
+    "options": ["Load balancer cookies", "Cold cache", "Replication", "Schema index"],
+    "correct": "A"
   },
   {
     "id": 90,
-    "question": "In a Node.js/Express app, which strategy is MOST appropriate for implementing long-running background jobs triggered by HTTP requests?",
-    "options": [
-      "Perform the entire job synchronously in the route",
-      "Use an in-memory loop until completion",
-      "Offload the job to a background worker via a queue and return a job ID",
-      "Block the event loop until the job is done"
-    ],
-    "correct": "C"
+    "question": "Which helps scale beyond single-region deployments?",
+    "options": ["Vertical scaling", "Multi-region replication", "CDN only", "API Gateway"],
+    "correct": "B"
   },
   {
     "id": 91,
-    "question": "In MongoDB, which metric from an explain plan STRONGLY indicates that your query is not using indexes efficiently?",
-    "options": [
-      "nReturned is small",
-      "totalDocsExamined is close to total indexed keys",
-      "totalDocsExamined is much larger than nReturned (COLLSCAN)",
-      "executionTimeMillis is very low"
-    ],
-    "correct": "C"
+    "question": "Which reduces DB load for repeated API calls?",
+    "options": ["Replication", "Caching", "Polling", "Load balancer"],
+    "correct": "B"
   },
   {
     "id": 92,
-    "question": "In Node.js, which method provides high-resolution time measurement suitable for benchmarking small code paths?",
-    "options": ["Date.now()", "process.hrtime.bigint()", "setTimeout()", "process.uptime()"],
+    "question": "Which algorithm distributes load based on server capacity?",
+    "options": ["Round robin", "Weighted round robin", "Random", "Naive cycle"],
     "correct": "B"
   },
   {
     "id": 93,
-    "question": "In MongoDB, which operator allows you to return only a slice of an array field in query results to reduce payload size?",
-    "options": ["$push", "$pull", "$slice", "$elemMatch"],
+    "question": "Which queue guarantee ensures exactly one consumption?",
+    "options": ["At-most-once", "At-least-once", "Exactly-once", "Never-once"],
     "correct": "C"
   },
   {
     "id": 94,
-    "question": "In a Node.js service, which logging format is MOST appropriate for integration with log aggregation tools like ELK?",
-    "options": ["Free-form text", "Emoji-based logs", "Structured JSON logs", "CSV-only logs"],
-    "correct": "C"
+    "question": "Which pattern caches data only after it is read at least once?",
+    "options": ["Write-through", "Cache aside", "Write-behind", "Warm cache"],
+    "correct": "B"
   },
   {
     "id": 95,
-    "question": "In MongoDB, which feature is specifically designed for storing files larger than 16MB efficiently?",
-    "options": ["Capped collections", "GridFS", "Change streams", "Text indexes"],
-    "correct": "B"
+    "question": "Which improves search for large text datasets?",
+    "options": ["ElasticSearch", "Redis", "MySQL", "MongoDB"],
+    "correct": "A"
   },
   {
     "id": 96,
-    "question": "In a Node.js/Express API, which HTTP status code is MOST appropriate for 'Too Many Requests' when rate limiting?",
-    "options": ["400", "401", "403", "429"],
-    "correct": "D"
-  },
-  {
-    "id": 97,
-    "question": "In MongoDB, which consistency model do SECONDARY reads primarily provide by default?",
-    "options": ["Strong linearizable consistency", "Eventual consistency", "No guarantees at all", "Serializable isolation"],
+    "question": "Which database guarantees high write scalability but weaker consistency?",
+    "options": ["MySQL", "Cassandra", "PostgreSQL", "SQLite"],
     "correct": "B"
   },
   {
-    "id": 98,
-    "question": "In a Node.js microservice, which pattern MOST helps prevent cascading failures when a downstream dependency is unhealthy?",
-    "options": [
-      "Always retry indefinitely",
-      "Remove all timeouts",
-      "Circuit breaker plus timeouts and fallbacks",
-      "Rely on the client to handle failures"
-    ],
+    "id": 97,
+    "question": "Which helps users get faster content globally?",
+    "options": ["Load balancer", "API gateway", "CDN", "Proxy"],
     "correct": "C"
   },
   {
+    "id": 98,
+    "question": "Which improves the reliability of distributed systems?",
+    "options": ["Circuit breaker", "Long polling", "Vertical scaling", "Single DB"],
+    "correct": "A"
+  },
+  {
     "id": 99,
-    "question": "In MongoDB, which feature is BEST suited for listening to real-time changes in a specific collection from a Node.js service?",
-    "options": ["TTL monitor", "Change streams on that collection", "Profiler", "Oplog tailing by hand only"],
+    "question": "Which is a benefit of distributed systems?",
+    "options": ["Single point of failure", "High availability", "Rigidity", "No scalability"],
     "correct": "B"
   },
   {
     "id": 100,
-    "question": "In a Node.js backend with MongoDB, which metric combination is MOST important to monitor for detecting database saturation?",
-    "options": [
-      "Number of JavaScript files",
-      "Connection count, operation latency, and queue length",
-      "Size of node_modules",
-      "Number of log lines per second only"
-    ],
+    "question": "Which allows services to scale independently?",
+    "options": ["Monolith", "Microservices", "Single DB schema", "Thick clients"],
     "correct": "B"
-  },{
-  "id": 101,
-  "question": "Which Node.js module provides event-driven, non-blocking I/O capability?",
-  "options": ["fs", "events", "cluster", "http"],
-  "correct": "B"
-},
-{
-  "id": 102,
-  "question": "Which MongoDB operator updates nested fields without replacing the entire document?",
-  "options": ["$unset", "$rename", "$set", "$slice"],
-  "correct": "C"
-},
-{
-  "id": 103,
-  "question": "Which Express method applies middleware only to a specific router instance?",
-  "options": ["app.use()", "router.use()", "app.stack()", "server.bind()"],
-  "correct": "C"
-},
-{
-  "id": 104,
-  "question": "Which MongoDB index improves queries using range filters and sorting?",
-  "options": ["Sparse index", "Text index", "Compound index", "TTL index"],
-  "correct": "C"
-},
-{
-  "id": 105,
-  "question": "Which module scales Node.js across multiple CPU cores?",
-  "options": ["child_process", "cluster", "perf_hooks", "async_hooks"],
-  "correct": "B"
-},
-{
-  "id": 106,
-  "question": "Which MongoDB aggregation stage calculates grouped metrics like total and average?",
-  "options": ["$project", "$lookup", "$group", "$limit"],
-  "correct": "C"
-},
-{
-  "id": 107,
-  "question": "In Express, which method handles all HTTP verbs for one endpoint?",
-  "options": ["app.map()", "app.use()", "app.all()", "app.handle()"],
-  "correct": "C"
-},
-{
-  "id": 108,
-  "question": "Which MongoDB operator checks existence of a field?",
-  "options": ["$regex", "$exists", "$where", "$slice"],
-  "correct": "B"
-},
-{
-  "id": 109,
-  "question": "Which Node.js API schedules a callback after current event loop phase?",
-  "options": ["setTimeout(0)", "process.nextTick()", "queueMicrotask()", "setImmediate()"],
-  "correct": "D"
-},
-{
-  "id": 110,
-  "question": "Which Express concept separates routing logic from main server?",
-  "options": ["Controllers", "Middleware", "Routers", "Templates"],
-  "correct": "C"
-},
-{
-  "id": 111,
-  "question": "Which MongoDB operator pushes a value only if it's not already present?",
-  "options": ["$push", "$addToSet", "$pull", "$merge"],
-  "correct": "B"
-},
-{
-  "id": 112,
-  "question": "Which header is critical to prevent CORS issues?",
-  "options": ["Content-Type", "Access-Control-Allow-Origin", "Authorization", "Accept"],
-  "correct": "B"
-},
-{
-  "id": 113,
-  "question": "Which Node.js built-in class allows event-based communication?",
-  "options": ["Emitter", "EventEmitter", "Callback", "Stream"],
-  "correct": "B"
-},
-{
-  "id": 114,
-  "question": "Which MongoDB stage flattens nested arrays for aggregation?",
-  "options": ["$unwind", "$group", "$sort", "$sample"],
-  "correct": "A"
-},
-{
-  "id": 115,
-  "question": "Which middleware is required to parse JSON body in Express?",
-  "options": ["express.text()", "express.json()", "express.raw()", "body.cookie()"],
-  "correct": "B"
-},
-{
-  "id": 116,
-  "question": "Which MongoDB index speeds up search in large text fields?",
-  "options": ["Text index", "Wildcard index", "DDL index", "Sparse index"],
-  "correct": "A"
-},
-{
-  "id": 117,
-  "question": "Which method closes MongoDB connection in Node.js?",
-  "options": ["client.disconnect()", "client.end()", "client.close()", "db.drop()"],
-  "correct": "C"
-},
-{
-  "id": 118,
-  "question": "Which Express method sends status + JSON in one call?",
-  "options": ["res.json()", "res.send()", "res.status().json()", "res.endJson()"],
-  "correct": "C"
-},
-{
-  "id": 119,
-  "question": "Which command installs Express locally?",
-  "options": ["npm add express", "npm install express", "node install express", "yarn expressNow"],
-  "correct": "B"
-},
-{
-  "id": 120,
-  "question": "Which MongoDB operator returns specific fields only?",
-  "options": ["$filter", "$project", "$reduce", "$map"],
-  "correct": "B"
-},
-{
-  "id": 121,
-  "question": "Which MongoDB operator increments numeric values atomically?",
-  "options": ["$sum", "$inc", "$mul", "$push"],
-  "correct": "B"
-},
-{
-  "id": 122,
-  "question": "Which Express middleware helps secure HTTP headers?",
-  "options": ["helmet", "multer", "cors", "express.static"],
-  "correct": "A"
-},
-{
-  "id": 123,
-  "question": "Which MongoDB operator removes an element from an array?",
-  "options": ["$unset", "$pull", "$addToSet", "$exists"],
-  "correct": "B"
-},
-{
-  "id": 124,
-  "question": "Which Node.js function executes immediately after I/O events?",
-  "options": ["setTimeout()", "setImmediate()", "process.now()", "queueMicrotask()"],
-  "correct": "B"
-},
-{
-  "id": 125,
-  "question": "Which read concern ensures reading committed data from majority?",
-  "options": ["available", "local", "majority", "linearizable"],
-  "correct": "C"
-},
-{
-  "id": 126,
-  "question": "Which Express pattern scales large APIs best?",
-  "options": ["Single file routing", "Modular routers per feature", "Global middleware only", "No router usage"],
-  "correct": "B"
-},
-{
-  "id": 127,
-  "question": "Which MongoDB feature provides real-time change notifications?",
-  "options": ["TTL Index", "Change Streams", "Geo Index", "Oplog Backup"],
-  "correct": "B"
-},
-{
-  "id": 128,
-  "question": "Which command views installed npm packages list?",
-  "options": ["npm tree", "npm show", "npm list", "npm graph"],
-  "correct": "C"
-},
-{
-  "id": 129,
-  "question": "Which Node.js API is best for CPU heavy parallel tasks?",
-  "options": ["EventEmitter", "Worker Threads", "Streams", "microtasks"],
-  "correct": "B"
-},
-{
-  "id": 130,
-  "question": "Which MongoDB operator limits documents returned?",
-  "options": ["$skip", "$limit", "$match", "$facet"],
-  "correct": "B"
-},
-{
-  "id": 131,
-  "question": "Which Express response ends request without body?",
-  "options": ["res.nil()", "res.end()", "res.json()", "res.sendStatus(204)"],
-  "correct": "D"
-},
-{
-  "id": 132,
-  "question": "Which MongoDB function returns query execution strategy?",
-  "options": ["db.explainPlan()", "cursor.profile()", "cursor.explain()", "explain.show()"],
-  "correct": "C"
-},
-{
-  "id": 133,
-  "question": "Which async pattern avoids callback hell best?",
-  "options": ["Nested callbacks", "Async/Await", "Sync loops", "Timeout chains"],
-  "correct": "B"
-},
-{
-  "id": 134,
-  "question": "Which MongoDB index prevents duplicate field values?",
-  "options": ["Sparse", "Partial", "Unique", "Wildcard"],
-  "correct": "C"
-},
-{
-  "id": 135,
-  "question": "Which Node tool restarts server automatically on file change?",
-  "options": ["pm2", "nodemon", "forever", "watchman"],
-  "correct": "B"
-},
-{
-  "id": 136,
-  "question": "Which MongoDB type stores binary large objects like images?",
-  "options": ["ObjectId", "Binary", "Decimal128", "MinKey"],
-  "correct": "B"
-},
-{
-  "id": 137,
-  "question": "Which middleware restricts rate of user requests?",
-  "options": ["morgan", "express-rate-limit", "cookie-parser", "compression"],
-  "correct": "B"
-},
-{
-  "id": 138,
-  "question": "Which aggregation stage joins documents across collections?",
-  "options": ["$lookup", "$match", "$reduce", "$facet"],
-  "correct": "A"
-},
-{
-  "id": 139,
-  "question": "Which Node.js module monitors event loop delay and bottlenecks?",
-  "options": ["timerStats", "cpuStats", "perf_hooks", "scheduler"],
-  "correct": "C"
-},
-{
-  "id": 140,
-  "question": "Which writeConcern provides strongest durability?",
-  "options": ["w:1", "w:0", "w:majority,j:true", "w:any"],
-  "correct": "C"
-},
-{
-  "id": 141,
-  "question": "Which Express function registers 404 handler?",
-  "options": ["app.drop()", "app.catch()", "app.use((req,res)=>{})", "app.listen(404)"],
-  "correct": "C"
-},
-{
-  "id": 142,
-  "question": "Which MongoDB feature handles >16MB files?",
-  "options": ["Text Search", "GridFS", "Geo Indexes", "Sharding"],
-  "correct": "B"
-},
-{
-  "id": 143,
-  "question": "Which Node API prevents app crash on unhandled rejections?",
-  "options": ["process.on('accept')", "process.on('unhandledRejection')", "app.catch()", "handle.default()"],
-  "correct": "B"
-},
-{
-  "id": 144,
-  "question": "Which indexing strategy reduces write amplification?",
-  "options": ["More indexes", "Remove unused indexes", "Wildcard indexing", "Duplicate indexes"],
-  "correct": "B"
-},
-{
-  "id": 145,
-  "question": "Which Express middleware handles static files?",
-  "options": ["express.cookie()", "express.static()", "express.fs()", "app.assets()"],
-  "correct": "B"
-},
-{
-  "id": 146,
-  "question": "Which operator projects only required fields?",
-  "options": ["$group", "$slice", "$project", "$unwind"],
-  "correct": "C"
-},
-{
-  "id": 147,
-  "question": "Which Node.js storage avoids XSS token theft?",
-  "options": ["localStorage", "sessionStorage", "HTTP-only cookies", "window.token"],
-  "correct": "C"
-},
-{
-  "id": 148,
-  "question": "Which query operator optimizes pagination?",
-  "options": ["skip-limit", "range pagination with index", "sample skip", "full scan skip"],
-  "correct": "B"
-},
-{
-  "id": 149,
-  "question": "Which stream method temporarily stops with backpressure?",
-  "options": ["stop()", "block()", "pause()", "freeze()"],
-  "correct": "C"
-},
-{
-  "id": 150,
-  "question": "Which operation is slowest without index?",
-  "options": ["point query", "insert one", "full collection scan", "updateOne"],
-  "correct": "C"
-},
-
-{
-  "id": 151,
-  "question": "Which Node.js method schedules microtasks synchronously?",
-  "options": ["setImmediate", "process.nextTick", "setTimeout", "delayTask"],
-  "correct": "B"
-},
-{
-  "id": 152,
-  "question": "Which authentication is stateless in Express backend?",
-  "options": ["Sessions", "JWT", "Cookies", "Local auth"],
-  "correct": "B"
-},
-{
-  "id": 153,
-  "question": "Which MongoDB scan occurs when regex has no prefix?",
-  "options": ["COLLSCAN", "IXSCAN", "HASHSCAN", "TEXTSCAN"],
-  "correct": "A"
-},
-{
-  "id": 154,
-  "question": "Which improves performance when sorting large collections?",
-  "options": ["Cursor rewind", "Index on sort field", "More documents", "Text search"],
-  "correct": "B"
-},
-{
-  "id": 155,
-  "question": "Which npm command installs package as dev dependency?",
-  "options": ["npm i pkg", "npm install --dev", "npm i -D", "npm pkg dev"],
-  "correct": "C"
-},
-{
-  "id": 156,
-  "question": "Which MongoDB command shows index stats?",
-  "options": ["db.collection.explain()", "db.collection.stats()", "db.collection.indexStats()", "db.showIndexes()"],
-  "correct": "C"
-},
-{
-  "id": 157,
-  "question": "Which prevents brute force login attacks?",
-  "options": ["More endpoints", "Infinite retries", "Rate limiting & lock mechanism", "Remove login"],
-  "correct": "C"
-},
-{
-  "id": 158,
-  "question": "Which Express feature parses cookies?",
-  "options": ["key-parser", "cookie-parser", "header-parser", "token-parser"],
-  "correct": "B"
-},
-{
-  "id": 159,
-  "question": "Which aggregation stage enables parallel sub pipelines?",
-  "options": ["$facet", "$group", "$sort", "$unset"],
-  "correct": "A"
-},
-{
-  "id": 160,
-  "question": "Which Node.js module executes system commands?",
-  "options": ["net", "dns", "child_process", "events"],
-  "correct": "C"
-},
-{
-  "id": 161,
-  "question": "Which MongoDB query operator performs partial indexing?",
-  "options": ["partialIndex()", "shardIndex()", "partialFilterExpression", "splitIndex()"],
-  "correct": "C"
-},
-{
-  "id": 162,
-  "question": "Which Express layer must return errors to handler?",
-  "options": ["controller", "router handler", "middleware next(err)", "static files"],
-  "correct": "C"
-},
-{
-  "id": 163,
-  "question": "Which stage increases docs by splitting arrays?",
-  "options": ["$match", "$group", "$unwind", "$project"],
-  "correct": "C"
-},
-{
-  "id": 164,
-  "question": "Which event triggers graceful shutdown?",
-  "options": ["SIGKILL", "SIGTERM", "SIGSTOP", "STOPPROCESS"],
-  "correct": "B"
-},
-{
-  "id": 165,
-  "question": "Which MongoDB storage engine supports journaling?",
-  "options": ["InMemory", "WiredTiger", "MemoryMap", "NoJournaling"],
-  "correct": "B"
-},
-{
-  "id": 166,
-  "question": "Which Express method chains multiple handlers?",
-  "options": ["app.chain()", "router.stack()", "app.route()", "app.attach()"],
-  "correct": "C"
-},
-{
-  "id": 167,
-  "question": "Which enhancement prevents hot shard in MongoDB?",
-  "options": ["Timestamp key", "Hashed shard key", "Embed arrays", "Single key writes"],
-  "correct": "B"
-},
-{
-  "id": 168,
-  "question": "Which Node.js method creates readable streams?",
-  "options": ["fs.readFile", "fs.createReadStream", "stream.input", "pipe.read"],
-  "correct": "B"
-},
-{
-  "id": 169,
-  "question": "Which operator applies math transformation in aggregation?",
-  "options": ["$expr", "$sum", "$map", "$reduce"],
-  "correct": "D"
-},
-{
-  "id": 170,
-  "question": "Which Express error signature is mandatory?",
-  "options": ["(req,res,next)", "(err,req,res,next)", "(error,res)", "(err)"],
-  "correct": "B"
-},
-{
-  "id": 171,
-  "question": "Which ensures eventual consistency reads from secondary?",
-  "options": ["readPreference secondary", "primary only", "nearest only", "none applicable"],
-  "correct": "A"
-},
-{
-  "id": 172,
-  "question": "Which utility measures memory leak patterns?",
-  "options": ["nodemon logs", "heap snapshots", "console.warn", "stack prints"],
-  "correct": "B"
-},
-{
-  "id": 173,
-  "question": "Which operation is best for high-traffic counters?",
-  "options": ["$push events", "$max increments", "$inc atomic", "$append"],
-  "correct": "C"
-},
-{
-  "id": 174,
-  "question": "Which concurrency method prevents race conditions on writes?",
-  "options": ["retry unbounded", "optimistic locking (__v)", "disable lock", "random insert"],
-  "correct": "B"
-},
-{
-  "id": 175,
-  "question": "Which index is preferred for prefix search?",
-  "options": ["Text index", "Hashed index", "Normal B-tree index", "TTL index"],
-  "correct": "C"
-},
-{
-  "id": 176,
-  "question": "Which Node.js flag increases memory allocation?",
-  "options": ["--max-memory", "--max-old-space-size", "--heap-boost", "--alloc-size"],
-  "correct": "B"
-},
-{
-  "id": 177,
-  "question": "Which Express field receives uploaded file?",
-  "options": ["helmet", "multer", "cookie-parser", "cluster"],
-  "correct": "B"
-},
-{
-  "id": 178,
-  "question": "Which MongoDB stage randomizes results?",
-  "options": ["$sample", "$limit", "$set", "$indexStats"],
-  "correct": "A"
-},
-{
-  "id": 179,
-  "question": "Which component logs structured output best?",
-  "options": ["console.log", "Winston JSON logger", "file.write()", "debug()"],
-  "correct": "B"
-},
-{
-  "id": 180,
-  "question": "Which operator filters array elements in projection?",
-  "options": ["$cond", "$filter", "$slice", "$map"],
-  "correct": "B"
-},
-{
-  "id": 181,
-  "question": "Which improves Express performance on large files?",
-  "options": ["fs.readFileSync", "streaming response", "send binary", "global buffer"],
-  "correct": "B"
-},
-{
-  "id": 182,
-  "question": "Which MongoDB action triggers document relocation frequently?",
-  "options": ["small updates", "document growth beyond allocation", "indexed reads", "lean queries"],
-  "correct": "B"
-},
-{
-  "id": 183,
-  "question": "Which avoids heavy request blocking?",
-  "options": ["sync crypto", "worker threads", "single loop", "timeout queue"],
-  "correct": "B"
-},
-{
-  "id": 184,
-  "question": "Which index supports geo spatial queries?",
-  "options": ["2dsphere", "text", "hashed", "gridFS"],
-  "correct": "A"
-},
-{
-  "id": 185,
-  "question": "Which operator truncates array content?",
-  "options": ["$slice", "$map", "$pull", "$gt"],
-  "correct": "A"
-},
-{
-  "id": 186,
-  "question": "Which Express middleware must be last?",
-  "options": ["parser", "router", "error handler", "helmet"],
-  "correct": "C"
-},
-{
-  "id": 187,
-  "question": "Which ensures retry safe API calls?",
-  "options": ["non-idempotent POST", "idempotent PUT/DELETE", "GET caching only", "random call"],
-  "correct": "B"
-},
-{
-  "id": 188,
-  "question": "Which Node.js storage is unsafe for tokens?",
-  "options": ["HTTP-only cookie", "localStorage", "signed cookie", "session cookie"],
-  "correct": "B"
-},
-{
-  "id": 189,
-  "question": "Which aggregation operation fans out pipelines?",
-  "options": ["$facet", "$group", "$sort", "$unwind"],
-  "correct": "A"
-},
-{
-  "id": 190,
-  "question": "Which MongoDB element triggers heavy RAM usage?",
-  "options": ["small docs", "large working set > RAM", "indexes trimmed", "sharded cold store"],
-  "correct": "B"
-},
-{
-  "id": 191,
-  "question": "Which ensures consistency across distributed cluster?",
-  "options": ["sticky requests", "writeConcern majority", "read local only", "null safety"],
-  "correct": "B"
-},
-{
-  "id": 192,
-  "question": "Which helps avoid N+1 queries?",
-  "options": ["multiple loops", "DataLoader batching", "cursor unbounded", "random fetch"],
-  "correct": "B"
-},
-{
-  "id": 193,
-  "question": "Which operator reduces document to specific field shape?",
-  "options": ["$project", "$sample", "$facet", "$map"],
-  "correct": "A"
-},
-{
-  "id": 194,
-  "question": "Which connection reuse improves performance?",
-  "options": ["new client per request", "Mongo connection pooling", "no pooling", "session for each"],
-  "correct": "B"
-},
-{
-  "id": 195,
-  "question": "Which enables atomic array update with filter?",
-  "options": ["$each", "$set", "$pull", "$[]"],
-  "correct": "D"
-},
-{
-  "id": 196,
-  "question": "Which Express optimization reduces payload size?",
-  "options": ["helmet", "compression middleware", "router chaining", "sync I/O"],
-  "correct": "B"
-},
-{
-  "id": 197,
-  "question": "Which operator validates pattern match?",
-  "options": ["$eq", "$regex", "$matchAll", "$find"],
-  "correct": "B"
-},
-{
-  "id": 198,
-  "question": "Which projection saves network bandwidth?",
-  "options": ["*,select all", "return all fields", "limit fields returned", "include documents fully"],
-  "correct": "C"
-},
-{
-  "id": 199,
-  "question": "Which prevents client seeing internal stack traces?",
-  "options": ["res.send(err.stack)", "custom error formatter", "return raw error", "console.log only"],
-  "correct": "B"
-},
-{
-  "id": 200,
-  "question": "Which Mongo feature is recommended for large analytics pipelines?",
-  "options": ["lookup everywhere", "Aggregation pipeline", "manual JS loops", "client-side processing"],
-  "correct": "B"
-}
+  }
 ]
-
-
